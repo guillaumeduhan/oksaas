@@ -1,0 +1,36 @@
+---
+import Logo from "./Logo.astro";
+---
+
+<div class="flex items-center justify-center py-4 w-full">
+  <Logo />
+  <nav class="grow flex items-center justify-center">
+    {
+      [
+        {
+          title: "Advertise",
+          url: "/advertise",
+        },
+        {
+          title: "Spotlight",
+          url: "/spotlight",
+        },
+        {
+          title: "Launches",
+          url: "/launches",
+        },
+      ].map((link: any) => (
+        <a class="p-2" href={link.url}>
+          {link.title}
+        </a>
+      ))
+    }
+  </nav>
+  <button
+    class="border-2 border-happy-600 duration-300 transition cursor-pointer group"
+  >
+    <div class="bg-transparent px-2 flex items-center gap-2 px-4 py-1">
+      <span class="font-[600] text-sm">Login</span>
+    </div>
+  </button>
+</div>

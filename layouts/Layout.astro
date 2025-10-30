@@ -1,0 +1,76 @@
+---
+import "../globals.css";
+const title = "OkAgents — Discover the best AI agents. Before everyone else.";
+const description =
+  "OkAgents is the directory of AI agents: compare, test, read real user feedback, and find the one that actually gets the job done — without wasting hours searching.";
+const url = "https://okagents.ai";
+const image = `${url}/og-image.jpg`; // 1200x630 recommandé
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <meta name="twitter:creator" content="@okagents_ai" />
+
+    <!-- JSON-LD: Product/Directory style -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "OkAgents",
+        "url": "https://okagents.ai",
+        "description": "Directory of AI agents with reviews, comparisons and real-world usage feedback.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "OkAgents",
+          "url": "https://okagents.ai",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://okagents.ai/logo.png"
+          }
+        },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://okagents.ai/search?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        },
+        "sameAs": ["https://x.com/okagents_ai"]
+      }
+    </script>
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#10b981" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={url} />
+  </head>
+
+  <body class="bg-black min-h-screen text-white antialiased">
+    <slot />
+  </body>
+</html>

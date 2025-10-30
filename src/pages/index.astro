@@ -1,252 +1,190 @@
 ---
-import "../../globals.css";
-import Logo from "../components/Logo.astro";
-const title =
-  "My Happy Agency — Agence de création web & branding professionnel";
-const description =
-  "Nous transformons votre image de marque en une expérience digitale impactante. Création de sites web, identité visuelle et stratégie de marque sur mesure.";
-const url = "https://myhappyagency.com";
-const image = `${url}/og-image.jpg`; // mets ici ton image OG réelle (1200x630 recommandé)
-const SIZE = 28;
+import { Plus } from "@lucide/astro";
+import Layout from "../../layouts/Layout.astro";
+import bg1 from "../../public/bg1.png";
+import Agent from "../components/Agent.astro";
+import Header from "../components/Header.astro";
 
-const BRANDS = Array.from({ length: 15 }, (_, i) => `./brands/${i + 1}.svg`);
+const agents = [
+  {
+    title: "Devin",
+    description:
+      "Autonomous AI software engineer from Cognition Labs. Plans tasks, writes code, runs tests, and ships PRs end-to-end like a real teammate.",
+    imageUrl: "/agents/devin.png",
+    url: "/agents/devin",
+    likesCount: 982,
+  },
+  {
+    title: "Replit Agent 3",
+    description:
+      "Replit’s long-running app builder. Builds full apps from a prompt, tests its own work, fixes bugs, and keeps iterating with your feedback.",
+    imageUrl: "/agents/replit-agent3.png",
+    url: "/agents/replit-agent-3",
+    likesCount: 764,
+  },
+  {
+    title: "Cursor Agent",
+    description:
+      "Cursor’s in-editor coding agent. Refactors multi-file codebases, applies changes across your repo, debugs, and ships features (‘vibe coding’ style).",
+    imageUrl: "/agents/cursor-agent.png",
+    url: "/agents/cursor-agent",
+    likesCount: 651,
+  },
+  {
+    title: "Fin",
+    description:
+      "Intercom’s AI support agent. Answers complex customer questions across chat / email / voice, resolves tickets, escalates only when needed.",
+    imageUrl: "/agents/fin.png",
+    url: "/agents/fin",
+    likesCount: 1134,
+  },
+  {
+    title: "Lindy",
+    description:
+      "AI executive assistant that schedules meetings, handles email, books travel, and even runs customer support flows — like a 24/7 chief of staff.",
+    imageUrl: "/agents/lindy.png",
+    url: "/agents/lindy",
+    likesCount: 512,
+  },
+  {
+    title: "Adept ACT-1",
+    description:
+      "Adept’s action-taking agent for ops work. Uses apps like a human — clicks, types, pulls data, completes multi-step business workflows automatically.",
+    imageUrl: "/agents/adept-act1.png",
+    url: "/agents/adept-act1",
+    likesCount: 403,
+  },
+  {
+    title: "Shopify Sidekick",
+    description:
+      "Commerce copilot built into Shopify. Knows your store, answers ‘how are sales?’, drafts content, suggests promos, and can take actions in admin.",
+    imageUrl: "/agents/sidekick.png",
+    url: "/agents/shopify-sidekick",
+    likesCount: 577,
+  },
+  {
+    title: "ElevenLabs Voice Agent",
+    description:
+      "Human-sounding phone agent. Qualifies inbound leads, books appointments, answers support calls, and follows up 24/7 in 30+ languages.",
+    imageUrl: "/agents/elevenlabs-voice.png",
+    url: "/agents/elevenlabs-voice-agent",
+    likesCount: 446,
+  },
+  {
+    title: "Retell AI",
+    description:
+      "AI call center agent. Answers the phone, resolves requests, updates your CRM, and warm-transfers to a human with full context. Deployable with no code.",
+    imageUrl: "/agents/retell.png",
+    url: "/agents/retell-ai",
+    likesCount: 389,
+  },
+  {
+    title: "OpenAI Realtime Agent",
+    description:
+      "Low-latency voice agent built on OpenAI’s Realtime API. Handles live phone calls over SIP, listens, talks back instantly, and can execute tasks.",
+    imageUrl: "/agents/openai-realtime.png",
+    url: "/agents/openai-realtime",
+    likesCount: 842,
+  },
+];
 ---
 
-<!doctype html>
-<html lang="fr">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="generator" content={Astro.generator} />
-
-    <!-- Title & Description -->
-    <title>{title}</title>
-    <meta name="description" content={description} />
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={url} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:locale" content="fr_FR" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={image} />
-    <meta name="twitter:creator" content="@myhappyagency" />
-
-    <!-- Schema.org / JSON-LD -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "My Happy Agency",
-        "url": "{url}",
-        "logo": "{url}/logo.png",
-        "description": "{description}",
-        "founder": {
-          "@type": "Person",
-          "name": "Guillaume Duhan"
-        },
-        "sameAs": [
-          "https://www.linkedin.com/company/myhappyagency",
-          "https://x.com/blackevilgoblin"
-        ],
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "contactType": "customer support",
-          "email": "contact@myhappyagency.com"
-        }
-      }
-    </script>
-
-    <!-- Theme -->
-    <meta name="theme-color" content="#10b981" />
-
-    <!-- Canonical -->
-    <link rel="canonical" href={url} />
-  </head>
-
-  <body>
-    <main class="grid gap-12 pb-24">
-      <section
-        class="bg-gradient-to-b from-neutral-950 to-transparent px-4 lg:px-0"
-      >
-        <div class="container mx-auto text-center py-4 lg:py-12">
-          <div class="grid gap-8 max-w-[900px] mx-auto">
-            <div class="grid gap-8 fade-in-up">
-              <div class="flex items-center justify-center">
-                <Logo />
-              </div>
-              <div class="flex items-center justify-center gap-4">
-                <img class="h-8 lg:h-16" src="15588.png" alt="" />
-                <p class="text-neutral-500 text-sm lg:text-[20px]">
-                  Top 1% des <span class="font-bold">agences web</span>
-                  <br />de France (Forbes Digital)
-                </p>
-                <img
-                  src="15588.png"
-                  alt=""
-                  class="transform scale-x-[-1] h-8 lg:h-16"
+<Layout>
+  <main>
+    <div class="max-w-[1000px] mx-auto grid px-4 lg:px-0 gap-12 lg:gap-24">
+      <section class="relative w-full grid gap-8 mx-auto py-4 lg:py-8">
+        <Header />
+        <img
+          src={bg1.src}
+          alt={`OkAgents logo`}
+          class="absolute z-1 right-0 bottom-0 h-96 fade-in-up-3 opacity-10 lg:opacity-50"
+          loading="lazy"
+        />
+        <div
+          class="z-50 grid gap-4 lg:gap-8 max-w-[800px] w-full text-center lg:text-left"
+        >
+          <div
+            class="flex items-center justify-center lg:justify-start text-center gap-4 fade-in-up"
+          >
+            <img class="h-8 lg:h-12" src="15588.png" alt="" />
+            <p class="text-neutral-500 text-sm">
+              #1 Directory to <span class="font-bold">rank</span>
+              <br />your AI Agents
+            </p>
+            <img
+              src="15588.png"
+              alt=""
+              class="transform scale-x-[-1] h-8 lg:h-12"
+            />
+          </div>
+          <h1
+            class="cal-sans text-[32px] lg:text-[56px] fade-in-up-2"
+            style={{
+              lineHeight: 1.2,
+            }}
+          >
+            Discover the best AI agents. <br />Before everyone else.
+          </h1>
+          <p class="text-neutral-500 text-base lg:text-[20px] fade-in-up-2">
+            OkAgents is the directory of AI agents: compare, test, read real
+            user feedback, and find the one that actually gets the job done —
+            without wasting hours searching.
+          </p>
+          <div class="lg:flex fade-in-up-2">
+            <button
+              class="bg-gradient-to-r from-happy-600 to-happy-700/25 hover:to-happy-700 duration-300 transition p-1 cursor-pointer group"
+            >
+              <div class="bg-black px-4 py-2 flex items-center gap-2">
+                <Plus
+                  size="20"
+                  class="text-happy-600 transition duration-200 group-hover:text-white"
                 />
+                <span class="font-[600]">New Launch</span>
               </div>
-            </div>
-            <div class="grid gap-4">
-              <h1
-                class="cal-sans text-[36px] md:text-[56px] lg:text-[72px] fade-in-up-1"
-                style={{
-                  lineHeight: 1.16,
-                }}
-              >
-                Agence de création web & branding professionnel
-              </h1>
-              <p
-                class="text-neutral-500 lg:text-[20px] max-w-[500px] mx-auto fade-in-up-2"
-              >
-                Nous transformons votre image de marque en expérience digitale
-                impactante.
-              </p>
-            </div>
-            <div class="grid gap-8 fade-in-up-3">
-              <a
-                href="https://codeg.link/20-min"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-block"
-              >
-                <button
-                  class="flex items-center justify-center gap-2 mx-auto px-4 py-2 lg:px-6 lg:py-4 text-[16px] lg:text-[20px] font-[500] border-4 border-happy-700 rounded-lg bg-gradient-to-r from-happy-700 to-transparent cursor-pointer hover:to-happy-600 transition duration-300"
-                >
-                  <span>
-                    Rendez-vous avec Guillaume
-                    <span class="hidden lg:inline-flex">notre CEO</span>
-                  </span>
-                  <img
-                    class="w-8 lg:w-10"
-                    src="./gd.png"
-                    alt="Guillaume Duhan"
-                    loading="lazy"
-                  />
-                </button>
-              </a>
-              <div class="grid gap-2">
-                <div class="avatar-stack mx-auto">
-                  <img
-                    src="./clients/1.jpeg"
-                    alt="Avatar 1"
-                    class="avatar object-cover"
-                  />
-                  <img
-                    src="./clients/2.jpeg"
-                    alt="Avatar 2"
-                    class="avatar object-cover"
-                  />
-                  <img
-                    src="./clients/3.jpeg"
-                    alt="Avatar 3"
-                    class="avatar object-cover"
-                  />
-                  <img
-                    src="./clients/4.jpg"
-                    alt="Avatar 4"
-                    class="avatar object-cover"
-                  />
-                </div>
-                <p
-                  class="text-neutral-500 lg:text-[20px] max-w-[500px] mx-auto"
-                >
-                  500+ clients déjà satisfaits
-                </p>
-              </div>
-              <div class="grid lg:flex items-center justify-center gap-4">
-                <div class="tag-neutral">
-                  <div class="rounded-full">
-                    <svg
-                      class="text-happy-700"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={SIZE}
-                      height={SIZE}
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="m10.6 16.6l7.05-7.05l-1.4-1.4l-5.65 5.65l-2.85-2.85l-1.4 1.4zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"
-                      ></path></svg
-                    >
-                  </div>
-                  <span class="text-center lg:text-left w-full"
-                    >Sites webs & Référencement</span
-                  >
-                </div>
-                <div class="tag-neutral">
-                  <div class="rounded-full">
-                    <svg
-                      class="text-happy-700"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={SIZE}
-                      height={SIZE}
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="m10.6 16.6l7.05-7.05l-1.4-1.4l-5.65 5.65l-2.85-2.85l-1.4 1.4zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"
-                      ></path></svg
-                    >
-                  </div>
-                  <span class="text-center lg:text-left w-full"
-                    >Livraison en 7 jours</span
-                  >
-                </div><div class="tag-neutral">
-                  <div class="rounded-full">
-                    <svg
-                      class="text-happy-700"
-                      xmlns="http://www.w3.org/2000/svg"
-                      width={SIZE}
-                      height={SIZE}
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="m10.6 16.6l7.05-7.05l-1.4-1.4l-5.65 5.65l-2.85-2.85l-1.4 1.4zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"
-                      ></path></svg
-                    >
-                  </div>
-                  <span class="text-center lg:text-left w-full"
-                    >Equipe internationale</span
-                  >
-                </div>
-              </div>
-            </div>
+            </button>
           </div>
         </div>
       </section>
-      <section
-        class="border-t border-b border-dashed border-neutral-800 w-fullfade-in-up-3"
-      >
-        <div
-          class="grid container mx-auto grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 border border-dashed border-neutral-800 bg-transparent"
-        >
+      <section class="grid lg:grid-cols-12 gap-8 mx-auto py-4 lg:py-8">
+        <div class="grid lg:col-span-8 order-2 lg:order-1">
           {
-            BRANDS.map((src) => (
-              <div class="flex items-center justify-center border-b border-l border-dashed border-neutral-800 aspect-square">
-                <img
-                  src={src}
-                  alt="Client logo"
-                  class="max-h-12 object-contain opacity-100 cursor-pointer hover:opacity-100 transition duration-300"
-                  loading="lazy"
+            agents
+              .sort((a, b) => b.likesCount - a.likesCount)
+              .map((agent) => (
+                <Agent
+                  title={agent.title}
+                  description={agent.description}
+                  imageUrl={agent.imageUrl}
+                  url={agent.url}
+                  likesCount={agent.likesCount}
                 />
-              </div>
-            ))
+              ))
           }
         </div>
+        <div class="lg:col-span-4 order-1 lg:order-2 grid gap-12 content-start">
+          <div class="grid gap-4">
+            <h4 class="font-[600]">Discover</h4>
+            <Agent
+              title={agents[3].title}
+              description={agents[3].description}
+              imageUrl={agents[3].imageUrl}
+              url={agents[3].url}
+              likesCount={agents[3].likesCount}
+            />
+          </div>
+          <div class="grid gap-4">
+            <h4 class="font-[600]">Featured</h4>
+            <Agent
+              title={agents[3].title}
+              description={agents[3].description}
+              imageUrl={agents[3].imageUrl}
+              url={agents[3].url}
+              likesCount={agents[3].likesCount}
+              small={true}
+            />
+          </div>
+        </div>
       </section>
-    </main>
-  </body>
-</html>
+    </div>
+  </main>
+</Layout>

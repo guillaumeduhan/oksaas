@@ -10,17 +10,32 @@
   }
 
   @theme {
-    --color-happy-50: hsl(222, 100%, 96%);
-    --color-happy-100: hsl(227, 100%, 93%);
-    --color-happy-200: hsl(228, 100%, 87%);
-    --color-happy-300: hsl(230, 100%, 80%);
-    --color-happy-400: hsl(235, 100%, 72%);
-    --color-happy-500: hsl(240, 100%, 65%);
-    --color-happy-600: hsl(245, 99%, 56%);
-    --color-happy-700: hsl(246, 76%, 51%);
-    --color-happy-800: hsl(245, 72%, 41%);
-    --color-happy-900: hsl(244, 62%, 34%);
-    --color-happy-950: hsl(246, 63%, 20%);
+    --color-happy-50: #ebf0ff;
+    --color-happy-100: #dbe3ff;
+    --color-happy-200: #becbff;
+    --color-happy-300: #97a8ff;
+    --color-happy-400: #6e79ff;
+    --color-happy-500: #4d4dff;
+    --color-happy-600: #3422fe;
+    --color-happy-700: #3421e1;
+    --color-happy-800: #2b1eb5;
+    --color-happy-900: #28218e;
+    --color-happy-950: #191353;
+    --color-vert-50: #edfff7;
+    --color-vert-100: #d5ffed;
+    --color-vert-200: #aeffdc;
+    --color-vert-300: #6fffc3;
+    --color-vert-400: #1fff9e;
+    --color-vert-500: #00e983;
+    --color-vert-600: #00c269;
+    --color-vert-700: #009856;
+    --color-vert-800: #047747;
+    --color-vert-900: #06613c;
+    --color-vert-950: #00371f;
+  }
+
+  * {
+    @apply transition duration-100;
   }
 
   /* Application globale */
@@ -31,6 +46,10 @@
     background: black;
     color: white;
     @apply text-[16px];
+  }
+
+  a {
+    @apply text-neutral-500 cursor-pointer hover:text-happy-500 transition duration-300;
   }
 
   /* Classe utilitaire */
@@ -90,5 +109,21 @@
 }
 
 .fade-in-up-3 {
-  animation: fade-in-up 2.6s ease-out forwards;
+  animation: fade-in-up 3s ease-out forwards;
+}
+
+@keyframes floatUpFade {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-25%);
+    opacity: 0;
+  }
+}
+
+.float-up-fade {
+  animation: floatUpFade 1s linear infinite;
 }
