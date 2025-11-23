@@ -1,8 +1,9 @@
 ---
 import "../globals.css";
+import Footer from "../src/components/Footer.astro";
 const title = "OkAgents — Discover the best AI agents. Before everyone else.";
 const description =
-  "OkAgents is the directory of AI agents: compare, test, read real user feedback, and find the one that actually gets the job done — without wasting hours searching.";
+  "OkAgents is the directory of AI agents: find the one that actually gets the job done — without wasting hours searching.";
 const url = "https://okagents.ai";
 const image = `${url}/og-image.jpg`; // 1200x630 recommandé
 ---
@@ -71,6 +72,9 @@ const image = `${url}/og-image.jpg`; // 1200x630 recommandé
   </head>
 
   <body class="bg-black min-h-screen text-white antialiased">
-    <slot />
+    <main class="mb-24">
+      <slot />
+    </main>
+    <Footer />
   </body>
 </html>

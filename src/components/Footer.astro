@@ -1,0 +1,134 @@
+---
+import Logo from "./Logo.astro";
+
+const column1 = [
+  ["Devin AI", "https://www.cognition-labs.com/"],
+  ["V0 by Vercel", "https://v0.dev/"],
+  ["OpenAI Operator", "https://openai.com/index/introducing-operator/"],
+  ["GitHub Copilot", "https://github.com/features/copilot"],
+  ["Perplexity AI", "https://www.perplexity.ai/"],
+  ["Claude by Anthropic", "https://www.anthropic.com/"],
+  ["Reka Core", "https://reka.ai/"],
+  ["Adept ACT-1", "https://www.adept.ai/"],
+  ["AutoDev", "https://autodev.ai/"],
+  ["Cursor IDE", "https://cursor.sh/"],
+  ["Cline AI", "https://github.com/cline/cline"],
+  ["CrewAI", "https://crewai.com/"],
+  ["AutoGen", "https://microsoft.github.io/autogen/"],
+  ["AgentGPT", "https://agentgpt.reworkd.ai/"],
+  ["BabyAGI", "https://github.com/yoheinakajima/babyagi"],
+  ["SWE-Agent", "https://github.com/princeton-nlp/SWE-agent"],
+  ["TaskingAI", "https://tasking.ai/"],
+  ["Langroid", "https://www.langroid.com/"],
+  ["Smol Agents", "https://github.com/huggingface/smolagents"],
+  ["Open Interpreter", "https://openinterpreter.com/"],
+];
+
+const column2 = [
+  ["Runway ML", "https://runwayml.com/"],
+  ["Midjourney", "https://www.midjourney.com/"],
+  ["Stable Diffusion", "https://stability.ai/"],
+  ["Firefly AI", "https://www.adobe.com/sensei/generative-ai.html"],
+  ["ElevenLabs", "https://elevenlabs.io/"],
+  ["HeyGen", "https://www.heygen.com/"],
+  ["D-ID", "https://www.d-id.com/"],
+  ["Descript", "https://www.descript.com/"],
+  ["Canva AI", "https://www.canva.com/ai/"],
+  ["OpenPipe", "https://www.openpipe.ai/"],
+  ["Replicate", "https://replicate.com/"],
+  ["RunPod", "https://runpod.io/"],
+  ["Pika Labs", "https://www.pika.art/"],
+  ["Leonardo AI", "https://leonardo.ai/"],
+  ["NotebookLM", "https://notebooklm.google/"],
+  ["Voiceflow", "https://www.voiceflow.com/"],
+  ["Recraft AI", "https://www.recraft.ai/"],
+  ["Figma AI", "https://www.figma.com/blog/introducing-ai-in-figma/"],
+  ["Hotshot AI", "https://hotshot.co/"],
+  ["Landing AI", "https://landing.ai/"],
+];
+
+const column3 = [
+  ["LangChain", "https://www.langchain.com/"],
+  ["LlamaIndex", "https://www.llamaindex.ai/"],
+  ["Ollama", "https://ollama.com/"],
+  ["HuggingFace", "https://huggingface.co/"],
+  ["Pinecone", "https://www.pinecone.io/"],
+  ["Weaviate", "https://weaviate.io/"],
+  ["Milvus", "https://milvus.io/"],
+  ["Supabase", "https://supabase.com/"],
+  ["Upstash", "https://upstash.com/"],
+  ["Fireworks AI", "https://fireworks.ai/"],
+  ["Baseten", "https://www.baseten.co/"],
+  ["Together AI", "https://www.together.ai/"],
+  ["Unstructured", "https://www.unstructured.io/"],
+  ["Modal Labs", "https://modal.com/"],
+  ["Fal AI", "https://fal.ai/"],
+  ["Cloudflare Workers AI", "https://developers.cloudflare.com/ai/"],
+  ["Mistral AI", "https://mistral.ai/"],
+  ["Groq", "https://groq.com/"],
+  ["Anthropic API", "https://docs.anthropic.com/"],
+  ["OpenAI API", "https://platform.openai.com/"],
+];
+
+const column4 = [
+  ["Prompt Engineering Guide", "https://www.promptingguide.ai/"],
+  [
+    "RAG Explained",
+    "https://www.pinecone.io/learn/retrieval-augmented-generation/",
+  ],
+  ["RLHF Deep Dive", "https://huggingface.co/blog/rlhf"],
+  ["Transformers Course", "https://huggingface.co/learn/nlp-course"],
+  ["DeepLearning.ai", "https://www.deeplearning.ai/"],
+  ["MIT AI Course", "https://mitxonline.mit.edu/"],
+  ["Stanford CS224N", "http://web.stanford.edu/class/cs224n/"],
+  ["Fast.ai", "https://www.fast.ai/"],
+  ["Andrej Karpathy's YouTube", "https://www.youtube.com/@AndrejKarpathy"],
+  ["Yann LeCun’s Papers", "https://yann.lecun.com/ex/index.html"],
+  ["OpenAI Research", "https://openai.com/research"],
+  ["Anthropic Research", "https://www.anthropic.com/research"],
+  ["Meta AI Research", "https://ai.meta.com/research/"],
+  ["Google DeepMind", "https://deepmind.google/"],
+  ["EleutherAI", "https://www.eleuther.ai/"],
+  ["Papers With Code", "https://paperswithcode.com/"],
+  ["Arxiv Sanity", "https://arxiv-sanity-lite.com/"],
+  ["Weights & Biases", "https://wandb.ai/"],
+  ["Kaggle Learn AI", "https://www.kaggle.com/learn"],
+  ["ML Glossary", "https://ml-cheatsheet.readthedocs.io/"],
+];
+
+const columns = [column1, column2, column3, column4];
+---
+
+<footer
+  class="grid gap-12 w-full bg-transparent text-neutral-400 py-16 px-6 border-t border-dashed border-happy-600"
+>
+  <div class="flex items-center gap-2 mx-auto">
+    <Logo />
+    <h2 class="text-white font-[600] text-xl">okagents.ai</h2>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+    {
+      columns.map((col, i) => (
+        <div class="flex flex-col gap-2">
+          <h3 class="text-white font-semibold mb-2">
+            {["AI Agents", "AI Tools", "AI Development", "AI Research"][i]}
+          </h3>
+          {col.map(([name, url]) => (
+            <a target="blank" href={`${url}?utm_source=okagents`}>
+              {name}
+            </a>
+          ))}
+        </div>
+      ))
+    }
+  </div>
+  <div class="mt-12 text-center text-neutral-600 text-sm">
+    © {new Date().getFullYear()} OkAgents — Curated directory of AI agents & tools.
+    Built by <a
+      href="https://guillaume.ceo"
+      target="_blank"
+      rel="noopener"
+      class="underline">Guillaume Duhan</a
+    >.
+  </div>
+</footer>

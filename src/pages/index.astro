@@ -1,92 +1,10 @@
 ---
 import { Plus } from "@lucide/astro";
+import agents from "../../data.json";
 import Layout from "../../layouts/Layout.astro";
 import bg1 from "../../public/bg1.png";
 import Agent from "../components/Agent.astro";
 import Header from "../components/Header.astro";
-
-const agents = [
-  {
-    title: "Devin",
-    description:
-      "Autonomous AI software engineer from Cognition Labs. Plans tasks, writes code, runs tests, and ships PRs end-to-end like a real teammate.",
-    imageUrl: "/agents/devin.png",
-    url: "/agents/devin",
-    likesCount: 982,
-  },
-  {
-    title: "Replit Agent 3",
-    description:
-      "Replit’s long-running app builder. Builds full apps from a prompt, tests its own work, fixes bugs, and keeps iterating with your feedback.",
-    imageUrl: "/agents/replit-agent3.png",
-    url: "/agents/replit-agent-3",
-    likesCount: 764,
-  },
-  {
-    title: "Cursor Agent",
-    description:
-      "Cursor’s in-editor coding agent. Refactors multi-file codebases, applies changes across your repo, debugs, and ships features (‘vibe coding’ style).",
-    imageUrl: "/agents/cursor-agent.png",
-    url: "/agents/cursor-agent",
-    likesCount: 651,
-  },
-  {
-    title: "Fin",
-    description:
-      "Intercom’s AI support agent. Answers complex customer questions across chat / email / voice, resolves tickets, escalates only when needed.",
-    imageUrl: "/agents/fin.png",
-    url: "/agents/fin",
-    likesCount: 1134,
-  },
-  {
-    title: "Lindy",
-    description:
-      "AI executive assistant that schedules meetings, handles email, books travel, and even runs customer support flows — like a 24/7 chief of staff.",
-    imageUrl: "/agents/lindy.png",
-    url: "/agents/lindy",
-    likesCount: 512,
-  },
-  {
-    title: "Adept ACT-1",
-    description:
-      "Adept’s action-taking agent for ops work. Uses apps like a human — clicks, types, pulls data, completes multi-step business workflows automatically.",
-    imageUrl: "/agents/adept-act1.png",
-    url: "/agents/adept-act1",
-    likesCount: 403,
-  },
-  {
-    title: "Shopify Sidekick",
-    description:
-      "Commerce copilot built into Shopify. Knows your store, answers ‘how are sales?’, drafts content, suggests promos, and can take actions in admin.",
-    imageUrl: "/agents/sidekick.png",
-    url: "/agents/shopify-sidekick",
-    likesCount: 577,
-  },
-  {
-    title: "ElevenLabs Voice Agent",
-    description:
-      "Human-sounding phone agent. Qualifies inbound leads, books appointments, answers support calls, and follows up 24/7 in 30+ languages.",
-    imageUrl: "/agents/elevenlabs-voice.png",
-    url: "/agents/elevenlabs-voice-agent",
-    likesCount: 446,
-  },
-  {
-    title: "Retell AI",
-    description:
-      "AI call center agent. Answers the phone, resolves requests, updates your CRM, and warm-transfers to a human with full context. Deployable with no code.",
-    imageUrl: "/agents/retell.png",
-    url: "/agents/retell-ai",
-    likesCount: 389,
-  },
-  {
-    title: "OpenAI Realtime Agent",
-    description:
-      "Low-latency voice agent built on OpenAI’s Realtime API. Handles live phone calls over SIP, listens, talks back instantly, and can execute tasks.",
-    imageUrl: "/agents/openai-realtime.png",
-    url: "/agents/openai-realtime",
-    likesCount: 842,
-  },
-];
 ---
 
 <Layout>
@@ -108,8 +26,8 @@ const agents = [
           >
             <img class="h-8 lg:h-12" src="15588.png" alt="" />
             <p class="text-neutral-500 text-sm">
-              #1 Directory to <span class="font-bold">rank</span>
-              <br />your AI Agents
+              Directory to <span class="font-bold">rank</span>
+              <br />best AI Agents
             </p>
             <img
               src="15588.png"
@@ -125,10 +43,11 @@ const agents = [
           >
             Discover the best AI agents. <br />Before everyone else.
           </h1>
-          <p class="text-neutral-500 text-base lg:text-[20px] fade-in-up-2">
-            OkAgents is the directory of AI agents: compare, test, read real
-            user feedback, and find the one that actually gets the job done —
-            without wasting hours searching.
+          <p
+            class="text-neutral-500 text-base lg:text-[20px] fade-in-up-2 max-w-[500px]"
+          >
+            OkAgents finds the best AI agents every week — and lets you vote to
+            highlight the top performers.
           </p>
           <div class="lg:flex fade-in-up-2">
             <button
@@ -146,7 +65,7 @@ const agents = [
         </div>
       </section>
       <section class="grid lg:grid-cols-12 gap-8 mx-auto py-4 lg:py-8">
-        <div class="grid lg:col-span-8 order-2 lg:order-1">
+        <div class="grid lg:col-span-8 order-2 lg:order-1 content-start">
           {
             agents
               .sort((a, b) => b.likesCount - a.likesCount)
@@ -165,21 +84,21 @@ const agents = [
           <div class="grid gap-4">
             <h4 class="font-[600]">Discover</h4>
             <Agent
-              title={agents[3].title}
-              description={agents[3].description}
-              imageUrl={agents[3].imageUrl}
-              url={agents[3].url}
-              likesCount={agents[3].likesCount}
+              title={agents[0].title}
+              description={agents[0].description}
+              imageUrl={agents[0].imageUrl}
+              url={agents[0].url}
+              likesCount={agents[0].likesCount}
             />
           </div>
           <div class="grid gap-4">
             <h4 class="font-[600]">Featured</h4>
             <Agent
-              title={agents[3].title}
-              description={agents[3].description}
-              imageUrl={agents[3].imageUrl}
-              url={agents[3].url}
-              likesCount={agents[3].likesCount}
+              title={agents[0].title}
+              description={agents[0].description}
+              imageUrl={agents[0].imageUrl}
+              url={agents[0].url}
+              likesCount={agents[0].likesCount}
               small={true}
             />
           </div>

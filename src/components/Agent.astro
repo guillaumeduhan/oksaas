@@ -1,5 +1,6 @@
 ---
 interface Props {
+  id: string;
   title: string;
   description: string;
   imageUrl: string;
@@ -8,19 +9,21 @@ interface Props {
   small?: boolean;
 }
 
-const { title, description, imageUrl, url, likesCount, small } = Astro.props;
+const { id, title, description, imageUrl, url, likesCount, small } =
+  Astro.props;
 ---
 
 <div
-  class={`flex items-center gap-12 justify-between w-full w-full hover:bg-neutral-500/10 ${small ? "p-1" : "px-3 py-2"}`}
+  class={`flex items-center gap-12 justify-between w-full hover:bg-neutral-500/10 ${small ? "p-1" : "px-3 py-2"}`}
 >
-  <!-- Left side: image + text -->
   <a
-    href={url}
-    class="grow flex items-center gap-2 hover:opacity-90 transition"
+    href={`${url}?utm_source=okagents`}
+    target="blank"
+    class="grow flex items-center gap-4 hover:opacity-90 transition"
   >
     <div
-      class={`bg-neutral-900 rounded-lg ${small ? "size-10 min-w-10 min-h-10" : "size-14 min-w-14 min-h-14"} overflow-hidden flex items-center justify-center`}
+      class={`bg-neutral-900 rounded-lg overflow-hidden
+       ${small ? "size-10 min-w-10 min-h-10" : "size-14 min-w-14 min-h-14"} flex items-center justify-center`}
     >
       {
         imageUrl && (
@@ -35,7 +38,7 @@ const { title, description, imageUrl, url, likesCount, small } = Astro.props;
     </div>
 
     <div class="grid grow">
-      <h3 class="cal-sans text-lg text-white leading-tight">
+      <h3 class="font-[600] text-white leading-tight">
         {title}
       </h3>
       <p class="text-neutral-500 text-sm line-clamp-2 text-nowrap truncate">
@@ -48,15 +51,14 @@ const { title, description, imageUrl, url, likesCount, small } = Astro.props;
     </div>
   </a>
 
-  <!-- Right side: like / upvote -->
   <button
-    class="group duration-300 hover:bg-vert-600/20 gap-0 border-2 border-happy-600 hover:border-vert-600 min-w-14 min-h-14 size-14 font-[600] cursor-pointer flex items-center justify-center hover:shadow-lg hover:shadow-vert-600/20"
+    class="group duration-300 hover:bg-vert-600/20 border-2 border-happy-600 hover:border-vert-600 min-w-14 min-h-14 size-14 font-[600] cursor-pointer flex items-center justify-center hover:shadow-lg hover:shadow-vert-600/20"
     type="button"
   >
     <div class="text-center relative leading-none text-white text-sm">
       <div class="flex group-hover:hidden">
         <svg
-          class="group-hover:text-vert-600 mx-auto"
+          class="mx-auto"
           xmlns="http://www.w3.org/2000/svg"
           width="32"
           height="32"
@@ -67,7 +69,7 @@ const { title, description, imageUrl, url, likesCount, small } = Astro.props;
       </div>
       <div class="hidden group-hover:flex float-up-fade">
         <svg
-          class="group-hover:text-vert-600 mx-auto"
+          class="mx-auto"
           xmlns="http://www.w3.org/2000/svg"
           width="32"
           height="32"
