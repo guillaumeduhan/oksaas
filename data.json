@@ -3,40 +3,50 @@
     "id": "c4f0d0b9-3e42-4f7b-9f05-d2f3c92d8a1a",
     "title": "V0 by Vercel",
     "description": "AI frontend engineer that builds interfaces instantly from natural language. Produces React, Tailwind and Next.js code.",
-    "imageUrl": "/agents/v0.jpeg",
+    "image_url": "/agents/v0.jpeg",
     "url": "https://v0.app/",
-    "likesCount": 0
+    "is_discover": true,
+    "is_featured": true,
+    "likes_count": 0
   },
   {
     "id": "8a7cc9c4-0e52-4bf7-9e54-4cc219c36e85",
     "title": "OpenAI Operator",
     "description": "OpenAI's autonomous agent that takes multi-step actions, executes API calls, browses, and completes tasks end-to-end.",
-    "imageUrl": "/agents/openai.png",
+    "image_url": "/agents/openai.png",
     "url": "https://openai.com/index/introducing-operator/",
-    "likesCount": 0
+    "is_discover": false,
+    "is_featured": false,
+    "likes_count": 0
   },
   {
     "id": "0f1c2c91-4bcf-4b40-9fe0-e3b9a2255739",
     "title": "GitHub Copilot",
     "description": "End-to-end coding agent that plans features, edits repositories, writes PRs, and explains code changes like a software teammate.",
-    "imageUrl": "/agents/copilot.png",
+    "image_url": "/agents/copilot.png",
     "url": "https://github.com/features/copilot",
-    "likesCount": 0
+    "is_discover": false,
+    "is_featured": false,
+    "likes_count": 0
   },
   {
     "id": "d2d8a7a1-f6b8-4e3c-8f73-76dbd47613fe",
     "title": "Perplexity Agent",
     "description": "Search-first AI agent that conducts research, cross-checks sources, and produces structured reports with citations.",
-    "imageUrl": "/agents/perplexity.png",
+    "image_url": "/agents/perplexity.png",
     "url": "https://www.perplexity.ai/",
-    "likesCount": 0
+    "is_discover": false,
+    "is_featured": false,
+    "likes_count": 0
   },
   {
     "id": "9e4b2dd5-2f80-4a0d-9a63-2e0df4e6e3cd",
     "title": "Figma Designer (AI)",
     "description": "Autonomous UI/UX agent that generates wireframes, iterations, prototypes, and full design assets from natural language prompts.",
-    "imageUrl": "/agents/figma.png",
+    "image_url": "/agents/figma.png",
     "url": "https://www.figma.com/make/",
-    "likesCount": 0
+    "is_discover": false,
+    "is_featured": false,
+    "likes_count": 0
   }
 ]

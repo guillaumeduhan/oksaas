@@ -26,8 +26,8 @@ import Header from "../components/Header.astro";
           >
             <img class="h-8 lg:h-12" src="15588.png" alt="" />
             <p class="text-neutral-500 text-sm">
-              Directory to <span class="font-bold">rank</span>
-              <br />best AI Agents
+              #1 Directory to <span class="font-bold"> find <br />& rank</span>
+              best AI Agents
             </p>
             <img
               src="15588.png"
@@ -50,8 +50,10 @@ import Header from "../components/Header.astro";
             highlight the top performers.
           </p>
           <div class="lg:flex fade-in-up-2">
-            <button
-              class="bg-gradient-to-r from-happy-600 to-happy-700/25 hover:to-happy-700 duration-300 transition p-1 cursor-pointer group"
+            <a
+              href="https://tally.so/r/GxxWeZ"
+              target="_blank"
+              class="bg-gradient-to-r text-white visited:text-white from-happy-600 to-happy-700/25 hover:to-happy-700 duration-300 transition p-1 cursor-pointer group"
             >
               <div class="bg-black px-4 py-2 flex items-center gap-2">
                 <Plus
@@ -60,7 +62,7 @@ import Header from "../components/Header.astro";
                 />
                 <span class="font-[600]">New Launch</span>
               </div>
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -68,39 +70,26 @@ import Header from "../components/Header.astro";
         <div class="grid gap-2 lg:col-span-8 order-2 lg:order-1 content-start">
           {
             agents
-              .sort((a, b) => b.likesCount - a.likesCount)
-              .map((agent) => (
-                <Agent
-                  title={agent.title}
-                  description={agent.description}
-                  imageUrl={agent.imageUrl}
-                  url={agent.url}
-                  likesCount={agent.likesCount}
-                />
-              ))
+              .sort((a, b) => b.likes_count - a.likes_count)
+              .map((agent) => <Agent {...agent} />)
           }
         </div>
         <div class="lg:col-span-4 order-1 lg:order-2 grid gap-12 content-start">
           <div class="grid gap-4">
             <h4 class="font-[600]">Discover</h4>
-            <Agent
-              title={agents[0].title}
-              description={agents[0].description}
-              imageUrl={agents[0].imageUrl}
-              url={agents[0].url}
-              likesCount={agents[0].likesCount}
-            />
+            {
+              agents
+                ?.filter((a: any) => a.is_discover === true)
+                .map((agent) => <Agent {...agent} />)
+            }
           </div>
           <div class="grid gap-4">
             <h4 class="font-[600]">Featured</h4>
-            <Agent
-              title={agents[0].title}
-              description={agents[0].description}
-              imageUrl={agents[0].imageUrl}
-              url={agents[0].url}
-              likesCount={agents[0].likesCount}
-              small={true}
-            />
+            {
+              agents
+                ?.filter((a: any) => a.is_featured === true)
+                .map((agent) => <Agent {...agent} small />)
+            }
           </div>
         </div>
       </section>

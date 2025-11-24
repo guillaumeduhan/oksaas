@@ -1,20 +1,101 @@
 ---
 interface Props {
-  id: string;
-  title: string;
-  description: string;
-  imageUrl: string;
-  url: string;
-  likesCount: number;
+  id?: string;
+  title?: string;
+  description?: string;
+  image_url?: string;
+  url?: string;
+  likes_count?: number;
   small?: boolean;
+  is_promoted?: boolean;
+  is_discover?: boolean;
 }
 
-const { id, title, description, imageUrl, url, likesCount, small } =
-  Astro.props;
+const {
+  id,
+  title,
+  description,
+  image_url,
+  url,
+  likes_count,
+  small,
+  is_promoted,
+  is_discover,
+} = Astro.props;
 ---
 
+<script is:client>
+  const STORAGE_KEY = "okagents_likes";
+
+  const LIKE_CLASSES = [
+    "bg-vert-600/20",
+    "border-vert-600",
+    "shadow-lg",
+    "shadow-vert-600/20",
+  ];
+
+  function getLikes() {
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
+  }
+
+  function saveLikes(arr) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
+  }
+
+  function isLiked(id) {
+    return getLikes().includes(id);
+  }
+
+  function toggleLike(id) {
+    let likes = getLikes();
+
+    if (likes.includes(id)) {
+      likes = likes.filter((x) => x !== id);
+    } else {
+      likes.push(id);
+    }
+
+    saveLikes(likes);
+    updateLikeButton(id);
+  }
+
+  function updateLikeButton(id) {
+    const btn = document.querySelector(`[data-like="${id}"]`);
+    if (!btn) return;
+
+    const liked = isLiked(id);
+
+    // Button state (color)
+    if (liked) btn.classList.add(...LIKE_CLASSES);
+    else btn.classList.remove(...LIKE_CLASSES);
+
+    // SVG toggle
+    const arrow = btn.querySelector(".arrow-wrapper");
+    const heart = btn.querySelector(".heart-wrapper");
+
+    if (liked) {
+      arrow.classList.add("hidden");
+      heart.classList.remove("hidden");
+    } else {
+      arrow.classList.remove("hidden");
+      heart.classList.add("hidden");
+    }
+
+    // Update displayed like count
+    const countEl = btn.querySelector(".like-count");
+    const baseCount = parseInt(btn.dataset.count);
+    countEl.textContent = liked ? baseCount + 1 : baseCount;
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll("[data-like]").forEach((btn) => {
+      updateLikeButton(btn.dataset.like);
+    });
+  });
+</script>
+
 <div
-  class={`flex items-center gap-12 justify-between w-full hover:bg-neutral-500/10 ${small ? "p-1" : "px-3 py-2"}`}
+  class={`flex items-center gap-12 justify-between w-full hover:bg-neutral-500/10 px-3 py-2`}
 >
   <a
     href={`${url}?utm_source=okagents`}
@@ -26,9 +107,9 @@ const { id, title, description, imageUrl, url, likesCount, small } =
        ${small ? "size-10 min-w-10 min-h-10" : "size-14 min-w-14 min-h-14"} flex items-center justify-center`}
     >
       {
-        imageUrl && (
+        image_url && (
           <img
-            src={imageUrl}
+            src={image_url}
             alt={title}
             class="w-full h-full object-cover rounded-lg"
             loading="lazy"
@@ -43,7 +124,7 @@ const { id, title, description, imageUrl, url, likesCount, small } =
       </h3>
       <p class="text-neutral-500 text-sm line-clamp-2 text-nowrap truncate">
         {
-          description.length > 60
+          description && description.length > 60
             ? description.slice(0, 60) + "..."
             : description
         }
@@ -52,36 +133,59 @@ const { id, title, description, imageUrl, url, likesCount, small } =
   </a>
 
   <button
-    class="group duration-300 hover:bg-vert-600/20 border-2 border-happy-600 hover:border-vert-600 min-w-14 min-h-14 size-14 font-[600] cursor-pointer flex items-center justify-center hover:shadow-lg hover:shadow-vert-600/20"
+    data-like={id}
+    data-count={likes_count}
+    class="group relative font-[600] min-w-[64px] min-h-[64px] max-w-[64px] max-h-[64px] cursor-pointer grid duration-300 hover:bg-vert-600/20 border-2 border-happy-600 hover:border-vert-600 hover:shadow-lg hover:shadow-vert-600/20"
     type="button"
+    onclick={`toggleLike('${id}')`}
   >
-    <div class="text-center relative leading-none text-white text-sm">
-      <div class="flex group-hover:hidden">
-        <svg
-          class="mx-auto"
-          xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
-          viewBox="0 0 24 24"
-        >
-          <path fill="currentColor" d="m7 14l5-5l5 5z"></path>
-        </svg>
-      </div>
-      <div class="hidden group-hover:flex float-up-fade">
-        <svg
-          class="mx-auto"
-          xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
-          viewBox="0 0 24 24"
-        >
-          <path fill="currentColor" d="m7 14l5-5l5 5z"></path>
-        </svg>
+    <div class="flex items-center justify-center min-h-[32px] -top-1">
+      <!-- ARROW → shown only when NOT liked -->
+      <div class="arrow-wrapper">
+        <!-- Normal arrow -->
+        <div class="arrow-default flex group-hover:hidden">
+          <svg
+            class="mx-auto"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+          >
+            <path fill="currentColor" d="m7 14l5-5l5 5z"></path>
+          </svg>
+        </div>
+
+        <!-- Hover arrow (animated) -->
+        <div class="arrow-hover hidden group-hover:flex float-up-fade">
+          <svg
+            class="mx-auto"
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+          >
+            <path fill="currentColor" d="m7 14l5-5l5 5z"></path>
+          </svg>
+        </div>
       </div>
 
-      <span class="relative -top-2 block text-[13px]">
-        {likesCount}
-      </span>
+      <!-- HEART → shown only when liked -->
+      <div class="heart-wrapper hidden">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+        >
+          <path
+            fill="currentColor"
+            d="M9 2H5v2H3v2H1v6h2v2h2v2h2v2h2v2h2v2h2v-2h2v-2h2v-2h2v-2h2v-2h2V6h-2V4h-2V2h-4v2h-2v2h-2V4H9zm0 2v2h2v2h2V6h2V4h4v2h2v6h-2v2h-2v2h-2v2h-2v2h-2v-2H9v-2H7v-2H5v-2H3V6h2V4z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    <div class="relative block text-[13px] like-count max-h-[32px] -top-1">
+      {likes_count}
     </div>
   </button>
 </div>

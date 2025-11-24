@@ -9,18 +9,18 @@ import Logo from "./Logo.astro";
       [
         {
           title: "Advertise",
-          url: "/advertise",
+          url: "https://tally.so/r/GxxWeZ",
         },
         {
           title: "Spotlight",
-          url: "/spotlight",
+          url: "https://tally.so/r/GxxWeZ",
         },
         {
           title: "Launches",
-          url: "/launches",
+          url: "https://tally.so/r/GxxWeZ",
         },
       ].map((link: any) => (
-        <a class="p-2" href={link.url}>
+        <a class="p-2" href={link.url} target="_blank">
           {link.title}
         </a>
       ))
@@ -29,10 +29,12 @@ import Logo from "./Logo.astro";
   <button
     class="border-2 border-happy-600 duration-300 transition cursor-pointer group"
   >
-    <div
-      class="bg-transparent px-2 flex items-center gap-2 px-4 py-1 hover:bg-happy-600"
+    <a
+      href="https://tally.so/r/GxxWeZ"
+      target="_blank"
+      class="bg-transparent text-white px-2 flex items-center gap-2 px-4 py-1 hover:bg-happy-600"
     >
       <span class="font-[600] text-sm">Get this spot</span>
-    </div>
+    </a>
   </button>
 </div>
