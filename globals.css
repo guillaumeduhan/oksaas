@@ -3,35 +3,32 @@
 
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-kiwi-50: #edfff7;
+  --color-kiwi-100: #d5ffed;
+  --color-kiwi-200: #aeffdc;
+  --color-kiwi-300: #6fffc3;
+  --color-kiwi-400: #1fff9e;
+  --color-kiwi-500: #00e983;
+  --color-kiwi-600: #00c269;
+  --color-kiwi-700: #009856;
+  --color-kiwi-800: #047747;
+  --color-kiwi-900: #06613c;
+  --color-kiwi-950: #00371f;
+}
+
 @layer base {
   :root {
+    --color-bg-light: white;
+    --color-bg-dark: #0f0f0f;
     --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI',
       Roboto, Helvetica, Arial, sans-serif;
   }
 
-  @theme {
-    --color-happy-50: #ebf0ff;
-    --color-happy-100: #dbe3ff;
-    --color-happy-200: #becbff;
-    --color-happy-300: #97a8ff;
-    --color-happy-400: #6e79ff;
-    --color-happy-500: #4d4dff;
-    --color-happy-600: #3422fe;
-    --color-happy-700: #3421e1;
-    --color-happy-800: #2b1eb5;
-    --color-happy-900: #28218e;
-    --color-happy-950: #191353;
-    --color-vert-50: #edfff7;
-    --color-vert-100: #d5ffed;
-    --color-vert-200: #aeffdc;
-    --color-vert-300: #6fffc3;
-    --color-vert-400: #1fff9e;
-    --color-vert-500: #00e983;
-    --color-vert-600: #00c269;
-    --color-vert-700: #009856;
-    --color-vert-800: #047747;
-    --color-vert-900: #06613c;
-    --color-vert-950: #00371f;
+  .dark {
+    color-scheme: dark;
   }
 
   * {
@@ -40,16 +37,19 @@
 
   /* Application globale */
   html {
+    @apply bg-transparent text-neutral-900 dark:text-neutral-100 dark:bg-neutral-950;
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: black;
-    color: white;
     @apply text-[16px];
   }
 
+  p {
+    @apply text-neutral-500 dark:text-neutral-400;
+  }
+
   a {
-    @apply text-neutral-500 cursor-pointer hover:text-happy-500 transition duration-300;
+    @apply text-neutral-500 cursor-pointer hover:text-kiwi-500 transition duration-300;
   }
 
   /* Classe utilitaire */
@@ -57,30 +57,6 @@
     font-family: "Cal Sans", sans-serif;
     font-weight: normal;
     -webkit-font-smoothing: antialiased;
-  }
-
-  .avatar-stack {
-    @apply flex items-center justify-center bg-transparent;
-  }
-
-  .avatar {
-    @apply w-8 h-8 rounded-full bg-neutral-500 border-2 border-[#3321FE] relative transition-transform duration-200;
-    margin-left: -0.75rem;
-    /* ≈ -12px overlap */
-    z-index: 1;
-  }
-
-  .avatar:first-child {
-    margin-left: 0;
-  }
-
-  .avatar:hover {
-    @apply scale-110;
-    z-index: 10;
-  }
-
-  .tag-neutral {
-    @apply inline-flex text-sm lg:text-base items-center gap-2 bg-neutral-900 text-neutral-100 pl-2 pr-4 py-2 rounded-full font-medium;
   }
 }
 

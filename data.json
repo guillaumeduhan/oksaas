@@ -1,52 +1,32 @@
 [
   {
-    "id": "c4f0d0b9-3e42-4f7b-9f05-d2f3c92d8a1a",
-    "title": "V0 by Vercel",
-    "description": "AI frontend engineer that builds interfaces instantly from natural language. Produces React, Tailwind and Next.js code.",
-    "image_url": "/agents/v0.jpeg",
-    "url": "https://v0.app/",
-    "is_discover": true,
+    "id": "7f0a9c2d-d6e3-4dd4-91c4-6f2f4a0e3b11",
+    "title": "Supabase",
+    "description": "Build in a week-end, Scale to Millions.",
+    "image_url": "/saas/supabase.jpg",
+    "url": "https://supabase.com/",
+    "is_promoted": true,
     "is_featured": true,
     "likes_count": 0
   },
   {
-    "id": "8a7cc9c4-0e52-4bf7-9e54-4cc219c36e85",
-    "title": "OpenAI Operator",
-    "description": "OpenAI's autonomous agent that takes multi-step actions, executes API calls, browses, and completes tasks end-to-end.",
-    "image_url": "/agents/openai.png",
-    "url": "https://openai.com/index/introducing-operator/",
-    "is_discover": false,
-    "is_featured": false,
+    "id": "c1b7df54-0d1c-4f35-83b2-7d543a11e92b",
+    "title": "Dub.co",
+    "description": "Turn clicks into revenue.",
+    "image_url": "/saas/dub.png",
+    "url": "https://dub.co/",
+    "is_promoted": false,
+    "is_featured": true,
     "likes_count": 0
   },
   {
-    "id": "0f1c2c91-4bcf-4b40-9fe0-e3b9a2255739",
-    "title": "GitHub Copilot",
-    "description": "End-to-end coding agent that plans features, edits repositories, writes PRs, and explains code changes like a software teammate.",
-    "image_url": "/agents/copilot.png",
-    "url": "https://github.com/features/copilot",
-    "is_discover": false,
-    "is_featured": false,
-    "likes_count": 0
-  },
-  {
-    "id": "d2d8a7a1-f6b8-4e3c-8f73-76dbd47613fe",
-    "title": "Perplexity Agent",
-    "description": "Search-first AI agent that conducts research, cross-checks sources, and produces structured reports with citations.",
-    "image_url": "/agents/perplexity.png",
-    "url": "https://www.perplexity.ai/",
-    "is_discover": false,
-    "is_featured": false,
-    "likes_count": 0
-  },
-  {
-    "id": "9e4b2dd5-2f80-4a0d-9a63-2e0df4e6e3cd",
-    "title": "Figma Designer (AI)",
-    "description": "Autonomous UI/UX agent that generates wireframes, iterations, prototypes, and full design assets from natural language prompts.",
-    "image_url": "/agents/figma.png",
-    "url": "https://www.figma.com/make/",
-    "is_discover": false,
-    "is_featured": false,
+    "id": "a8e0fb19-f263-4f03-9c5d-2e81a9e3a611",
+    "title": "Submagic",
+    "description": "Create viral shorts in seconds with AI.",
+    "image_url": "/saas/submagic.png",
+    "url": "https://submagic.co/",
+    "is_promoted": false,
+    "is_featured": true,
     "likes_count": 0
   }
 ]

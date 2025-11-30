@@ -1,19 +1,20 @@
-# robots.txt — My Happy Agency
-# Allow full site indexing but block image crawling
+# robots.txt — Oksaas
+# Allow full indexing of the public directory
 
 User-agent: *
+Allow: /
+
+# Block private asset folders (if any)
 Disallow: /images/private/
 Disallow: /uploads/secret/
-Noindex: /images/
-Noindex: /uploads/
 
-# Prevent images from appearing in Google Images
-Disallow: /*.jpg$
-Disallow: /*.jpeg$
-Disallow: /*.png$
-Disallow: /*.webp$
-Disallow: /*.gif$
-Disallow: /*.svg$
+# Allow images (important for product previews)
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.webp$
+Allow: /*.gif$
+Allow: /*.svg$
 
 # Allow CSS, JS, and fonts
 Allow: /*.css$
@@ -21,7 +22,7 @@ Allow: /*.js$
 Allow: /*.woff$
 Allow: /*.woff2$
 
-# Sitemap for better crawling
-Sitemap: https://myhappyagency.com/sitemap.xml
+# Sitemap
+Sitemap: https://oksaas.com/sitemap.xml
 
 # End of file

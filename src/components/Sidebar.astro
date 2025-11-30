@@ -1,0 +1,82 @@
+---
+import DarkMode from "./DarkMode.astro";
+import Leaf from "./Leaf.astro";
+import Logo from "./Logo.astro";
+import Promoted from "./Promoted.astro";
+---
+
+<aside class="grid gap-4 lg:gap-12 max-w-full">
+  <header
+    class="flex items-center justify-between fade-in-up px-4 lg:px-8 mt-8"
+  >
+    <Logo />
+    <div class="flex items-center gap-2">
+      <nav class="grow flex items-center justify-center">
+        {
+          [
+            {
+              title: "Advertise",
+              url: "https://tally.so/r/GxxWeZ",
+            },
+            {
+              title: "Spotlight",
+              url: "https://tally.so/r/GxxWeZ",
+            },
+            {
+              title: "Launches",
+              url: "https://tally.so/r/GxxWeZ",
+            },
+          ].map((link: any) => (
+            <a class="p-2" href={link.url} target="_blank">
+              {link.title}
+            </a>
+          ))
+        }
+      </nav>
+      <DarkMode />
+    </div>
+  </header>
+  <main class="grid gap-4 fade-in-up text-center lg:text-left px-4 lg:px-8">
+    <div
+      class="mx-auto lg:mx-0 flex items-center justify-center lg:justify-start text-center gap-4 max-w-[280px]"
+    >
+      <div style="transform: scaleX(-1);">
+        <Leaf />
+      </div>
+      <p class="text-neutral-500 text-sm">
+        <span class="font-bold">We're finally live!</span><br />Launch today!
+      </p>
+      <div>
+        <Leaf />
+      </div>
+    </div>
+    <h1 class="cal-sans text-4xl">
+      Discover the best products before everyone else.
+    </h1>
+    <p class="text-lg">
+      A curated feed of emerging SaaS products. Discover, compare, and follow
+      the next big thing before anyone else.
+    </p>
+    <div class="flex mx-auto lg:mx-0 mt-4 lg:mt-8">
+      <button
+        class="border-2 border-neutral-300 dark:border-neutral-800 flex items-center gap-1 font-[500] px-4 py-2 cursor-pointer transition duration-300 hover:border-kiwi-600 hover:border-kiwi-600 dark:border-kiwi-600 dark:hover:bg-neutral-800"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          ><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE -->
+          <path fill="currentColor" d="M11 13H5v-2h6V5h2v6h6v2h-6v6h-2z"
+          ></path></svg
+        >
+        <span>New Launch</span>
+      </button>
+    </div>
+  </main>
+  <footer
+    class="px-2 sm:px-0 lg:px-8 w-full max-w-[576px] mx-auto pb-12 lg:pb-0"
+  >
+    <Promoted />
+  </footer>
+</aside>

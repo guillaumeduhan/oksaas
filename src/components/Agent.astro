@@ -1,4 +1,5 @@
 ---
+import { ExternalLink } from "@lucide/astro"
 interface Props {
   id?: string;
   title?: string;
@@ -9,6 +10,7 @@ interface Props {
   small?: boolean;
   is_promoted?: boolean;
   is_discover?: boolean;
+  isButton?: boolean;
 }
 
 const {
@@ -21,17 +23,18 @@ const {
   small,
   is_promoted,
   is_discover,
+  isButton = false,
 } = Astro.props;
 ---
 
 <script is:client>
-  const STORAGE_KEY = "okagents_likes";
+  const STORAGE_KEY = "oksaas";
 
   const LIKE_CLASSES = [
-    "bg-vert-600/20",
-    "border-vert-600",
+    "bg-kiwi-600/20",
+    "border-kiwi-600",
     "shadow-lg",
-    "shadow-vert-600/20",
+    "shadow-kiwi-600/20",
   ];
 
   function getLikes() {
@@ -94,24 +97,22 @@ const {
   });
 </script>
 
-<div
-  class={`flex items-center gap-12 justify-between w-full hover:bg-neutral-500/10 px-3 py-2`}
->
+<div class={`flex items-center gap-12 justify-between w-full py-2 cursor-pointer`}>
   <a
-    href={`${url}?utm_source=okagents`}
+    href={`${url}?utm_source=oksaas`}
     target="blank"
     class="grow flex items-center gap-4 hover:opacity-90 transition"
   >
     <div
-      class={`bg-neutral-900 rounded-lg overflow-hidden
-       ${small ? "size-10 min-w-10 min-h-10" : "size-14 min-w-14 min-h-14"} flex items-center justify-center`}
+      class={`
+       ${small ? "size-10 min-w-10 min-h-10" : "size-12 min-w-12 min-h-12"} flex items-center justify-center`}
     >
       {
         image_url && (
           <img
             src={image_url}
             alt={title}
-            class="w-full h-full object-cover rounded-lg"
+            class="w-full h-full object-cover"
             loading="lazy"
           />
         )
@@ -119,7 +120,7 @@ const {
     </div>
 
     <div class="grid grow">
-      <h3 class="font-[600] text-white leading-tight">
+      <h3 class="font-[600] text-black dark:text-neutral-200 leading-tight">
         {title}
       </h3>
       <p class="text-neutral-500 text-sm line-clamp-2 text-nowrap truncate">
@@ -130,12 +131,14 @@ const {
         }
       </p>
     </div>
+    {!isButton && <ExternalLink class="text-neutral-400 dark:text-neutral-200" />}
   </a>
 
-  <button
+
+  {isButton && <button
     data-like={id}
     data-count={likes_count}
-    class="group relative font-[600] min-w-[64px] min-h-[64px] max-w-[64px] max-h-[64px] cursor-pointer grid duration-300 hover:bg-vert-600/20 border-2 border-happy-600 hover:border-vert-600 hover:shadow-lg hover:shadow-vert-600/20"
+    class="group relative font-[600] min-w-[32px] min-h-[32px] max-w-[32px] max-h-[32px] cursor-pointer grid duration-300"
     type="button"
     onclick={`toggleLike('${id}')`}
   >
@@ -187,5 +190,5 @@ const {
     <div class="relative block text-[13px] like-count max-h-[32px] -top-1">
       {likes_count}
     </div>
-  </button>
+  </button>}
 </div>
