@@ -1,12 +1,12 @@
 ---
 // Promoted.astro
 import data from "../../data.json";
-import Agent from "../components/Agent.astro";
+import Link from "../components/Link.astro";
 
 const promoted = data.filter((agent: any) => agent.is_promoted === true);
 ---
 
 <div class="grid mx-auto">
-  {promoted.length > 0 && promoted.map((agent) => <Agent {...agent} />)}
-  {promoted.length === 0 && <div>hello</div>}
+  {promoted.length > 0 && promoted.map((agent) => <Link {...agent} />)}
+  {promoted.length === 0 && <div>No promotion so far.</div>}
 </div>

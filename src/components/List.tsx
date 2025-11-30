@@ -1,0 +1,52 @@
+"use client";
+
+import { useMemo, useState } from "react";
+import data from "../../data.json";
+import Link from "./Link.tsx";
+
+const List = () => {
+  const [range, setRange] = useState<"week" | "month" | "year" | "all">("week");
+
+  const filtered = useMemo(() => {
+    const now = new Date();
+
+    function inRange(dateString: string) {
+      const d = new Date(dateString);
+      if (range === "week") {
+        return now.getTime() - d.getTime() <= 7 * 24 * 60 * 60 * 1000;
+      }
+      if (range === "month") {
+        return d.getMonth() === now.getMonth() && d.getFullYear() === now.getFullYear();
+      }
+      if (range === "year") {
+        return d.getFullYear() === now.getFullYear();
+      }
+      return true;
+    }
+
+    return [...data]
+      .filter((a) => inRange(a.created_at))
+      .sort((a, b) => (b.is_featured === true) - (a.is_featured === true));
+  }, [range]);
+
+  return (
+    <div className="space-y-4">
+      {/* Filters */}
+      <div className="flex gap-2 py-2">
+        <button onClick={() => setRange("week")} className={`cursor-pointer ${range === 'week' ? 'text-kiwi-600 font-[500]' : 'text-neutral-500'}`}>This week</button>
+        {/* <button onClick={() => setRange("month")} className={`cursor-pointer ${range === 'month' ? 'text-kiwi-600 font-[500]' : 'text-neutral-500'}`}>This month</button>
+        <button onClick={() => setRange("year")} className={`cursor-pointer ${range === 'year' ? 'text-kiwi-600 font-[500]' : 'text-neutral-500'}`}>This year</button>
+        <button onClick={() => setRange("all")} className={`cursor-pointer ${range === 'all' ? 'text-kiwi-600 font-[500]' : 'text-neutral-500'}`}>All</button> */}
+      </div>
+
+      {/* List */}
+      <div className="grid gap-1">
+        {filtered.map((agent) => (
+          <Link key={agent.id} {...agent} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default List;

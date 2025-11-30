@@ -1,5 +1,6 @@
 ---
 import { ExternalLink } from "@lucide/astro"
+
 interface Props {
   id?: string;
   title?: string;
@@ -9,7 +10,7 @@ interface Props {
   likes_count?: number;
   small?: boolean;
   is_promoted?: boolean;
-  is_discover?: boolean;
+  is_featured?: boolean;
   isButton?: boolean;
 }
 
@@ -22,7 +23,7 @@ const {
   likes_count,
   small,
   is_promoted,
-  is_discover,
+  is_featured,
   isButton = false,
 } = Astro.props;
 ---
@@ -97,9 +98,10 @@ const {
   });
 </script>
 
-<div class={`flex items-center gap-12 justify-between w-full py-2 cursor-pointer`}>
+<div class={`flex items-center gap-12 justify-between w-full py-2 cursor-pointer px-2 ${is_featured ? 'bg-kiwi-600/20' : is_promoted? 'bg-neutral-200 dark:bg-neutral-800' : ''}`}>
   <a
     href={`${url}?utm_source=oksaas`}
+    rel="dofollow"
     target="blank"
     class="grow flex items-center gap-4 hover:opacity-90 transition"
   >
@@ -131,7 +133,11 @@ const {
         }
       </p>
     </div>
-    {!isButton && <ExternalLink class="text-neutral-400 dark:text-neutral-200" />}
+    {!isButton && <div class="flex items-center justify-center gap-2"> 
+      {is_featured && <div class="text-xs text-kiwi-600 font-[600] bg-transparent border border-kiwi-600 px-1 py-[1px]">Featured</div>}
+      {is_promoted && <div class="text-xs text-amber-600 font-[600] bg-transparent border border-amber-600 px-1 py-[1px]">Promoted</div>}
+      <ExternalLink class={`${is_featured ? 'text-kiwi-700' : is_promoted ? 'text-amber-600' : 'text-neutral-400 dark:text-neutral-200 '}`} />
+    </div>}
   </a>
 
 

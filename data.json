@@ -1,16 +1,18 @@
 [
   {
     "id": "7f0a9c2d-d6e3-4dd4-91c4-6f2f4a0e3b11",
+    "created_at": "2025-12-01T00:00:00Z",
     "title": "Supabase",
     "description": "Build in a week-end, Scale to Millions.",
     "image_url": "/saas/supabase.jpg",
     "url": "https://supabase.com/",
     "is_promoted": true,
-    "is_featured": true,
+    "is_featured": false,
     "likes_count": 0
   },
   {
     "id": "c1b7df54-0d1c-4f35-83b2-7d543a11e92b",
+    "created_at": "2025-12-01T00:00:00Z",
     "title": "Dub.co",
     "description": "Turn clicks into revenue.",
     "image_url": "/saas/dub.png",
@@ -21,12 +23,24 @@
   },
   {
     "id": "a8e0fb19-f263-4f03-9c5d-2e81a9e3a611",
+    "created_at": "2025-12-01T00:00:00Z",
     "title": "Submagic",
     "description": "Create viral shorts in seconds with AI.",
     "image_url": "/saas/submagic.png",
     "url": "https://submagic.co/",
     "is_promoted": false,
     "is_featured": true,
+    "likes_count": 0
+  },
+  {
+    "id": "a8e0fb19-f263-4f03-9c5d-2e81a9e3a622",
+    "created_at": "2025-12-01T00:00:00Z",
+    "title": "Peerlist",
+    "description": "The Professional Network for builders to show and tell!",
+    "image_url": "/saas/peerlist.jpeg",
+    "url": "https://codeg.link/peerlist",
+    "is_promoted": false,
+    "is_featured": false,
     "likes_count": 0
   }
 ]

@@ -102,8 +102,8 @@ const image = `${url}/og-image.jpg`; // 1200x630 recommended
     <!-- Theme -->
     <meta name="theme-color" content="#10b981" />
 
-    <!-- Plausible Analytics -->
-    <script async src="https://plausible.io/js/pa-4-lotD0hLQDcKShds7OJH.js"
+    <!-- Privacy-friendly analytics by Plausible -->
+    <script async src="https://plausible.io/js/pa-NZVRr75V_CLz7MtN6izt5.js"
     ></script>
     <script>
       (window.plausible =
@@ -123,12 +123,16 @@ const image = `${url}/og-image.jpg`; // 1200x630 recommended
   <body class="grid lg:flex items-start min-h-screen antialiased">
     <!-- Sidebar column -->
     <div
-      class="relative w-full lg:min-w-[500px] lg:max-w-[500px] lg:min-h-screen bg-neutral-100 dark:bg-neutral-900"
+      class="relative w-full lg:min-w-[536px] lg:max-w-[536px] lg:min-h-screen bg-neutral-100 dark:bg-neutral-900"
     >
-      <div class="relative lg:fixed lg:max-w-[500px] top-0 lg:min-h-screen">
-        <Sidebar />
+      <div
+        class="relative lg:fixed lg:max-w-[536px] top-0 lg:min-h-screen bg-neutral-100 dark:bg-neutral-900"
+      >
+        <div class="z-[99]">
+          <Sidebar />
+        </div>
         <svg
-          class="opacity-5 dark:invert absolute bottom-0"
+          class="opacity-5 dark:invert absolute bottom-0 -z-10"
           width="410"
           height="395"
           viewBox="0 0 410 395"
