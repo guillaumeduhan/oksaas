@@ -8,7 +8,8 @@
     "url": "https://supabase.com/",
     "is_promoted": true,
     "is_featured": false,
-    "likes_count": 0
+    "likes_count": 0,
+    "email": ""
   },
   {
     "id": "c1b7df54-0d1c-4f35-83b2-7d543a11e92b",
@@ -19,7 +20,8 @@
     "url": "https://dub.co/",
     "is_promoted": false,
     "is_featured": true,
-    "likes_count": 0
+    "likes_count": 0,
+    "email": ""
   },
   {
     "id": "a8e0fb19-f263-4f03-9c5d-2e81a9e3a611",
@@ -30,7 +32,8 @@
     "url": "https://submagic.co/",
     "is_promoted": false,
     "is_featured": true,
-    "likes_count": 0
+    "likes_count": 0,
+    "email": ""
   },
   {
     "id": "a8e0fb19-f263-4f03-9c5d-2e81a9e3a622",
@@ -41,6 +44,55 @@
     "url": "https://codeg.link/peerlist",
     "is_promoted": false,
     "is_featured": false,
-    "likes_count": 0
+    "likes_count": 0,
+    "email": ""
+  },
+  {
+    "id": "d2b3a4f1-91cc-4e3a-a8ef-2b3ce3d48c10",
+    "created_at": "2025-12-01T12:03:00Z",
+    "title": "BlitzReels",
+    "description": "The AI editor that handles the tedious stuff.",
+    "image_url": "/saas/blitzreels.png",
+    "url": "https://www.blitzreels.com/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "vigile@algosmax.fr"
+  },
+  {
+    "id": "4f7c9b0f-1c1b-4d4b-9e51-0e7a3d44ba28",
+    "created_at": "2025-12-01T12:02:00Z",
+    "title": "ShipAhead",
+    "description": "Ship your AI SaaS in days. Skip the setup and focus on what matters with a ready-to-ship Nuxt 4 boilerplate built to help you launch faster, save hours, and ship ahead.",
+    "image_url": "https://shipahe.ad/favicon.ico",
+    "url": "https://shipahe.ad/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "hello@shipahe.ad"
+  },
+  {
+    "id": "93c42e67-8a28-4d0d-b55c-9364e304f21a",
+    "created_at": "2025-12-01T12:01:00Z",
+    "title": "AILeads.now",
+    "description": "AI Leads is an AI-driven SaaS platform that automates marketing in niche online communities on platforms like Reddit, LinkedIn, and Facebook. It identifies relevant communities, generates undetectable human-like content to foster engagement, and enhances brand visibility in AI search engines such as ChatGPT and Claude.",
+    "image_url": "https://www.aileads.now/android-chrome-512x512.png",
+    "url": "https://www.aileads.now/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "luigibross3@gmail.com"
+  },
+  {
+    "id": "e6d80a5e-d925-4ed7-af93-23dc32fcf8c1",
+    "created_at": "2025-12-01T12:00:00Z",
+    "title": "TrustSEO",
+    "description": "SEO that drives predictable organic growth.",
+    "image_url": "https://i.ibb.co/v6858nV/Screenshot-2025-11-30-at-10-42-53-PM.png",
+    "url": "https://trustseo.me/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "brogee90@gmail.com"
   }
 ]

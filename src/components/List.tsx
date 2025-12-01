@@ -26,11 +26,12 @@ const List = () => {
 
     return [...data]
       .filter((a) => inRange(a.created_at))
-      .sort((a, b) => (b.is_featured === true) - (a.is_featured === true));
+      .filter((a) => !a.is_featured)
+      .sort((a, b) => (b.created_at || "").localeCompare(a.created_at || ""));
   }, [range]);
 
   return (
-    <div className="space-y-4">
+    <div className="grid gap-8">
       {/* Filters */}
       <div className="flex gap-2 py-2">
         <button onClick={() => setRange("week")} className={`cursor-pointer ${range === 'week' ? 'text-kiwi-600 font-[500]' : 'text-neutral-500'}`}>This week</button>
@@ -39,10 +40,17 @@ const List = () => {
         <button onClick={() => setRange("all")} className={`cursor-pointer ${range === 'all' ? 'text-kiwi-600 font-[500]' : 'text-neutral-500'}`}>All</button> */}
       </div>
 
+      {/* Featured */}
+      <div className="grid gap-1">
+        {data.filter((product) => product.is_featured).map((product) => (
+          <Link key={product.id} {...product} />
+        ))}
+      </div>
+
       {/* List */}
       <div className="grid gap-1">
-        {filtered.map((agent) => (
-          <Link key={agent.id} {...agent} />
+        {filtered.map((product) => (
+          <Link key={product.id} {...product} />
         ))}
       </div>
     </div>
