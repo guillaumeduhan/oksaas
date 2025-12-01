@@ -1,6 +1,6 @@
 ---
 import "../globals.css";
-import Footer from "../src/components/Footer.astro";
+import Video from "../src/components/Video.astro";
 import Sidebar from "../src/components/Sidebar.astro";
 
 const title =
@@ -120,7 +120,7 @@ const image = `${url}/og-image.jpg`; // 1200x630 recommended
     </script>
   </head>
 
-  <body class="grid lg:flex items-start min-h-screen antialiased">
+  <body class="relative grid lg:flex items-start min-h-screen antialiased">
     <!-- Sidebar column -->
     <div
       class="relative w-full lg:min-w-[536px] lg:max-w-[536px] lg:min-h-screen bg-neutral-100 dark:bg-neutral-900"
@@ -145,8 +145,10 @@ const image = `${url}/og-image.jpg`; // 1200x630 recommended
         </svg>
       </div>
     </div>
-    <div class="overflow-auto w-full mx-auto my-8 px-2">
-      <slot />
+    <div class="relative px-2 lg:px-0 overflow-auto w-full mx-auto">
+      <div class="my-8">
+        <slot />
+      </div>
     </div>
   </body>
 </html>
