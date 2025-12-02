@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 
 interface Props {
   id?: string;
@@ -37,51 +36,12 @@ export default function Link(props: Props) {
     is_featured,
     isButton = false,
   } = props;
-
-  const [liked, setLiked] = useState(false);
-  const [count, setCount] = useState(likes_count);
-
-  /* ──────────────────────────────────────────────── */
-  /* LocalStorage                                     */
-  /* ──────────────────────────────────────────────── */
-  const getLikes = () => JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-  const saveLikes = (arr: string[]) =>
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(arr));
-
-  useEffect(() => {
-    if (!id) return;
-    setLiked(getLikes().includes(id));
-  }, [id]);
-
-  /* ──────────────────────────────────────────────── */
-  /* Toggle Like                                      */
-  /* ──────────────────────────────────────────────── */
-  function toggleLike() {
-    if (!id) return;
-
-    let arr = getLikes();
-    let newLiked;
-
-    if (arr.includes(id)) {
-      arr = arr.filter((x: string) => x !== id);
-      newLiked = false;
-      setCount((c) => c - 1);
-    } else {
-      arr.push(id);
-      newLiked = true;
-      setCount((c) => c + 1);
-    }
-
-    saveLikes(arr);
-    setLiked(newLiked);
-  }
-
   /* ──────────────────────────────────────────────── */
   /* Render                                           */
   /* ──────────────────────────────────────────────── */
   return (
     <div
-      className={`flex items-center gap-12 justify-between w-full py-2 cursor-pointer px-2 ${is_featured ? "bg-kiwi-600/20" : ""
+      className={`flex items-center gap-12 justify-between w-full py-2 cursor-pointer px-2 ${is_featured ? "bg-gradient-to-r from-neutral-50 dark:from-neutral-900 to-kiwi-600/20 dark:from-neutral-800" : ""
         }`}
     >
       <a
@@ -129,51 +89,6 @@ export default function Link(props: Props) {
           </div>
         )}
       </a>
-
-      {/* Like button */}
-      {isButton && (
-        <button
-          type="button"
-          onClick={toggleLike}
-          className={`group relative font-[600] min-w-[32px] min-h-[32px] max-w-[32px] max-h-[32px] cursor-pointer grid duration-300 ${liked ? LIKE_CLASSES.join(" ") : ""
-            }`}
-        >
-          <div className="flex items-center justify-center min-h-[32px] -top-1">
-            {/* Arrow (not liked) */}
-            {!liked && (
-              <div className="arrow-wrapper">
-                <div className="arrow-default flex group-hover:hidden">
-                  <svg width="32" height="32" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="m7 14l5-5l5 5z"></path>
-                  </svg>
-                </div>
-
-                <div className="arrow-hover hidden group-hover:flex float-up-fade">
-                  <svg width="32" height="32" viewBox="0 0 24 24">
-                    <path fill="currentColor" d="m7 14l5-5l5 5z"></path>
-                  </svg>
-                </div>
-              </div>
-            )}
-
-            {/* Heart (liked) */}
-            {liked && (
-              <div className="heart-wrapper">
-                <svg width="16" height="16" viewBox="0 0 24 24">
-                  <path
-                    fill="currentColor"
-                    d="M9 2H5v2H3v2H1v6h2v2h2v2h2v2h2v2h2v2h2v-2h2v-2h2v-2h2v-2h2v-2h2V6h-2V4h-2V2h-4v2h-2v2h-2V4H9zm0 2v2h2v2h2V6h2V4h4v2h2v6h-2v2h-2v2h-2v2h-2v2h-2v-2H9v-2H7v-2H5v-2H3V6h2V4z"
-                  ></path>
-                </svg>
-              </div>
-            )}
-          </div>
-
-          <div className="relative block text-[13px] like-count max-h-[32px] -top-1">
-            {count}
-          </div>
-        </button>
-      )}
     </div>
   );
 }
