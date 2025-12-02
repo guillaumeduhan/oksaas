@@ -3,7 +3,6 @@ import DarkMode from "./DarkMode.astro";
 import Leaf from "./Leaf.astro";
 import Logo from "./Logo.astro";
 import Promoted from "./Promoted.astro";
-import Video from "./Video.astro";
 ---
 
 <aside class="grid gap-4 lg:gap-12 max-w-full">
@@ -38,20 +37,31 @@ import Video from "./Video.astro";
     </div>
   </header>
   <main class="grid gap-4 fade-in-up text-center lg:text-left px-4 lg:px-8">
-    <div class="flex items-center justify-start">
-      <div
-        class="mx-auto lg:mx-0 flex items-center justify-center lg:justify-start text-center gap-4 max-w-[280px]"
-      >
-        <div style="transform: scaleX(-1);">
-          <Leaf />
-        </div>
-        <p class="text-neutral-500 text-sm">
-          <span class="font-bold">We're finally live!</span><br />Launch today!
-        </p>
-        <div>
-          <Leaf />
-        </div>
+    <div
+      class="mx-auto lg:mx-0 flex items-center justify-center lg:justify-start text-center gap-4 max-w-[280px]"
+    >
+      <div style="transform: scaleX(-1);">
+        <Leaf />
       </div>
+      <p class="text-neutral-500 text-sm">
+        <span class="font-bold">We're finally live!</span><br />Launch for free!
+      </p>
+      <div>
+        <Leaf />
+      </div>
+    </div>
+    <div class="flex items-center justify-start grid grid-cols-2">
+      <a
+        href="https://www.producthunt.com/products/oksaas?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-oksaas"
+        target="_blank"
+        ><img
+          src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1044610&theme=light&t=1764671137437"
+          alt="Oksaas - The best products every week | Product Hunt"
+          style="width: 250px; height: 54px;"
+          width="250"
+          height="54"
+        /></a
+      >
       <a
         href="https://peerlist.io/guillaumeduhan/project/oksaasco"
         target="_blank"
@@ -92,5 +102,5 @@ import Video from "./Video.astro";
   <footer class="px-2 sm:px-0 lg:px-8 w-full max-w-[576px] mx-auto lg:pb-0">
     <Promoted />
   </footer>
-  <Video />
+  <!-- <Video /> -->
 </aside>

@@ -94,5 +94,101 @@
     "is_featured": false,
     "likes_count": 0,
     "email": "brogee90@gmail.com"
+  },
+  {
+    "id": "3b4bc8c9-4e1f-46a0-b3b1-8ae4df7c0f11",
+    "created_at": "2025-12-01T13:26:04Z",
+    "title": "LaunchIgniter",
+    "description": "LaunchIgniter is the go-to platform for creators to launch their innovative products and connect with a community of early adopters who are passionate about discovering what's next. We've helped hundreds of products find their first users, gather crucial feedback, and build momentum for successful launches.",
+    "image_url": "https://startupfa.me/images/cdn/startups/3543/logo.webp",
+    "url": "https://launchigniter.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "launchigniter@gmail.com"
+  },
+  {
+    "id": "7cfbd6e7-6f5e-4d49-8c00-2eacbc8c37e2",
+    "created_at": "2025-12-01T13:34:20Z",
+    "title": "MathMax",
+    "description": "Une plateforme interactif d'exercices de mathématiques avec corrigés (en vidéos), un système de planification et suivi des devoirs, de la vidéo conférence entre deux utilisateurs avec partage d'écran et tableau blanc, une messagerie etc...",
+    "image_url": "https://www.mathmax.fr/assets/logo-bis-Do-kbTI5.png",
+    "url": "https://www.mathmax.fr",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "boups12@hotmail.com"
+  },
+  {
+    "id": "c6a453ef-8f5c-4b98-aef5-5d43bb9b10c4",
+    "created_at": "2025-12-01T14:57:45Z",
+    "title": "ProTouch AI",
+    "description": "Turn selfies into professional studio headshots in seconds. ProTouch AI transforms your amateur photos into high-quality professional headshots. Ideal for LinkedIn, CVs, and personal branding. No need for a studio—get professional results instantly from your phone. Built by @David_Rondio.",
+    "image_url": "https://protouch-ai.netlify.app/logo.svg",
+    "url": "https://protouch-ai.netlify.app/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "drondiodev@icloud.com"
+  },
+  {
+    "id": "f2ed1c3c-d9bd-4de4-bcb6-1b7f52a4d2ea",
+    "created_at": "2025-12-01T17:26:07Z",
+    "title": "Sociavault",
+    "description": "SociaVault is a unified REST API that extracts real-time data from 25+ social media platforms, including TikTok, Instagram, YouTube, LinkedIn, and Twitter/X. Built for developers who need reliable social data without rate limits, infrastructure headaches, or expensive enterprise contracts. Simple authentication, pay-as-you-go pricing, and comprehensive documentation make it easy to integrate social media data into any application.",
+    "image_url": "https://sociavault.com/favicon-512x512.png",
+    "url": "https://sociavault.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "ola@sociavault.com"
+  },
+  {
+    "id": "e3530dba-fc8f-4c0b-a779-2d0e331c7184",
+    "created_at": "2025-12-01T17:51:56Z",
+    "title": "God of Feed",
+    "description": "🚀 Linkedin advanced analytics and AI comments",
+    "image_url": "https://godoffeed.com/icon.png",
+    "url": "https://godoffeed.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "founder@godoffeed.com"
+  },
+  {
+    "id": "b62d4b72-c623-4467-bf3d-e52ed53c1cb5",
+    "created_at": "2025-12-01T19:12:47Z",
+    "title": "QriosX",
+    "description": "Build the clarity and capability to shape your own growth.",
+    "image_url": "https://qrios-assets-public.s3.ap-southeast-1.amazonaws.com/qriosx-logo.png",
+    "url": "https://www.qriosx.com/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "prashantkumarsingh.work@gmail.com"
+  },
+  {
+    "id": "5fd93e3d-4dd7-4afa-b508-32cee7c6b8e7",
+    "created_at": "2025-12-01T20:43:19Z",
+    "title": "Two Cents Software Stack",
+    "description": "Two Cents Software Stack is a production-ready SaaS boilerplate built to remove the slow, repetitive work from launching a product. Authentication, billing, multi-tenancy, storage, audit logging, resource tracking, email delivery, CRM sync, and background jobs all come fully implemented through a clean configuration-first architecture…",
+    "image_url": "https://cdn.twocents.software/LogoMarkTCS.svg",
+    "url": "https://www.twocents.software/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "katerinatomislav99@gmail.com"
+  },
+  {
+    "id": "8a30d8bc-cd98-4210-af51-6c55f4e8f25c",
+    "created_at": "2025-12-02T07:50:44Z",
+    "title": "SubtitlesFast",
+    "description": "Super Simple AI Video Editor",
+    "image_url": "/saas/fast.png",
+    "url": "https://subtitlesfast.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "hello@subtitlesfast.com"
   }
 ]
