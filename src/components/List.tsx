@@ -7,6 +7,18 @@ import Link from "./Link.tsx";
 const List = () => {
   const [range, setRange] = useState<"week" | "month" | "year" | "all">("week");
 
+  const lastUpdated = new Date("2025-12-02T21:38:00+01:00");
+
+  const updatedAgo = useMemo(() => {
+    const diff = Date.now() - lastUpdated.getTime();
+    const mins = Math.floor(diff / 60000);
+    const hours = Math.floor(mins / 60);
+
+    if (mins < 1) return "Updated just now";
+    if (mins < 60) return `Updated ${mins} min ago`;
+    return `Updated ${hours}h ago`;
+  }, []);
+
   const filtered = useMemo(() => {
     const now = new Date();
 
@@ -40,7 +52,7 @@ const List = () => {
         <button onClick={() => setRange("year")} className={`cursor-pointer ${range === 'year' ? 'text-kiwi-600 font-[500]' : 'text-neutral-500'}`}>This year</button>
         <button onClick={() => setRange("all")} className={`cursor-pointer ${range === 'all' ? 'text-kiwi-600 font-[500]' : 'text-neutral-500'}`}>All</button> */}
         </div>
-        <p className="text-sm italic">Updated 12 min ago.</p>
+        <p className="text-sm italic">{updatedAgo}.</p>
       </header>
 
       {/* Featured */}
