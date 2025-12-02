@@ -33,12 +33,15 @@ const List = () => {
   return (
     <div className="grid gap-8">
       {/* Filters */}
-      <div className="flex gap-2 py-2">
-        <button onClick={() => setRange("week")} className={`cursor-pointer ${range === 'week' ? 'text-kiwi-600 font-[500]' : 'text-neutral-500'}`}>This week</button>
-        {/* <button onClick={() => setRange("month")} className={`cursor-pointer ${range === 'month' ? 'text-kiwi-600 font-[500]' : 'text-neutral-500'}`}>This month</button>
+      <header className="flex items-center justify-between gap-2 py-2 w-full">
+        <div>
+          <button onClick={() => setRange("week")} className={`cursor-pointer ${range === 'week' ? 'text-kiwi-600 font-[500]' : 'text-neutral-500'}`}>This week</button>
+          {/* <button onClick={() => setRange("month")} className={`cursor-pointer ${range === 'month' ? 'text-kiwi-600 font-[500]' : 'text-neutral-500'}`}>This month</button>
         <button onClick={() => setRange("year")} className={`cursor-pointer ${range === 'year' ? 'text-kiwi-600 font-[500]' : 'text-neutral-500'}`}>This year</button>
         <button onClick={() => setRange("all")} className={`cursor-pointer ${range === 'all' ? 'text-kiwi-600 font-[500]' : 'text-neutral-500'}`}>All</button> */}
-      </div>
+        </div>
+        <p className="text-sm italic">Updated 12 min ago.</p>
+      </header>
 
       {/* Featured */}
       <div className="grid gap-1">
