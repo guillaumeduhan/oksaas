@@ -262,5 +262,29 @@
     "is_featured": false,
     "likes_count": 0,
     "email": "andraskindler@gmail.com"
+  },
+  {
+    "id": "f3a3c9c9-26b3-4c8d-9b77-6e4e43d6e3b1",
+    "created_at": "2025-12-03T11:53:00+01:00",
+    "title": "VCDir",
+    "description": "vcdir.com is a free and open directory of 1,300+ venture capital firms worldwide. The platform allows users to explore VCs by country, region, investment phase, and market focus.",
+    "image_url": "https://vcdir.com/favicon.ico",
+    "url": "https://vcdir.com/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "hello@launchdirectories.com"
+  },
+  {
+    "id": "0c7e0ef3-bf44-4cb7-9d18-8bb5a4a98745",
+    "created_at": "2025-12-03T11:50:00+01:00",
+    "title": "LaunchDirectories",
+    "description": "LaunchDirectories.com is a curated list of 100+ startup directories to help you submit your product, build high-quality backlinks, and increase visibility. Includes DR, traffic stats, and link types to optimize your launch strategy.",
+    "image_url": "https://i.ibb.co/YFzVcKsB/launchdirectorieslgo.png",
+    "url": "https://launchdirectories.com/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "hello@launchdirectories.com"
   }
 ]
