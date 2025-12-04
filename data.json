@@ -286,5 +286,41 @@
     "is_featured": false,
     "likes_count": 0,
     "email": "hello@launchdirectories.com"
+  },
+  {
+    "id": "cozy-watch-2025-12-04",
+    "created_at": "2025-12-04T16:19:00Z",
+    "title": "Cozy Watch",
+    "description": "Cozy Watch brings GitHub notifications to your desktop. Track pull requests, CI updates, and mentions instantly, helping you stay focused while knowing exactly when your attention is needed.",
+    "image_url": "https://www.cozywatch.com/armchair.png",
+    "url": "https://www.cozywatch.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "tiago@cozywatch.com"
+  },
+  {
+    "id": "claritybee-2025-12-04",
+    "created_at": "2025-12-04T14:51:00Z",
+    "title": "ClarityBee",
+    "description": "Fast and actionable UX audits. Get UX review in minutes or expert review in 3 days. Use it on homepages, onboarding, dashboards to get priority fixes, design tweaks, conversion tips, usability checks and more.",
+    "image_url": "https://www.claritybee.com/assets/clarity-bee-logo.png",
+    "url": "https://claritybee.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "hello@claritybee.com"
+  },
+  {
+    "id": "safe-or-not-2025-12-04",
+    "created_at": "2025-12-04T13:39:00Z",
+    "title": "Safe or Not",
+    "description": "Community-driven platform offering real-time safety tips and insights. Get local warnings, traveler reports, and safety advice to make smarter decisions wherever you go.",
+    "image_url": "https://www.safeornot.space/logo.avif",
+    "url": "https://www.safeornot.space/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "gupta15.lakshay@gmail.com"
   }
 ]
