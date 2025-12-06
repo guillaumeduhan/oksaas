@@ -7,17 +7,20 @@ import Link from "./Link.tsx";
 const List = () => {
   const [range, setRange] = useState<"week" | "month" | "year" | "all">("week");
 
-  const lastUpdated = new Date("2025-12-04T20:08:00+01:00");
+  const lastUpdated = new Date("2025-12-06T15:08:00+01:00");
 
   const updatedAgo = useMemo(() => {
     const diff = Date.now() - lastUpdated.getTime();
     const mins = Math.floor(diff / 60000);
     const hours = Math.floor(mins / 60);
+    const days = Math.floor(hours / 24);
 
     if (mins < 1) return "Updated just now";
     if (mins < 60) return `Updated ${mins} min ago`;
-    return `Updated ${hours}h ago`;
-  }, []);
+    if (hours < 24) return `Updated ${hours}h ago`;
+    if (days === 1) return "Updated 1 day ago";
+    return `Updated ${days} days ago`;
+  }, [lastUpdated]);
 
   const filtered = useMemo(() => {
     const now = new Date();
