@@ -7,7 +7,7 @@ import Link from "./Link.tsx";
 const List = () => {
   const [range, setRange] = useState<"week" | "month" | "year" | "all">("week");
 
-  const lastUpdated = new Date("2025-12-06T15:08:00+01:00");
+  const lastUpdated = new Date("2025-12-11T15:08:00+01:00");
 
   const updatedAgo = useMemo(() => {
     const diff = Date.now() - lastUpdated.getTime();

@@ -334,5 +334,29 @@
     "is_featured": false,
     "likes_count": 0,
     "email": "sam@chatqube.com"
+  },
+  {
+    "id": "f3d7a4c9-92c1-4e0d-b7e4-2b7e8c6a4f11",
+    "created_at": "2025-12-08T10:59:00Z",
+    "title": "Client Hunter",
+    "description": "ClipBlaze is an autonomous AI agent for web designers and agencies. It finds local businesses without websites, auto-generates a custom site, runs Gmail outreach, follows up, negotiates, and sends invoices — fully automated.",
+    "image_url": "https://client-hunter-rho.vercel.app/",
+    "url": "https://client-hunter-rho.vercel.app/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "worksapec@gmail.com"
+  },
+  {
+    "id": "9c4fa1e2-6f33-4ad8-af89-2f1b13de7c44",
+    "created_at": "2025-12-07T08:40:00Z",
+    "title": "Oh My Prompt",
+    "description": "Awesome Nano Banana prompt Library !",
+    "image_url": "https://www.ohmyprompt.net/icon.png",
+    "url": "https://ohmyprompt.net",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "ramzi90000@gmail.com"
   }
 ]
