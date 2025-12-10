@@ -40,7 +40,6 @@ const List = () => {
     }
 
     return [...data]
-      .filter((a) => inRange(a.created_at))
       .filter((a) => !a.is_featured)
       .sort((a, b) => (b.created_at || "").localeCompare(a.created_at || ""));
   }, [range]);
