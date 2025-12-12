@@ -22,7 +22,7 @@
 @layer base {
   :root {
     --color-bg-light: white;
-    --color-bg-dark: #0f0f0f;
+    /* --color-bg-dark: #181818; */
     --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI',
       Roboto, Helvetica, Arial, sans-serif;
   }
@@ -37,7 +37,7 @@
 
   /* Application globale */
   html {
-    @apply bg-transparent text-neutral-900 dark:text-neutral-100 dark:bg-neutral-950;
+    @apply bg-transparent text-neutral-900 dark:text-neutral-200 dark:bg-neutral-900/80;
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

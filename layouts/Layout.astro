@@ -1,7 +1,6 @@
 ---
 import "../globals.css";
-import Video from "../src/components/Video.astro";
-import Sidebar from "../src/components/Sidebar.astro";
+import Header from "../src/components/Header.astro";
 
 const title =
   "Oksaas — Discover the Best New SaaS Products Before Everyone Else";
@@ -106,7 +105,7 @@ const image = `${url}/og-image.jpg`; // 1200x630 recommended
     <script async src="https://plausible.io/js/pa-NZVRr75V_CLz7MtN6izt5.js"
     ></script>
     <script>
-      (window.plausible =
+      ((window.plausible =
         window.plausible ||
         function () {
           (plausible.q = plausible.q || []).push(arguments);
@@ -115,40 +114,15 @@ const image = `${url}/og-image.jpg`; // 1200x630 recommended
           plausible.init ||
           function (i) {
             plausible.o = i || {};
-          });
+          }));
       plausible.init();
     </script>
   </head>
 
-  <body class="relative grid lg:flex items-start min-h-screen antialiased">
-    <!-- Sidebar column -->
-    <div
-      class="relative w-full lg:min-w-[536px] lg:max-w-[536px] lg:min-h-screen bg-neutral-100 dark:bg-neutral-900"
-    >
-      <div
-        class="relative lg:fixed lg:max-w-[536px] top-0 lg:min-h-screen bg-neutral-100 dark:bg-neutral-900"
-      >
-        <div class="z-[99]">
-          <Sidebar />
-        </div>
-        <svg
-          class="opacity-5 dark:invert absolute bottom-0 -z-10"
-          width="410"
-          height="395"
-          viewBox="0 0 410 395"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M255.637 131.051C285.804 156.734 306.976 185.699 319.153 217.948C331.591 250.176 334.574 283.229 328.102 317.107C321.89 350.964 305.823 383.117 279.901 413.567C253.619 444.439 224.064 466.447 191.236 479.589C158.528 492.591 124.924 496.078 90.425 490.049C56.187 484 23.3499 467.594 -8.08625 440.832C-39.9453 413.709 -61.8434 383.883 -73.7804 351.352C-85.5975 318.68 -87.6878 285.293 -80.0514 251.19C-72.4149 217.087 -55.2156 184.317 -28.4532 152.881C-2.77101 122.714 26.406 101.722 59.0779 89.9046C91.8907 78.2075 125.317 75.7858 159.357 82.6392C193.517 89.3518 225.61 105.489 255.637 131.051ZM117.28 387.818C136.242 365.545 152.479 342.046 165.99 317.321C169.423 311.004 173.651 302.325 178.674 291.284C183.697 280.243 188.436 268.108 192.889 254.88C197.484 241.772 201.024 228.617 203.51 215.415C206.136 202.334 206.759 190.464 205.378 179.806C204.257 169.127 200.314 160.907 193.548 155.146C186.358 149.026 178.693 147.606 170.551 150.886C162.55 154.287 154.957 159.493 147.771 166.505C140.847 173.497 135.225 179.53 130.904 184.605C116.023 202.085 102.551 220.765 90.4894 240.646C78.6885 260.505 68.7983 281.262 60.8188 302.916C58.43 309.149 55.687 317.512 52.5897 328.004C49.6334 338.617 47.3114 349.77 45.6238 361.462C43.9362 373.155 43.6212 383.949 44.6786 393.846C45.877 403.862 49.4365 411.39 55.3572 416.431C62.5467 422.551 70.0818 423.982 77.9626 420.722C85.9843 417.583 93.4574 412.517 100.382 405.526C107.447 398.655 113.08 392.752 117.28 387.818Z"
-            fill="black"></path>
-        </svg>
-      </div>
-    </div>
-    <div class="relative px-2 lg:px-0 overflow-auto w-full mx-auto">
-      <div class="my-8">
-        <slot />
-      </div>
+  <body class="relative grid">
+    <Header />
+    <div class="fade-in-up-2 max-w-2xl mx-auto">
+      <slot />
     </div>
   </body>
 </html>
