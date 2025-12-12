@@ -358,5 +358,65 @@
     "is_featured": false,
     "likes_count": 0,
     "email": "ramzi90000@gmail.com"
+  },
+  {
+    "id": "6f3d9d4e-9a7a-4e3b-b6f7-9b5f1f3a2c01",
+    "created_at": "2025-12-12T03:18:00Z",
+    "title": "Coast FIRE Calculator",
+    "description": "Free calculator to check whether your current investments can reach your retirement goal without further contributions.",
+    "image_url": "https://www.coastfirecalc.org/logo.png",
+    "url": "https://www.coastfirecalc.org/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "kaofeesgf@gmail.com"
+  },
+  {
+    "id": "2c8b1e44-3a8a-4d8f-9e2a-1c8f7b9a0d42",
+    "created_at": "2025-12-12T03:17:00Z",
+    "title": "BG Remove Pro",
+    "description": "Free AI-powered tool that removes image backgrounds instantly in the browser without uploading files to a server.",
+    "image_url": "https://www.bgremovepro.com/logo.png",
+    "url": "https://www.bgremovepro.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "kaofeesgf@gmail.com"
+  },
+  {
+    "id": "9a41f3b0-7c6d-4c6a-8b3d-ef8d7c4e1b55",
+    "created_at": "2025-12-12T03:16:00Z",
+    "title": "JustSimple Tools",
+    "description": "Curated collection of 200+ tools for developers, designers, and creators across AI, design, analytics, SEO, marketing, and automation.",
+    "image_url": "https://www.justsimple.tools/logo.png",
+    "url": "https://www.justsimple.tools",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "kaofeesgf@gmail.com"
+  },
+  {
+    "id": "c7f2e5a1-4b9e-4f61-9f6a-3c2d8e9b6a77",
+    "created_at": "2025-12-11T17:58:00Z",
+    "title": "Kikaroo",
+    "description": "Kids chore tracker app that turns daily tasks into a rewarding routine and helps parents manage family chores easily.",
+    "image_url": "https://kikaroo.app/",
+    "url": "https://kikaroo.app/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "kikarooapp@gmail.com"
+  },
+  {
+    "id": "e1b9c6a4-2f5d-4a8b-9c7e-5f3a9d2b8c90",
+    "created_at": "2025-12-11T17:30:00Z",
+    "title": "Liquid Glass Resources",
+    "description": "Directory of frameworks, code samples, and design assets for implementing Liquid Glass effects beyond iOS and macOS.",
+    "image_url": "https://www.liquidglassresources.com/favicon.png",
+    "url": "https://www.liquidglassresources.com/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "andras@brew.dev"
   }
 ]
