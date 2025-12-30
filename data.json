@@ -454,5 +454,41 @@
     "is_featured": false,
     "likes_count": 0,
     "email": "byteforge12@gmail.com"
+  },
+  {
+    "id": "c1a9d3c2-9e54-4a6e-9c7d-8f3b1b5a21aa",
+    "created_at": "2025-12-30T11:15:00Z",
+    "title": "Starscape SEO",
+    "description": "Full-service digital marketing and web design agency helping local businesses improve online visibility, Google rankings, and conversions through SEO, WordPress websites, and Google Ads.",
+    "image_url": "https://starscapeseo.com/logo.jpg",
+    "url": "https://starscapeseo.com/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "starscapeseo.team@gmail.com"
+  },
+  {
+    "id": "a47e9d10-6f6a-4a1b-8c21-4b2a9f1d2c55",
+    "created_at": "2025-12-29T17:41:00Z",
+    "title": "aat.ee",
+    "description": "Open-source, community-driven alternative to Product Hunt for discovering, upvoting, and sharing AI tools, indie products, and startups with no paywalls or approvals.",
+    "image_url": "https://www.aat.ee/logo.svg",
+    "url": "https://www.aat.ee/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "aatee2026@gmail.com"
+  },
+  {
+    "id": "e93f6c77-0c5b-4f47-9c9e-1c5e8b9f4e88",
+    "created_at": "2025-12-27T04:27:00Z",
+    "title": "Supawazap",
+    "description": "Chrome extension that turns WhatsApp Web into a local-first CRM with automation, no-code chatbots, smart broadcasting, scheduling, and privacy-focused marketing tools.",
+    "image_url": "https://supawazap.com/logo.png",
+    "url": "https://supawazap.com/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "ahoy1945@gmail.com"
   }
 ]
