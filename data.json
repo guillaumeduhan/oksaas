@@ -490,5 +490,29 @@
     "is_featured": false,
     "likes_count": 0,
     "email": "ahoy1945@gmail.com"
+  },
+  {
+    "id": "7f6e2d8c-9a44-4f8e-9d5f-4c9e5c3d1a21",
+    "created_at": "2026-01-02T12:15:00Z",
+    "title": "LeapCount",
+    "description": "LeapCount is a comprehensive all-in-one business management platform for freelancers, startups, and SMEs. It unifies accounting, project management, inventory control, cloud file storage, and transport & logistics into a single interface, helping teams replace fragmented and expensive software stacks. Free forever for up to 5 users with no credit card required.",
+    "image_url": "https://logo-1766935749295.png",
+    "url": "https://leapcount.com/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "leapcount.com@gmail.com"
+  },
+  {
+    "id": "b3c1a4f2-6e7d-4c3a-9f2e-8a1d5b9c4e77",
+    "created_at": "2025-12-30T18:24:00Z",
+    "title": "Witty",
+    "description": "Witty is a Chrome sidebar for X that helps you build engagement in real time. Set daily reply targets, get AI-generated suggestions in your own voice, and track your growth directly from the sidebar.",
+    "image_url": "https://witty.so/img/favicon.png",
+    "url": "https://witty.so",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "team@launchquest.co"
   }
 ]
