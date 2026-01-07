@@ -514,5 +514,53 @@
     "is_featured": false,
     "likes_count": 0,
     "email": "team@launchquest.co"
+  },
+  {
+    "id": "9c7f4e8d-0c1a-4c8b-9c9a-1b2a6c8e5f41",
+    "created_at": "2026-01-06T17:13:00Z",
+    "title": "Note67",
+    "description": "Privacy-centric, open-source, local-first meeting assistant for macOS. Records audio, transcribes speech, and generates AI summaries entirely on-device using Whisper and Ollama. No cloud, no accounts, no data leakage.",
+    "image_url": "https://note67.com/logo.png",
+    "url": "https://note67.com/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "ctnote518@gmail.com"
+  },
+  {
+    "id": "4b2e3f6a-9f21-4e7d-8a91-6d3a2c5f9e8b",
+    "created_at": "2026-01-06T12:30:00Z",
+    "title": "Memovee",
+    "description": "AI-powered movie discovery platform that lets users find films using natural language queries based on ideas, moods, or questions instead of traditional search filters.",
+    "image_url": "https://memovee-static.b-cdn.net/images/apple-touch-icon-639d0528a031e0b23db5347c25becfa1.png",
+    "url": "https://memovee.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "zack@upmaru.com"
+  },
+  {
+    "id": "e1a8d7b2-3f4a-4c9e-9b6a-5c2f1d8e7a44",
+    "created_at": "2026-01-04T02:11:00Z",
+    "title": "Keyword Explorer",
+    "description": "Keyword research tool that helps marketers discover profitable long-tail keywords using search engine autosuggest data and accurate search volume metrics.",
+    "image_url": "https://ibb.co/9mqnN6q0",
+    "url": "https://keywordexplorer.net/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "keywordexplorer360@gmail.com"
+  },
+  {
+    "id": "6d9b2c3a-1f84-4a6b-9e72-8c5f4a1e3d90",
+    "created_at": "2026-01-02T21:14:00Z",
+    "title": "Supme",
+    "description": "Simple professional contact page solution that helps individuals present their personal or business information in a clean, shareable format.",
+    "image_url": "https://supme.me/images/supmelogo.png",
+    "url": "https://supme.me",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "admin@supme.me"
   }
 ]
