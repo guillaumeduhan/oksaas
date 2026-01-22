@@ -658,5 +658,65 @@
     "is_featured": false,
     "likes_count": 0,
     "email": "brogee9o9@gmail.com"
+  },
+  {
+    "id": "a3b7c9d2-1f4e-4a8b-b2e5-7c9d3e1f6a4b",
+    "created_at": "2026-01-22 08:41:00",
+    "title": "tini.bio",
+    "description": "More than a link in bio. Build a complete page with links, images, blog posts, and portfolio projects. Drag-and-drop editor. Free to start",
+    "image_url": "https://submitsaas.com/images/product-icon-7d6e5a17-4ac2-451a-aa35-45b9818cb7e0.png",
+    "url": "https://tini.bio",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "tinibiomkt@gmail.com"
+  },
+  {
+    "id": "b8e4f1c5-3a7d-4e9b-a1f6-8d2c5b3e9a7c",
+    "created_at": "2026-01-21 15:36:00",
+    "title": "cuentosia.ai",
+    "description": "CuentosIA.ai enables parents and educators to create fully personalized children's storybooks using artificial intelligence. Users define the child's name, characters, style, age, language, and theme, and receive a unique illustrated story within minutes. Creative control always remains with the user: they can edit the text, storyline, and details before generating the final PDF. The service is designed to encourage reading, imagination, and family bonding, delivering fast, professional-quality results in both digital and printable formats.",
+    "image_url": "https://logo-1768426621590.png",
+    "url": "https://cuentosia.ai/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "cuentosia.ai@gmail.com"
+  },
+  {
+    "id": "c2d9e6a3-5b1f-4c7e-9a3d-1e8b4f2c7a9e",
+    "created_at": "2026-01-21 10:47:00",
+    "title": "Picknar YouTube Thumbnail Downloader",
+    "description": "A free online tool to download YouTube video and Shorts thumbnails in HD, 4K, and MaxRes quality. No login, no watermark.",
+    "image_url": "https://picknar.com/wp-content/uploads/2025/07/Add-a-heading-2.webp",
+    "url": "https://picknar.com/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "picknarteam@gmail.com"
+  },
+  {
+    "id": "e1f6b9c7-4d3a-4e8b-a2c5-9e7d1f3a8b6c",
+    "created_at": "2026-01-14 14:23:00",
+    "title": "CAD Software Hub",
+    "description": "CAD Software Hub is a comprehensive directory and resource platform designed to help professionals discover, compare, and review software across various engineering and design categories, including CAD, 3D printing, CAM, BIM, and AI-assisted design tools.",
+    "image_url": "https://logo-1768088934657.svg",
+    "url": "https://cadsoftwarehub.com/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "cadsoftwarehubcom@gmail.com"
+  },
+  {
+    "id": "f9a2c5e8-7b4d-4f1e-b3a6-2d8c9e1f5a4b",
+    "created_at": "2026-01-13 16:41:00",
+    "title": "CleanTextLab",
+    "description": "Free developer tools for clean text and data: JSON formatter, URL/Base64 tools, regex tester, case converter, remove duplicates, and more. Client-side processing (works offline) and privacy-focused. Try now!",
+    "image_url": "https://vozuxsuihoqnnyifrmuw.supabase.co/storage/v1/object/public/submissions/pay_0NViXZc3SzWOUCWQDM9Td/logo-1767724159395.png",
+    "url": "https://cleantextlab.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "cleantextlab108@gmail.com"
   }
 ]
