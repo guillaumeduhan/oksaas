@@ -1,5 +1,17 @@
 [
   {
+    "id": "7f0a9c2d-d6e3-4dd4-91c4-6f2f4a0ccb11",
+    "created_at": "2025-12-01T00:00:00Z",
+    "title": "Manastone.ai",
+    "description": "Launch your AI now",
+    "image_url": "http://manastone.ai/logo.png",
+    "url": "https://manastone.ai",
+    "is_promoted": true,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": ""
+  },
+  {
     "id": "7f0a9c2d-d6e3-4dd4-91c4-6f2f4a0e3b11",
     "created_at": "2025-12-01T00:00:00Z",
     "title": "Supabase",
@@ -19,7 +31,7 @@
     "image_url": "/saas/dub.png",
     "url": "https://dub.co/",
     "is_promoted": false,
-    "is_featured": true,
+    "is_featured": false,
     "likes_count": 0,
     "email": ""
   },
@@ -31,7 +43,7 @@
     "image_url": "/saas/submagic.png",
     "url": "https://submagic.co/",
     "is_promoted": false,
-    "is_featured": true,
+    "is_featured": false,
     "likes_count": 0,
     "email": ""
   },
@@ -1390,5 +1402,125 @@
     "is_featured": false,
     "likes_count": 0,
     "email": "team@backreply.com"
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "created_at": "2026-02-17T07:26:00Z",
+    "title": "ReadIt Club",
+    "description": "A book tracker and social community. Helps readers launch book clubs, invite people, coordinate picks, host discussions, and maintain personal libraries with tracking, shelves, and ML-powered recommendations. Multilingual and global by design, focused on trust, authenticity, and human moderation.",
+    "image_url": "",
+    "url": "https://readit.club",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "peopletrap@mail.ru"
+  },
+  {
+    "id": "b2c3d4e5-f6g7-8901-bcde-f2345678901a",
+    "created_at": "2026-02-17T05:32:00Z",
+    "title": "Cavuno",
+    "description": "AI-native job board platform. Launch branded, white-label job boards in minutes with no coding. Features AI job aggregation, semantic search, auto-tagging, company enrichment, programmatic SEO, job alerts, and monetization via paid listings, subscriptions, and ads. Built by the founders of Himalayas.",
+    "image_url": "https://pbs.twimg.com/profile_images/2016372083262160897/LCQ7Uoeb_400x400.jpg",
+    "url": "https://cavuno.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "hi@cavuno.com"
+  },
+  {
+    "id": "c3d4e5f6-g7h8-9012-cdef-3456789012bc",
+    "created_at": "2026-02-16T16:35:00Z",
+    "title": "Spotipo",
+    "description": "Transforms guest WiFi into a marketing engine — captures emails, runs ads, and turns every login into a lead. Monetizes venue networks while providing free internet to guests.",
+    "image_url": "https://logo-1770718455145.png",
+    "url": "https://www.spotipo.com/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "spotipo123@gmail.com"
+  },
+  {
+    "id": "d4e5f6g7-h8i9-0123-def0-4567890123cd",
+    "created_at": "2026-02-14T20:42:00Z",
+    "title": "LinkPilot",
+    "description": "AI-powered LinkedIn growth platform. Researches viral content, generates posts in your voice, schedules at optimal times, and tracks performance — like an always-on LinkedIn manager.",
+    "image_url": "https://vozuxsuihoqnnyifrmuw.supabase.co/storage/v1/object/public/submissions/pay_0NY4yUykFLKamUgAeyMWd/logo-1770590995039.png",
+    "url": "https://link-pilot.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "linkpilot30@gmail.com"
+  },
+  {
+    "id": "e5f6g7h8-i9j0-1234-ef01-5678901234de",
+    "created_at": "2026-02-13T16:56:00Z",
+    "title": "RiskOfficer",
+    "description": "Professional-grade risk analytics for individual investors. Features real-time VaR, Expected Shortfall, Beta, Volatility, scenario stress testing (historical & hypothetical), performance ratios (Sharpe, Sortino, Max Drawdown), AI natural language queries via API, and privacy-first design (no asset custody).",
+    "image_url": "https://vozuxsuihoqnnyifrmuw.supabase.co/storage/v1/object/public/submissions/pay_0NXn4VPZYacMC47Tt1K9n/logo-1770238315759.webp",
+    "url": "https://apps.apple.com/ru/app/riskofficer/id6757360596",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "riskofficer7@gmail.com"
+  },
+  {
+    "id": "f6g7h8i9-j0k1-2345-f012-6789012345ef",
+    "created_at": "2026-02-13T05:23:00Z",
+    "title": "Hush Touch",
+    "description": "Offline, fully on-device voice-to-text for macOS using tandem Apple transcription engines + Apple Intelligence final pass. $20 lifetime license.",
+    "image_url": "https://submitsaas.com/images/product-icon-0edd2bf8-e0da-4d35-9cb7-c39ce05b8894.jpg",
+    "url": "https://hushtouch.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "icoder972@gmail.com"
+  },
+  {
+    "id": "g7h8i9j0-k1l2-3456-0123-7890123456fg",
+    "created_at": "2026-02-13T05:22:00Z",
+    "title": "The New Black AI",
+    "description": "Create AI-generated models for clothing, jewelry, and accessories. Skip traditional e-commerce photoshoots while keeping full creative control.",
+    "image_url": "https://submitsaas.com/images/product-icon-9322acb3-cf79-408e-a46a-ba3562caf768.png",
+    "url": "https://thenewblack.ai/ai-generated-models",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "thenewblackai7@gmail.com"
+  },
+  {
+    "id": "h8i9j0k1-l2m3-4567-1234-8901234567gh",
+    "created_at": "2026-02-12T23:38:00Z",
+    "title": "Tailride",
+    "description": "AI-powered automation for extracting invoice and receipt data from emails and web portals.",
+    "image_url": "https://submitsaas.com/images/product-icon-6b353bfd-2714-4185-bfd7-fa901d92a10b.jpg",
+    "url": "https://tailride.so",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "directories@tailride.so"
+  },
+  {
+    "id": "i9j0k1l2-m3n4-5678-2345-9012345678hi",
+    "created_at": "2026-02-12T23:32:00Z",
+    "title": "RedVeil",
+    "description": "On-demand penetration testing powered by agentic AI. Uncover vulnerabilities and receive actionable reports at a fraction of traditional costs.",
+    "image_url": "https://submitsaas.com/images/product-icon-9dabe6c5-8382-4216-85cd-a3ad7d2cc216.jpg",
+    "url": "https://www.redveil.ai",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "directories@redveil.ai"
+  },
+  {
+    "id": "j0k1l2m3-n4o5-6789-3456-0123456789ij",
+    "created_at": "2026-02-12T22:13:00Z",
+    "title": "Facejam",
+    "description": "Turn selfies into studio-style photos using AI-powered experiences and styles.",
+    "image_url": "https://submitsaas.com/images/product-icon-baa72db6-b8a7-4067-a566-3c79d1627169.jpg",
+    "url": "https://facejam.co",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "facejamdirectories@gmail.com"
   }
 ]
