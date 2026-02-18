@@ -4,12 +4,12 @@ import { useMemo, useState } from "react";
 import data from "../../data.json";
 import Link from "./Link";
 
-const FILTERS = ["This week", "Last week", "3 months ago", "A year ago"] as const;
+const FILTERS = ["This week", "Last week", "Last month", "Last 3 months", "From beginning"] as const;
 
 type Filter = (typeof FILTERS)[number] | null;
 
 function getFilterCutoff(label: Filter): Date | null {
-  if (!label) return null;
+  if (!label || label === "From beginning") return null;
   const now = new Date();
   // Start of current week (Monday)
   const daysFromMonday = now.getDay() === 0 ? 6 : now.getDay() - 1;
@@ -23,14 +23,14 @@ function getFilterCutoff(label: Filter): Date | null {
     d.setDate(d.getDate() - 7);
     return d;
   }
-  if (label === "3 months ago") {
+  if (label === "Last month") {
     const d = new Date(now);
-    d.setMonth(d.getMonth() - 3);
+    d.setMonth(d.getMonth() - 1);
     return d;
   }
-  if (label === "A year ago") {
+  if (label === "Last 3 months") {
     const d = new Date(now);
-    d.setFullYear(d.getFullYear() - 1);
+    d.setMonth(d.getMonth() - 3);
     return d;
   }
   return null;
@@ -65,8 +65,8 @@ const List = () => {
             key={f}
             onClick={() => setActiveFilter(activeFilter === f ? null : f)}
             className={`px-3 py-1 rounded-full text-sm transition-colors cursor-pointer ${activeFilter === f
-              ? "bg-primary-500 text-black"
-              : "text-white/50 hover:text-white"
+                ? "bg-primary-500 text-white"
+                : "text-white/50 hover:text-white"
               }`}
           >
             {f}
