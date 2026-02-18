@@ -6,17 +6,17 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-kiwi-50: #edfff7;
-  --color-kiwi-100: #d5ffed;
-  --color-kiwi-200: #aeffdc;
-  --color-kiwi-300: #6fffc3;
-  --color-kiwi-400: #1fff9e;
-  --color-kiwi-500: #00e983;
-  --color-kiwi-600: #00c269;
-  --color-kiwi-700: #009856;
-  --color-kiwi-800: #047747;
-  --color-kiwi-900: #06613c;
-  --color-kiwi-950: #00371f;
+  --color-primary-50: #edfff7;
+  --color-primary-100: #d5ffed;
+  --color-primary-200: #aeffdc;
+  --color-primary-300: #6fffc3;
+  --color-primary-400: #1fff9e;
+  --color-primary-500: #00e983;
+  --color-primary-600: #00c269;
+  --color-primary-700: #009856;
+  --color-primary-800: #047747;
+  --color-primary-900: #06613c;
+  --color-primary-950: #00371f;
 }
 
 @layer base {
@@ -49,7 +49,7 @@
   }
 
   a {
-    @apply text-neutral-500 cursor-pointer hover:text-kiwi-500 transition duration-300;
+    @apply text-neutral-500 cursor-pointer hover:text-primary-500 transition duration-300;
   }
 
   /* Classe utilitaire */

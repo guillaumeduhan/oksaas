@@ -1,6 +1,5 @@
 "use client";
 
-
 interface Props {
   id?: string;
   title?: string;
@@ -33,18 +32,18 @@ export default function Link(props: Props) {
   /* ──────────────────────────────────────────────── */
   return (
     <div
-      className={`group relative flex items-center gap-12 justify-between w-full py-2 cursor-pointer px-2 bg-gradient-to-r cursor-pointer transition duration-300 ${is_promoted ? 'hover:bg-amber-600/20 to-amber-600/20 dark:from-neutral-800' : is_featured ? "hover:bg-kiwi-600/20 dark:from-transparent to-kiwi-600/20 dark:from-neutral-800" : "dark:from-neutral-700/20 dark:hover:bg-neutral-700/20"
+      className={`group relative flex items-center gap-12 justify-between w-full py-2 cursor-pointer px-2 bg-gradient-to-r cursor-pointer transition duration-300 ${is_promoted ? 'hover:bg-amber-600/20 to-amber-600/20 dark:from-neutral-900' : is_featured ? "hover:bg-primary-600/20 dark:from-transparent to-primary-600/20 dark:from-neutral-900" : "dark:from-neutral-900 dark:hover:bg-neutral-700/20"
         }`}
     >
       <a
-        href={`${url}?utm_source=oksaas`}
+        href={`${url}?utm_source=okagents`}
         target="_blank"
         rel="noreferrer"
         className="grow flex items-center gap-4 hover:opacity-90 transition"
       >
         <div
           className={`${small ? "size-10 min-w-10 min-h-10" : "size-12 min-w-12 min-h-12"
-            } flex items-center justify-center`}
+            } flex items-center justify-center rounded-sm overflow-hidden bg-neutral-800`}
         >
           {image_url && (
             <img
@@ -52,6 +51,7 @@ export default function Link(props: Props) {
               alt={title}
               className="w-full h-full object-cover"
               loading="lazy"
+              onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
             />
           )}
         </div>
@@ -75,12 +75,12 @@ export default function Link(props: Props) {
               </div>
             )}
             {is_featured && (
-              <div className="text-xs text-kiwi-600 font-[600] bg-transparent border border-kiwi-600 px-1 py-[1px]">
+              <div className="text-xs text-primary-600 font-[600] bg-transparent border border-primary-600 px-1 py-[1px]">
                 Featured
               </div>
             )}
             <svg className={`relative right-2 group-hover:right-0 transition-all duration-600 ease-in-out ${is_promoted ? 'text-amber-700' : is_featured
-              ? "text-kiwi-700"
+              ? "text-primary-700"
               : "text-neutral-400 dark:text-neutral-200"}`} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M16.15 13H5q-.425 0-.712-.288T4 12t.288-.712T5 11h11.15L13.3 8.15q-.3-.3-.288-.7t.288-.7q.3-.3.713-.312t.712.287L19.3 11.3q.15.15.213.325t.062.375t-.062.375t-.213.325l-4.575 4.575q-.3.3-.712.288t-.713-.313q-.275-.3-.288-.7t.288-.7z" /></svg>
 
           </div>
