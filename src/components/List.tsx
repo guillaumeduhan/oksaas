@@ -4,48 +4,34 @@ import { useMemo, useState } from "react";
 import data from "../../data.json";
 import Link from "./Link";
 
-const FILTERS = ["This week", "Last week", "Last month", "Last 3 months", "From beginning"] as const;
+const FILTERS = ["This month", "Last month", "Last 3 months", "Last 6 months", "From beginning"] as const;
 
 type Filter = (typeof FILTERS)[number] | null;
 
-function getFilterCutoff(label: Filter): Date | null {
+function getFilterRange(label: Filter): { start: Date; end: Date } | null {
   if (!label || label === "From beginning") return null;
   const now = new Date();
-  // Start of current week (Monday)
-  const daysFromMonday = now.getDay() === 0 ? 6 : now.getDay() - 1;
-  const startOfThisWeek = new Date(now);
-  startOfThisWeek.setDate(now.getDate() - daysFromMonday);
-  startOfThisWeek.setHours(0, 0, 0, 0);
+  const y = now.getFullYear();
+  const m = now.getMonth();
 
-  if (label === "This week") return startOfThisWeek;
-  if (label === "Last week") {
-    const d = new Date(startOfThisWeek);
-    d.setDate(d.getDate() - 7);
-    return d;
-  }
-  if (label === "Last month") {
-    const d = new Date(now);
-    d.setMonth(d.getMonth() - 1);
-    return d;
-  }
-  if (label === "Last 3 months") {
-    const d = new Date(now);
-    d.setMonth(d.getMonth() - 3);
-    return d;
-  }
+  if (label === "This month") return { start: new Date(y, m, 1), end: new Date(y, m + 1, 1) };
+  if (label === "Last month") return { start: new Date(y, m - 1, 1), end: new Date(y, m, 1) };
+  if (label === "Last 3 months") return { start: new Date(y, m - 3, 1), end: new Date(y, m, 1) };
+  if (label === "Last 6 months") return { start: new Date(y, m - 6, 1), end: new Date(y, m, 1) };
   return null;
 }
 
 const List = () => {
-  const [activeFilter, setActiveFilter] = useState<Filter>("This week");
+  const [activeFilter, setActiveFilter] = useState<Filter>("This month");
 
   const sorted = useMemo(() => {
-    const cutoff = getFilterCutoff(activeFilter);
+    const range = getFilterRange(activeFilter);
 
     const filtered = data.filter((item) => {
       if (item.is_promoted || item.is_featured) return true;
-      if (!cutoff) return true;
-      return new Date(item.created_at || "") >= cutoff;
+      if (!range) return true;
+      const d = new Date(item.created_at || "");
+      return d >= range.start && d < range.end;
     });
 
     return filtered.sort((a, b) => {
