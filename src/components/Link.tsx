@@ -36,7 +36,7 @@ export default function Link(props: Props) {
         }`}
     >
       <a
-        href={`${url}?utm_source=okagents`}
+        href={`${url}?utm_source=oksaas`}
         target="_blank"
         rel="noreferrer"
         className="grow flex items-center gap-4 hover:opacity-90 transition"
