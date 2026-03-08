@@ -1,28 +1,40 @@
-# robots.txt — Oksaas
-# Allow full indexing of the public directory
-
+# robots.txt — OkSaaS
 User-agent: *
 Allow: /
-
-# Block private asset folders (if any)
-Disallow: /images/private/
-Disallow: /uploads/secret/
-
-# Allow images (important for product previews)
-Allow: /*.jpg$
-Allow: /*.jpeg$
-Allow: /*.png$
-Allow: /*.webp$
-Allow: /*.gif$
-Allow: /*.svg$
-
-# Allow CSS, JS, and fonts
-Allow: /*.css$
-Allow: /*.js$
-Allow: /*.woff$
-Allow: /*.woff2$
+Disallow: /api/
+Disallow: /_astro/
 
 # Sitemap
 Sitemap: https://oksaas.com/sitemap.xml
 
-# End of file
+# LLMs — allow llms.txt only
+User-agent: GPTBot
+Allow: /llms.txt
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /llms.txt
+Allow: /
+
+User-agent: Claude-Web
+Allow: /llms.txt
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /llms.txt
+Allow: /
+
+User-agent: Google-Extended
+Allow: /llms.txt
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /llms.txt
+Allow: /
+
+User-agent: CCBot
+Allow: /llms.txt
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /

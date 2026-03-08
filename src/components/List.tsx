@@ -4,25 +4,27 @@ import { useMemo, useState } from "react";
 import data from "../../data.json";
 import Link from "./Link";
 
-const FILTERS = ["This month", "Last month", "Last 3 months", "Last 6 months", "From beginning"] as const;
+const FILTERS = ["Last week", "Last 3 months", "Last 6 months", "From beginning"] as const;
 
 type Filter = (typeof FILTERS)[number] | null;
 
 function getFilterRange(label: Filter): { start: Date; end: Date } | null {
   if (!label || label === "From beginning") return null;
   const now = new Date();
-  const y = now.getFullYear();
-  const m = now.getMonth();
 
-  if (label === "This month") return { start: new Date(y, m, 1), end: new Date(y, m + 1, 1) };
-  if (label === "Last month") return { start: new Date(y, m - 1, 1), end: new Date(y, m, 1) };
-  if (label === "Last 3 months") return { start: new Date(y, m - 3, 1), end: new Date(y, m, 1) };
-  if (label === "Last 6 months") return { start: new Date(y, m - 6, 1), end: new Date(y, m, 1) };
+  if (label === "Last week") {
+    const start = new Date(now);
+    start.setDate(start.getDate() - 7);
+    start.setHours(0, 0, 0, 0);
+    return { start, end: now };
+  }
+  if (label === "Last 3 months") return { start: new Date(now.getFullYear(), now.getMonth() - 3, 1), end: now };
+  if (label === "Last 6 months") return { start: new Date(now.getFullYear(), now.getMonth() - 6, 1), end: now };
   return null;
 }
 
 const List = () => {
-  const [activeFilter, setActiveFilter] = useState<Filter>("This month");
+  const [activeFilter, setActiveFilter] = useState<Filter>("Last 6 months");
 
   const sorted = useMemo(() => {
     const range = getFilterRange(activeFilter);
@@ -51,7 +53,7 @@ const List = () => {
             key={f}
             onClick={() => setActiveFilter(activeFilter === f ? null : f)}
             className={`px-3 py-1 rounded-full text-sm transition-colors cursor-pointer ${activeFilter === f
-                ? "bg-primary-500 text-white"
+                ? "bg-primary-500 text-black"
                 : "text-white/50 hover:text-white"
               }`}
           >

@@ -1,0 +1,41 @@
+# OkSaaS
+
+> Discover the best SaaS tools, indie products, and startups. A curated directory to find your next favorite tool.
+
+## About
+
+OkSaaS is a curated directory of SaaS products, indie tools, and startups. Makers submit their products and get listed with a description, logo, and backlink. Users browse, discover, and filter tools by category and recency.
+
+## Features
+
+- **Curated Directory**: Browse hundreds of SaaS products and tools
+- **Free Submissions**: Makers can submit their product with a dofollow backlink
+- **Promoted & Featured Listings**: Highlighted placement for selected products
+- **Filtering**: Filter by time period (last week, last 3 months, last 6 months, all time)
+- **SEO-Friendly**: Each listing includes a dofollow backlink to the product
+
+## How It Works
+
+1. Makers submit their SaaS product via the submission form
+2. Products are reviewed and added to the directory
+3. Each product gets a listing with logo, description, and link
+4. Users browse and discover new tools
+
+## Categories
+
+Products span many categories including: AI tools, developer tools, marketing, SEO, design, productivity, finance, video editing, form builders, resume builders, compliance, fitness, education, and more.
+
+## Tech Stack
+
+- Built with Astro (static site generator)
+- Hosted on Vercel
+- Data-driven listings from a curated JSON dataset
+
+## Links
+
+- Website: https://oksaas.com
+- Sitemap: https://oksaas.com/sitemap.xml
+
+## Contact
+
+For submissions and inquiries, visit https://oksaas.com.
