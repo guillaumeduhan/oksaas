@@ -1,4 +1,4 @@
-# Astro Starter Kit: Minimal
+# Oksaas
 
 ```sh
 npm create astro@latest -- --template minimal
