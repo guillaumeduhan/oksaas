@@ -2,10 +2,9 @@
 import "../globals.css";
 import Header from "../src/components/Header.astro";
 
-const title =
-  "Oksaas — Discover the Best New SaaS Products Before Everyone Else";
+const title = "OkSaaS — The Best SaaS Drop, Every Week.";
 const description =
-  "Oksaas is the curated directory of emerging SaaS products. Discover, compare, and follow the next big thing before anyone else — and publish your SaaS for free during launch.";
+  "OkSaaS curates the best new SaaS products every week. Discover trending tools before everyone else and submit your SaaS for free.";
 const url = "https://oksaas.co";
 const image = `${url}/og-image.jpg`; // 1200x630 recommended
 ---
@@ -22,7 +21,7 @@ const image = `${url}/og-image.jpg`; // 1200x630 recommended
     <meta name="description" content={description} />
     <meta
       name="keywords"
-      content="saas directory, discover saas, new saas products, emerging software tools, startup tools, trending saas, software discovery, best new apps"
+      content="saas directory, best saas products, weekly saas drop, new saas tools, trending saas, startup tools, software discovery, saas launch"
     />
 
     <!-- Robots -->
@@ -36,7 +35,8 @@ const image = `${url}/og-image.jpg`; // 1200x630 recommended
     <link rel="alternate" hreflang="en" href={url} />
 
     <!-- Favicons -->
-    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!-- Open Graph -->
@@ -45,7 +45,7 @@ const image = `${url}/og-image.jpg`; // 1200x630 recommended
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
-    <meta property="og:site_name" content="Oksaas" />
+    <meta property="og:site_name" content="OkSaaS" />
     <meta property="og:locale" content="en_US" />
 
     <!-- Twitter / X -->
@@ -66,12 +66,12 @@ const image = `${url}/og-image.jpg`; // 1200x630 recommended
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Oksaas",
+        "name": "OkSaaS",
         "url": "https://oksaas.co",
-        "description": "Curated directory of emerging SaaS products.",
+        "description": "The best SaaS drop, every week.",
         "publisher": {
           "@type": "Organization",
-          "name": "Oksaas",
+          "name": "OkSaaS",
           "logo": {
             "@type": "ImageObject",
             "url": "https://oksaas.co/logo.png"
@@ -91,10 +91,10 @@ const image = `${url}/og-image.jpg`; // 1200x630 recommended
       {
         "@context": "https://schema.org",
         "@type": "ItemList",
-        "name": "SaaS Products Directory",
+        "name": "Weekly SaaS Drops",
         "url": "https://oksaas.co",
         "itemListOrder": "Descending",
-        "description": "Discover the best emerging SaaS tools and apps."
+        "description": "The best new SaaS products, curated every week."
       }
     </script>
 
