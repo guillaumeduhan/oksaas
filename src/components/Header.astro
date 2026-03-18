@@ -3,78 +3,36 @@ import DarkMode from "./DarkMode.astro";
 import Logo from "./Logo.astro";
 ---
 
-<header class="grid max-w-2xl mx-auto text-center py-12">
-  <div class="flex items-center justify-center gap-2 fade-in-up">
-    <div class="rotate-0">
-      <Logo />
-    </div>
-    <!-- <DarkMode /> -->
-  </div>
-  <h1 class="cal-sans text-6xl fade-in-up-2 my-4" style="line-height: 1;">
-    The Best SaaS Drop — Every Week
-  </h1>
-  <div class="grid gap-2 fade-in-up-3">
-    <p class="text-lg">
-      Discover, compare, and follow the next big SaaS before anyone else.
+<header
+  class="md:flex md:items-center md:justify-between w-full mx-auto text-center gap-4 my-12"
+>
+  <div class="flex items-center justify-center gap-2">
+    <Logo />
+    <p class="truncate whitespace-nowrap">
+      OkSaaS — The Best SaaS Drop, Every Week.
     </p>
-    <p class="text-sm opacity-50">5,342 visitors this month</p>
+    <div class="fixed top-4 right-4">
+      <DarkMode />
+    </div>
   </div>
-  <div class="flex mx-auto my-2 fade-in-up-3 mt-12">
+  <div class="my-4 md:my-0 flex items-center justify-center gap-4">
     <a
       href="https://codeg.link/oksaas"
       target="blank"
-      class="rounded-full bg-linear-to-r from-primary-300 to-primary-600 hover:from-primary-600 hover:to-primary-300 p-1"
+      class="truncate whitespace-nowrap flex items-center gap-2 text-primary-500"
     >
-      <button
-        class="flex items-center gap-1 font-[500] px-4 py-3 cursor-pointer bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-600 transition duration-300 rounded-full text-white"
+      <span>New Launch (free backlink)</span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        ><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE -->
+        <path
+          fill="currentColor"
+          d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6z"
+        ></path></svg
       >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          ><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE -->
-          <path fill="currentColor" d="M11 13H5v-2h6V5h2v6h6v2h-6v6h-2z"
-          ></path></svg
-        >
-        <span class="font-[600]">New Launch (free backlink)</span>
-      </button>
     </a>
-  </div>
-
-  <div
-    class="hidden lg:flex items-center justify-start fixed top-2 right-2 fade-in-up-3"
-  >
-    <a
-      href="https://www.producthunt.com/products/oksaas?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-oksaas"
-      target="_blank"
-      ><img
-        src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1044610&theme=light&t=1764671137437"
-        alt="Oksaas - The best products every week | Product Hunt"
-        style="width: 250px; height: 54px;"
-        width="250"
-        height="54"
-      /></a
-    >
-    <a
-      href="https://peerlist.io/guillaumeduhan/project/oksaasco"
-      target="_blank"
-      rel="noreferrer"
-      class="scale-85"
-    >
-      <img
-        src="https://peerlist.io/api/v1/projects/embed/PRJH8OELADKJD9B7LH9BJNDJON6ENG?showUpvote=false&theme=dark"
-        alt="Oksaas.co"
-        style="width: auto; height: 72px;"
-      />
-    </a>
-    <a href="https://marketingdb.live" target="_blank"
-      ><img
-        src="https://marketingdb.live/badge.svg"
-        alt="Listed on MarketingDB"
-        width="190"
-        height="44"
-      /></a
-    >
   </div>
 </header>

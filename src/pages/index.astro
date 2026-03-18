@@ -1,8 +1,17 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import List from "../components/List.tsx";
+import List from "../components/List.astro";
+import data from "../../data.json";
+
+const sorted = [...data].sort((a, b) => {
+  if (a.is_promoted && !b.is_promoted) return -1;
+  if (!a.is_promoted && b.is_promoted) return 1;
+  if (a.is_featured && !b.is_featured) return -1;
+  if (!a.is_featured && b.is_featured) return 1;
+  return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+});
 ---
 
 <Layout>
-  <List client:load />
+  <List items={sorted} />
 </Layout>

@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400;700&family=Geist:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;700&family=Geist:wght@100..900&display=swap');
 
 @import "tailwindcss";
@@ -21,14 +20,8 @@
 
 @layer base {
   :root {
-    --color-bg-light: white;
-    /* --color-bg-dark: #181818; */
     --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI',
       Roboto, Helvetica, Arial, sans-serif;
-  }
-
-  .dark {
-    color-scheme: dark;
   }
 
   * {
@@ -37,69 +30,58 @@
 
   /* Application globale */
   html {
-    @apply bg-transparent text-neutral-900 dark:text-neutral-200 dark:bg-neutral-900/80;
+    @apply bg-transparent text-neutral-900 dark:text-neutral-200 dark:bg-neutral-900;
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     @apply text-[16px];
   }
 
-  p {
-    @apply text-neutral-500 dark:text-neutral-400;
-  }
-
   a {
-    @apply text-neutral-500 cursor-pointer hover:text-primary-500 transition duration-300;
+    @apply cursor-pointer hover:text-primary-500 transition duration-300;
   }
 
-  /* Classe utilitaire */
-  .cal-sans {
-    font-family: "Cal Sans", sans-serif;
-    font-weight: normal;
-    -webkit-font-smoothing: antialiased;
-  }
-}
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
 
-@keyframes fade-in-up {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in-up {
-  animation: fade-in-up 0.8s ease-out forwards;
-}
-
-.fade-in-up-1 {
-  animation: fade-in-up 1.6s ease-out forwards;
-}
-
-.fade-in-up-2 {
-  animation: fade-in-up 2.2s ease-out forwards;
-}
-
-.fade-in-up-3 {
-  animation: fade-in-up 3s ease-out forwards;
-}
-
-@keyframes floatUpFade {
-  0% {
-    transform: translateY(0);
-    opacity: 1;
+  .fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
   }
 
-  100% {
-    transform: translateY(-25%);
-    opacity: 0;
+  .fade-in-up-1 {
+    animation: fade-in-up 1.6s ease-out forwards;
   }
-}
 
-.float-up-fade {
-  animation: floatUpFade 1s linear infinite;
+  .fade-in-up-2 {
+    animation: fade-in-up 2.2s ease-out forwards;
+  }
+
+  .fade-in-up-3 {
+    animation: fade-in-up 3s ease-out forwards;
+  }
+
+  @keyframes floatUpFade {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translateY(-25%);
+      opacity: 0;
+    }
+  }
+
+  .float-up-fade {
+    animation: floatUpFade 1s linear infinite;
+  }
 }
