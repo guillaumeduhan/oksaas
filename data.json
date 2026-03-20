@@ -1,12 +1,24 @@
 [
   {
+    "id": "7f0a9c2d-d6e3-4dd4-91c4-6f2f4a0ccb22",
+    "created_at": "2026-01-10T00:00:00Z",
+    "title": "Tally",
+    "description": "Launch your AI now",
+    "image_url": "https://cdn.prod.website-files.com/64d1ef80445c8af250b5bb34/66b39397d2f68ba60b241965_Tally_Icon_-_Black.png",
+    "url": "https://tally.cello.so/SVRF3gJ7vhn",
+    "is_promoted": true,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": ""
+  },
+  {
     "id": "7f0a9c2d-d6e3-4dd4-91c4-6f2f4a0ccb11",
     "created_at": "2025-12-01T00:00:00Z",
     "title": "Manastone.ai",
     "description": "Launch your AI now",
     "image_url": "http://manastone.ai/logo.png",
     "url": "https://manastone.ai",
-    "is_promoted": true,
+    "is_promoted": false,
     "is_featured": false,
     "likes_count": 0,
     "email": ""
@@ -1762,5 +1774,77 @@
     "is_featured": false,
     "likes_count": 0,
     "email": "francesstarkenx@gmail.com"
+  },
+  {
+    "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "created_at": "2026-03-19T11:13:00Z",
+    "title": "Zynk",
+    "description": "Zynk sends files directly between devices. Fast, encrypted, cross-platform. No cloud upload. No size limits.",
+    "image_url": "https://vozuxsuihoqnnyifrmuw.supabase.co/storage/v1/object/public/submissions/pay_0NaMA6ufzUwL7LGUIissc/logo-1773349842959.jpg",
+    "url": "https://zynk.it",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "zynk618@gmail.com"
+  },
+  {
+    "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+    "created_at": "2026-03-17T08:24:00Z",
+    "title": "Arythmatic Cloud",
+    "description": "Arythmatic is a white-label learning infrastructure platform for training organizations, course creators, and enterprises — built to run under your brand, not ours.",
+    "image_url": "https://arythmatic.cloud/icon.svg",
+    "url": "https://arythmatic.cloud/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "marketing@arythmatic.cloud"
+  },
+  {
+    "id": "c3d4e5f6-a7b8-9012-cdef-123456789012",
+    "created_at": "2026-03-17T02:04:00Z",
+    "title": "Marketingblocks.ai",
+    "description": "MarketingBlocks provides autonomous AI agents that create, distribute, and amplify content daily, helping experts, coaches, and SaaS founders stay visible and trusted without the need for hiring or managing multiple tools. The platform generates 100+ pieces of content weekly, handles posting and replies across social media platforms, and offers AI strategy sessions to optimize growth.",
+    "image_url": "https://gastric-amaranth-rbcgjruzq1.edgeone.app/MB-removebg-preview.png",
+    "url": "https://marketingblocks.ai",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "Lucasbennett517@gmail.com"
+  },
+  {
+    "id": "d4e5f6a7-b8c9-0123-defa-234567890123",
+    "created_at": "2026-03-16T04:49:00Z",
+    "title": "Editaimg",
+    "description": "Editaimg is a versatile AI-powered image editing platform designed to streamline complex photo manipulation tasks. It offers a suite of intelligent tools including advanced AI retouching, seamless object insertion, and precise text editing within images.",
+    "image_url": "https://editaimg.com/logo.png",
+    "url": "https://editaimg.com/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "info@editaimg.com"
+  },
+  {
+    "id": "e5f6a7b8-c9d0-1234-efab-345678901234",
+    "created_at": "2026-03-15T09:43:00Z",
+    "title": "SyncGTM",
+    "description": "AI-powered GTM engineer that automates outbound sales, lead enrichment, and pipeline building for B2B startups.",
+    "image_url": "https://syncgtm.com/logo.png",
+    "url": "https://syncgtm.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "kushal@syncgtm.com"
+  },
+  {
+    "id": "f6a7b8c9-d0e1-2345-fabc-456789012345",
+    "created_at": "2026-03-15T01:53:00Z",
+    "title": "DoneDone.Run",
+    "description": "DoneDone is the MCP server that closes the gap between AI-built WordPress clones and production-ready sites. It plugs into any MCP-compatible agent and provides continuous source-to-clone comparison: visual layout, functional verification, WooCommerce intelligence, SEO preservation, and product data integrity.",
+    "image_url": "https://vozuxsuihoqnnyifrmuw.supabase.co/storage/v1/object/public/submissions/pay_0Na7sdpQd6ICljtlMsBa6/logo-1773073414334.jpg",
+    "url": "https://donedone.run",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "donedonerun535@gmail.com"
   }
 ]
