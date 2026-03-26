@@ -1906,5 +1906,29 @@
     "is_featured": false,
     "likes_count": 0,
     "email": "migraintrail@gmail.com"
+  },
+  {
+    "id": "f6a7b8c9-d0e1-2345-fab0-cflowapps00001",
+    "created_at": "2026-03-25T12:38:00Z",
+    "title": "Cflow",
+    "description": "Cflow is a no-code workflow automation platform that helps businesses automate approvals, streamline operations, and improve process efficiency without coding.",
+    "image_url": "https://drive.google.com/file/d/Yk_DAw9_ajXDUQNtT3lWhZo/view?usp=sharing",
+    "url": "https://www.cflowapps.com/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "search@cavintek.com"
+  },
+  {
+    "id": "a7b8c9d0-e1f2-3456-ab01-evalmymeds0001",
+    "created_at": "2026-03-25T21:53:00Z",
+    "title": "Evaluate My Meds",
+    "description": "Evaluate My Meds is an AI-powered digital health service designed to bring clarity to the parts of healthcare that often feel overwhelming. We review medication lists to help identify potential interaction risks and reconciliation gaps, analyze how meals may influence your health and prescriptions, and turn complex medical documents into clear, easy-to-understand summaries. Our goal isn't to replace your provider — it's to help you feel informed, prepared, and confident when discussing your health. Because understanding your care shouldn't feel confusing — it should feel empowering.",
+    "image_url": "https://ibb.co/KBsDGTv",
+    "url": "https://www.evaluatemymeds.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "evaluatemymeds@gmail.com"
   }
 ]
