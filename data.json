@@ -1906,5 +1906,29 @@
     "is_featured": false,
     "likes_count": 0,
     "email": "migraintrail@gmail.com"
+  },
+  {
+    "id": "g7h8i9j0-k1l2-3456-ghij-567890123456",
+    "created_at": "2026-03-25T21:53:00Z",
+    "title": "Evaluate My Meds",
+    "description": "Evaluate My Meds is an AI-powered digital health service designed to bring clarity to healthcare. It reviews medication lists to help identify potential interaction risks, analyzes how meals may influence your health and prescriptions, and turns complex medical documents into clear, easy-to-understand summaries.",
+    "image_url": "https://www.evaluatemymeds.com/favicon.ico",
+    "url": "https://www.evaluatemymeds.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "evaluatemymeds@gmail.com"
+  },
+  {
+    "id": "h8i9j0k1-l2m3-4567-hijk-678901234567",
+    "created_at": "2026-03-27T12:24:00Z",
+    "title": "GoPublicly",
+    "description": "GoPublicly is a product launch platform built for indie hackers, SaaS founders, and startups who want real visibility. Your product gets a fair shot with a curated daily launch system that limits listings and maximizes exposure. Create a launch page in minutes, track engagement, validate your idea, and build traction from day one.",
+    "image_url": "https://go-publicly.com/favicon.ico",
+    "url": "https://go-publicly.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "support@go-publicly.com"
   }
 ]
