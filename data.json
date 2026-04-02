@@ -1930,5 +1930,17 @@
     "is_featured": false,
     "likes_count": 0,
     "email": "evaluatemymeds@gmail.com"
+  },
+  {
+    "id": "h8i9j0k1-l2m3-4567-hijk-678901234567",
+    "created_at": "2026-03-27T12:24:00Z",
+    "title": "GoPublicly",
+    "description": "GoPublicly is a product launch platform built for indie hackers, SaaS founders, and startups who want real visibility. Your product gets a fair shot with a curated daily launch system that limits listings and maximizes exposure. Create a launch page in minutes, track engagement, validate your idea, and build traction from day one.",
+    "image_url": "https://go-publicly.com/favicon.ico",
+    "url": "https://go-publicly.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "support@go-publicly.com"
   }
 ]

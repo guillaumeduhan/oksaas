@@ -51,8 +51,8 @@ const { items } = Astro.props;
             href={withUtm(a.url)}
             class:list={[
               "flex gap-3 items-center justify-between text-[16px] py-2 px-3 cursor-pointer hover:bg-neutral-800 transition duration-300 overflow-hidden bg-linear-to-r",
-              a.is_promoted && "from-transparent to-amber-200 dark:to-amber-600/40",
-              a.is_featured && "from-transparent to-emerald-200 dark:to-emerald-600/40",
+              a.is_promoted && "from-transparent dark:from-neutral-950 to-amber-600/40",
+              a.is_featured && "from-transparent dark:from-neutral-950 to-emerald-600/40",
             ]}
             target="_blank"
           >
