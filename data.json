@@ -1942,5 +1942,101 @@
     "is_featured": false,
     "likes_count": 0,
     "email": "support@go-publicly.com"
+  },
+  {
+    "id": "c1r2o3w4-b5e6-7890-crow-bert000000001",
+    "created_at": "2026-04-02T10:06:00Z",
+    "title": "Crowbert",
+    "description": "Crowbert is an AI-powered social media workspace that helps teams create, schedule, publish, and analyze content across multiple platforms from one place. It automates content ideation, streamlines multi-channel publishing, and provides performance insights—enabling fast, consistent social media execution without manual effort.",
+    "image_url": "https://vozuxsuihoqnnyifrmuw.supabase.co/storage/v1/object/public/submissions/pay_0NbbmC0yw8rUMzrowywxu/logo-1774867906465.jpg",
+    "url": "https://www.crowbert.com/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "crowbert706@gmail.com"
+  },
+  {
+    "id": "t1r2i3m4-s5h6-7890-trim-sheetfast0001",
+    "created_at": "2026-04-01T16:31:00Z",
+    "title": "TrimSheetFast",
+    "description": "Fast Game-Ready Trim Sheets In Seconds",
+    "image_url": "https://trimsheetfast.com/favicon.svg",
+    "url": "https://trimsheetfast.com/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "hey@mikecaps.io"
+  },
+  {
+    "id": "t1e2x3t4-u5r6-7890-text-urefast00001",
+    "created_at": "2026-04-01T16:31:00Z",
+    "title": "TextureFast",
+    "description": "Fast Texturing For 3D Models In Seconds",
+    "image_url": "https://texturefast.com/favicon.svg",
+    "url": "https://texturefast.com/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "hey@mikecaps.io"
+  },
+  {
+    "id": "b1n2b3d4-e5t6-7890-bnbd-etector00001",
+    "created_at": "2026-04-01T16:30:00Z",
+    "title": "BnBDetector",
+    "description": "Detect Short-Term Rental Activity In Any Building",
+    "image_url": "https://www.bnbdetector.com/_next/image?url=https%3A%2F%2Fik.imagekit.io%2Fmoddswatch%2FBnBDetector%2FLogos%2FBnBDetector_logo.webp%3Fauto%3Dfalse&w=640&q=75",
+    "url": "https://bnbdetector.com/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "hey@mikecaps.io"
+  },
+  {
+    "id": "c1a2c3a4-o5t6-7890-caca-otool0000001",
+    "created_at": "2026-03-31T20:08:00Z",
+    "title": "Cacao",
+    "description": "Google reviews management tool for multi location brands",
+    "image_url": "https://www.cacao.to/logo-cacao1.png",
+    "url": "https://www.cacao.to/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "echambouleyron@cacao.to"
+  },
+  {
+    "id": "a1p2o3g4-e5e6-7890-apog-eelegal0001",
+    "created_at": "2026-03-30T20:28:00Z",
+    "title": "Apogee — Canadian Legal Research",
+    "description": "Apogee is a Chrome extension that brings AI legal research to your browser sidebar. Ask a question about Canadian law, and it searches the CanLII database — finding relevant cases, checking citations, and pulling legislation across all jurisdictions. Every answer includes proper legal citations and direct links to the full text on CanLII. Built for lawyers, law students, paralegals, and researchers.",
+    "image_url": "https://vozuxsuihoqnnyifrmuw.supabase.co/storage/v1/object/public/submissions/pay_0NbGqq74wmMCJuf09mtdy/logo-1774459676502.jpg",
+    "url": "https://apogee.1000ml.io",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "apogee345@gmail.com"
+  },
+  {
+    "id": "a1g2e3i4-n5x6-7890-agei-nxauth00001",
+    "created_at": "2026-03-30T09:21:00Z",
+    "title": "Ageinx",
+    "description": "Ageinx is a simple, redirect-based authentication platform that removes the need for SDKs and complex auth setups. Developers send users to a hosted login page, receive a signed token on return, and verify it via a single API call. Built for frontend-focused developers and indie builders.",
+    "image_url": "https://ibb.co/W4dbcb4T",
+    "url": "https://ageinx.vercel.app",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "kjuhi1496@gmail.com"
+  },
+  {
+    "id": "s1o2n3g4-l5y6-7890-song-lyricsrv001",
+    "created_at": "2026-03-29T12:29:00Z",
+    "title": "Song Lyrics Review",
+    "description": "Song Lyrics Review is an AI-powered ecosystem designed to transform how music enthusiasts, aspiring critics, and professional songwriters engage with the narrative depth of music. It provides intelligent tools that decode the soul of songwriting, offering instant expert-level insights through AI lyrical deconstruction, professional review auditing, and technical quality evaluation.",
+    "image_url": "https://song-lyrics-review.com/logo.png",
+    "url": "https://song-lyrics-review.com/",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "info@song-lyrics-review.com"
   }
 ]
