@@ -55,7 +55,7 @@
     "image_url": "/saas/submagic.png",
     "url": "https://submagic.co/?via=codewithg",
     "is_promoted": false,
-    "is_featured": true,
+    "is_featured": false,
     "likes_count": 0,
     "email": ""
   },
@@ -2179,7 +2179,7 @@
     "image_url": "https://rebriefed.ai/logo-square.svg",
     "url": "https://rebriefed.ai",
     "is_promoted": false,
-    "is_featured": false,
+    "is_featured": true,
     "likes_count": 0,
     "email": "contact@rebriefed.ai"
   },
@@ -2482,5 +2482,113 @@
     "is_featured": false,
     "likes_count": 0,
     "email": "takaraqode@gmail.com"
+  },
+  {
+    "id": "c1l2o3u4-d5e6-4a78-9012-cloudease0001",
+    "created_at": "2026-04-14T01:56:00Z",
+    "title": "CloudEASE Parking Management",
+    "description": "CloudEASE parking management system combines LPR cameras, barrier gates, pay stations, software & APIs for automated parking payment & access control.",
+    "image_url": "https://submitsaas.com/images/product-icon-5f9d7e7f-1412-4ac2-a024-848750d79e72.jpg",
+    "url": "https://www.parkingboxx.com/parking-management-systems",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "parkingboxx@inboxpad.com"
+  },
+  {
+    "id": "c2h3e4r5-i6c7-4h89-0123-chericheri001",
+    "created_at": "2026-04-13T23:56:00Z",
+    "title": "Chericherilady",
+    "description": "Italian Charms, Italian Charm Bracelet",
+    "image_url": "https://submitsaas.com/images/product-icon-50369fb2-2629-42ab-b252-e7766d1ad93a.jpg",
+    "url": "https://chericherilady.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "chericherilady@inboxpad.com"
+  },
+  {
+    "id": "b3i4d5m6-y7r8-4o89-0123-bidmyroom0001",
+    "created_at": "2026-04-13T23:50:00Z",
+    "title": "Bidmyroom",
+    "description": "BidMyRoom is a revolutionary zero-commission hotel booking platform where travelers post their stay requirements once and hotels compete by sending th",
+    "image_url": "https://submitsaas.com/images/product-icon-2d9ccdc0-bcf8-40f8-94c2-fdbae8223e4f.jpg",
+    "url": "https://bidmyroom.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "bidmyroom@inboxpad.com"
+  },
+  {
+    "id": "f4o5r6m7-b8l9-4e01-2345-formblends001",
+    "created_at": "2026-04-13T22:23:00Z",
+    "title": "FormBlends",
+    "description": "Doctor-backed GLP-1 weight loss, peptide and HRT programs. Semaglutide and tirzepatide delivered to your door. Real results, real providers.",
+    "image_url": "https://submitsaas.com/images/product-icon-df40de59-1043-42c8-8536-7f6ef1d2d77b.jpg",
+    "url": "https://formblends.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "formblends@inboxpad.com"
+  },
+  {
+    "id": "f5e6e7d8-m9a0-4n12-3456-feedmansion01",
+    "created_at": "2026-04-13T22:23:00Z",
+    "title": "FeedMansion",
+    "description": "Schedule and queue social posts with AI ghostwriters that turn your blogs, podcasts, videos, and events into on-brand content. MCP-native.",
+    "image_url": "https://submitsaas.com/images/product-icon-be2532c0-62f4-4aec-a3fc-25f242863f43.jpg",
+    "url": "https://feedmansion.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "feedmansion@inboxpad.com"
+  },
+  {
+    "id": "v6i7r8t9-u0a1-4l23-4567-virtualcv0001",
+    "created_at": "2026-04-13T20:27:00Z",
+    "title": "Virtual CV",
+    "description": "Turn your resume into a dynamic virtual CV with AI insights, job matching, and tailored applications to help you stand out and get hired faste",
+    "image_url": "https://submitsaas.com/images/product-icon-68701cf1-dbcb-4095-b0f9-7c043fe19b89.jpg",
+    "url": "https://www.wipperoz.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "wipperozlaunch@gmail.com"
+  },
+  {
+    "id": "d7u8o9s0-y1n2-4c34-5678-duosyncio0001",
+    "created_at": "2026-04-13T20:25:00Z",
+    "title": "DuoSync",
+    "description": "DuoSync is a period tracker built for men. See her cycle at a glance, get notifications before PMS, and receive custom suggestions to connect.",
+    "image_url": "https://submitsaas.com/images/product-icon-c2c70529-e8dd-4b69-9b28-d4140a5ef112.jpg",
+    "url": "https://duosync.io",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "ryanmolkentin657@gmail.com"
+  },
+  {
+    "id": "s8p9i0n2-d3e4-4x56-7890-spindexnet001",
+    "created_at": "2026-04-13T19:18:00Z",
+    "title": "Spindex",
+    "description": "Analyze real-time game data, test strategies, and track performance with live insights and simulations.",
+    "image_url": "https://submitsaas.com/images/product-icon-08f10fa2-8841-451c-b39f-10757763fbeb.png",
+    "url": "https://spindex.net",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "spindex@inboxpad.com"
+  },
+  {
+    "id": "c9l0e1a2-r3q4-4u56-7890-clearquote001",
+    "created_at": "2026-04-12T20:36:00Z",
+    "title": "ClearQuote",
+    "description": "AI proposals for insurance agents — branded, sent in minutes",
+    "image_url": "https://submitsaas.com/images/product-icon-c9d56b07-f55d-46e9-aa4f-5c2a6d848907.jpg",
+    "url": "https://clearquoteapp.com",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "clearquoteapp@inboxpad.com"
   }
 ]
