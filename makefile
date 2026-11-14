@@ -20,4 +20,7 @@ gmc:
 	git checkout -
 
 dev:
-	yarn && yarn dev
+	npm install && npm run dev
+
+# http://oksaas.localhost (proxy :80 partagé → astro dev :4321)
+.DEFAULT_GOAL := dev
