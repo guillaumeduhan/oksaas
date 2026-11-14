@@ -1,0 +1,15 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import List from "../../components/List.astro";
+import { pageCount, pageItems } from "../../lib/items";
+
+export function getStaticPaths() {
+  return Array.from({ length: pageCount - 1 }, (_, i) => ({ params: { page: String(i + 2) } }));
+}
+
+const page = Number(Astro.params.page);
+---
+
+<Layout>
+  <List items={pageItems(page)} page={page} pageCount={pageCount} />
+</Layout>

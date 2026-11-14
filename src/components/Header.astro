@@ -1,43 +1,18 @@
 ---
-import DarkMode from "./DarkMode.astro";
-import Logo from "./Logo.astro";
+const SUBMIT_URL = "https://tally.so/r/gDbJaO";
 ---
 
-<header
-  class="md:flex md:items-center md:justify-between w-full mx-auto text-center gap-4 my-12"
->
-  <div class="flex items-center justify-center gap-2">
-    <Logo />
-    <div class="flex flex-col items-start">
-      <p class="truncate whitespace-nowrap">
-        oksaas.co - The Best SaaS Drop, Every Week.
-      </p>
-      <p class="text-xs text-gray-500 dark:text-gray-400 truncate whitespace-nowrap">
-        10,983 visitors last week
-      </p>
-    </div>
-    <div class="fixed top-4 right-4">
-      <DarkMode />
-    </div>
-  </div>
-  <div class="my-4 md:my-0 flex items-center justify-center gap-4">
-    <a
-      href="https://codeg.link/oksaas"
-      target="blank"
-      class="truncate whitespace-nowrap flex items-center gap-2 text-primary-500"
-    >
-      <span>New Launch (free backlink)</span>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="32"
-        height="32"
-        viewBox="0 0 24 24"
-        ><!-- Icon from Material Symbols by Google - https://github.com/google/material-design-icons/blob/master/LICENSE -->
-        <path
-          fill="currentColor"
-          d="m14 18l-1.4-1.45L16.15 13H4v-2h12.15L12.6 7.45L14 6l6 6z"
-        ></path></svg
-      >
-    </a>
-  </div>
+<header class="flex flex-wrap items-center justify-between gap-4">
+  <a href="/" class="font-bold text-white no-underline hover:text-white">
+    oksaas<span class="text-accent">.co</span>
+  </a>
+  <a href={SUBMIT_URL} target="_blank" rel="noopener" class="text-accent no-underline">[ + submit launch ]</a>
 </header>
+
+<section class="flex flex-col gap-3">
+  <p class="text-muted">$ cat about.txt</p>
+  <h1 class="text-3xl leading-10 font-bold text-white">
+    The best SaaS drop, every week.<span class="text-accent">█</span>
+  </h1>
+  <p class="text-subtle">10,983 visitors last week. Free launch, free backlink.</p>
+</section>

@@ -1,0 +1,25 @@
+---
+import { domain, featured, withUtm } from "../lib/items";
+---
+
+<section aria-labelledby="t-feat" class="flex flex-col">
+  <h2 id="t-feat" class="mb-2 text-base font-normal text-muted">$ ls ./featured</h2>
+  {
+    featured.map((f) => (
+      <a
+        href={withUtm(f.url)}
+        target="_blank"
+        class="group flex items-center gap-4 py-2 text-body no-underline hover:bg-row-hover hover:text-body"
+      >
+        <span class="min-w-0 flex-auto truncate">
+          <span class="text-white group-hover:text-accent">{f.title}</span>{" "}
+          <span class="text-muted">— {domain(f.url)}</span>
+        </span>
+        <span class:list={["flex-none", f.is_promoted ? "text-sponsored" : "text-accent"]}>
+          {f.is_promoted ? "sponsored" : "featured"}
+        </span>
+        <span class="flex-none text-muted">↗</span>
+      </a>
+    ))
+  }
+</section>
