@@ -67,7 +67,7 @@
     "image_url": "/saas/peerlist.jpeg",
     "url": "https://codeg.link/peerlist",
     "is_promoted": false,
-    "is_featured": true,
+    "is_featured": false,
     "likes_count": 0,
     "email": ""
   },
@@ -1686,7 +1686,7 @@
     "description": "Independent technology news publication covering AI, startups, venture capital, cryptocurrency, and CEO profiles. Daily briefings on tech intelligence with 1,260+ subscribers.",
     "image_url": "https://ceowire.co/logo.svg",
     "url": "https://ceowire.co",
-    "is_promoted": true,
+    "is_promoted": false,
     "is_featured": false,
     "likes_count": 0,
     "email": ""
