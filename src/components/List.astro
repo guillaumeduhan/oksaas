@@ -13,7 +13,7 @@ const num = (i: number) => String(offset + i + 1).padStart(2, "0");
 ---
 
 <section aria-labelledby="i-latest" class="flex flex-col gap-4">
-  <h2 id="i-latest" class="text-xs font-normal text-muted">{page === 1 ? "LATEST" : `LATEST · PAGE ${page}`}</h2>
+  <h2 id="i-latest" class="text-sm font-normal text-muted">{page === 1 ? "LATEST" : `LATEST · PAGE ${page}`}</h2>
   <div class="border-t border-line">
     {
       items.map((p, i) => (
@@ -22,12 +22,12 @@ const num = (i: number) => String(offset + i + 1).padStart(2, "0");
           target="_blank"
           class="group flex items-baseline gap-6 border-b border-line py-3.5 text-soft no-underline hover:text-soft"
         >
-          <span class="w-8 flex-none text-xs text-faint">{num(i)}</span>
+          <span class="w-8 flex-none text-sm text-faint">{num(i)}</span>
           <span class="min-w-0 flex-auto truncate">
-            <span class="font-display text-xl leading-[26px] font-medium group-hover:text-accent">{p.title}</span>
-            <span class="text-xs text-dim">&#160;— {domain(p.url)}</span>
+            <span class="font-display text-2xl leading-[30px] font-medium group-hover:text-accent">{p.title}</span>
+            <span class="text-sm text-dim">&#160;— {domain(p.url)}</span>
           </span>
-          <span class="flex-none text-xs text-dim">{timeAgo(p.created_at)}</span>
+          <span class="flex-none text-sm text-dim">{timeAgo(p.created_at)}</span>
           <span class="flex-none text-faint transition-transform duration-[120ms] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent">
             ↗
           </span>
@@ -35,7 +35,7 @@ const num = (i: number) => String(offset + i + 1).padStart(2, "0");
       ))
     }
   </div>
-  <nav class="flex gap-6 text-[13px]">
+  <nav class="flex gap-6 text-sm">
     {page > 1 && <a href={pageHref(page - 1)} class="no-underline">← Newer</a>}
     {page < pageCount && <a href={pageHref(page + 1)} class="no-underline">Previous →</a>}
   </nav>

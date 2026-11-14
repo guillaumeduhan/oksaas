@@ -38,7 +38,7 @@
 
 @layer base {
   html {
-    @apply bg-bg font-mono text-sm leading-[22px] text-body;
+    @apply bg-bg font-mono text-base leading-6 text-body;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
