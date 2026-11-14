@@ -1,87 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;700&family=Geist:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Space+Grotesk:wght@400;500;700&display=swap");
 
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *));
+/* Design « A · Terminal » — every color lives here. */
+:root {
+  --bg: #0a0a0a;
+  --accent: #4ade80;
+  --accent-hover: #86efac;
+  --sponsored: #facc15;
+  --body: #d4d4d4;
+  --soft: #e5e7e5;
+  --subtle: #a3a3a3;
+  --muted: #737373;
+  --dim: #7b847e;
+  --faint: #4b524d;
+  --footer: #525252;
+  --line: #222823;
+  --row-hover: #111411;
+}
 
-@theme {
-  --color-primary-50: #edfff7;
-  --color-primary-100: #d5ffed;
-  --color-primary-200: #aeffdc;
-  --color-primary-300: #6fffc3;
-  --color-primary-400: #1fff9e;
-  --color-primary-500: #00e983;
-  --color-primary-600: #00c269;
-  --color-primary-700: #009856;
-  --color-primary-800: #047747;
-  --color-primary-900: #06613c;
-  --color-primary-950: #00371f;
+@theme inline {
+  --color-bg: var(--bg);
+  --color-accent: var(--accent);
+  --color-sponsored: var(--sponsored);
+  --color-body: var(--body);
+  --color-soft: var(--soft);
+  --color-subtle: var(--subtle);
+  --color-muted: var(--muted);
+  --color-dim: var(--dim);
+  --color-faint: var(--faint);
+  --color-footer: var(--footer);
+  --color-line: var(--line);
+  --color-row-hover: var(--row-hover);
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+  --font-display: "Space Grotesk", system-ui, sans-serif;
 }
 
 @layer base {
-  :root {
-    --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-      Roboto, Helvetica, Arial, sans-serif;
-  }
-
-  * {
-    @apply transition duration-100;
-  }
-
-  /* Application globale */
   html {
-    @apply bg-transparent text-neutral-900 dark:text-neutral-200 dark:bg-neutral-900;
-    font-family: var(--font-sans);
+    @apply bg-bg font-mono text-sm leading-[22px] text-body;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    @apply text-[16px];
   }
 
   a {
-    @apply cursor-pointer hover:text-primary-500 transition duration-300;
+    color: var(--accent);
   }
 
-  @keyframes fade-in-up {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  a:hover {
+    color: var(--accent-hover);
   }
 
-  .fade-in-up {
-    animation: fade-in-up 0.8s ease-out forwards;
-  }
-
-  .fade-in-up-1 {
-    animation: fade-in-up 1.6s ease-out forwards;
-  }
-
-  .fade-in-up-2 {
-    animation: fade-in-up 2.2s ease-out forwards;
-  }
-
-  .fade-in-up-3 {
-    animation: fade-in-up 3s ease-out forwards;
-  }
-
-  @keyframes floatUpFade {
-    0% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-
-    100% {
-      transform: translateY(-25%);
-      opacity: 0;
-    }
-  }
-
-  .float-up-fade {
-    animation: floatUpFade 1s linear infinite;
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
   }
 }

@@ -1,17 +1,11 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import Featured from "../components/Featured.astro";
 import List from "../components/List.astro";
-import data from "../../data.json";
-
-const sorted = [...data].sort((a, b) => {
-  if (a.is_promoted && !b.is_promoted) return -1;
-  if (!a.is_promoted && b.is_promoted) return 1;
-  if (a.is_featured && !b.is_featured) return -1;
-  if (!a.is_featured && b.is_featured) return 1;
-  return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
-});
+import { pageCount, pageItems } from "../lib/items";
 ---
 
 <Layout>
-  <List items={sorted} />
+  <Featured />
+  <List items={pageItems(1)} page={1} pageCount={pageCount} />
 </Layout>
