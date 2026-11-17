@@ -1,11 +1,29 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import Featured from "../components/Featured.astro";
+import Hero from "../components/Hero.astro";
 import List from "../components/List.astro";
-import { pageCount, pageItems } from "../lib/items";
+import { SITE, itemHref, pageCount, pageItems } from "../lib/items";
+
+const items = pageItems(1);
 ---
 
-<Layout>
+<Layout
+  jsonLd={[
+    {
+      "@type": "ItemList",
+      name: "Latest SaaS launches",
+      itemListOrder: "https://schema.org/ItemListOrderDescending",
+      itemListElement: items.map((item, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: `${SITE}${itemHref(item)}`,
+        name: item.title,
+      })),
+    },
+  ]}
+>
+  <Hero />
   <Featured />
-  <List items={pageItems(1)} page={1} pageCount={pageCount} />
+  <List items={items} page={1} pageCount={pageCount} />
 </Layout>

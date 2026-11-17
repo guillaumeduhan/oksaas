@@ -1,0 +1,103 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import { SITE, domain, formatDate, itemHref, items, latest, withUtm, type Item } from "../../lib/items";
+
+export function getStaticPaths() {
+  return items.map((item) => ({ params: { slug: item.slug }, props: { item } }));
+}
+
+const { item } = Astro.props as { item: Item };
+const host = domain(item.url);
+const summary = item.description?.trim() || `${item.title} is a SaaS product launched on OkSaaS.`;
+const metaDescription = summary.length > 155 ? `${summary.slice(0, 152).replace(/\s+\S*$/, "")}…` : summary;
+const path = itemHref(item);
+
+// Neighbouring launches in the "latest" order, for internal linking.
+const index = latest.findIndex((i) => i.id === item.id);
+const around = (index === -1 ? latest.slice(0, 7) : latest.slice(Math.max(0, index - 3), index + 4))
+  .filter((i) => i.id !== item.id)
+  .slice(0, 6);
+---
+
+<Layout
+  title={`${item.title} — ${host} | OkSaaS`}
+  description={metaDescription}
+  path={path}
+  ogType="article"
+  jsonLd={[
+    {
+      "@type": "SoftwareApplication",
+      name: item.title,
+      url: item.url,
+      description: summary,
+      ...(item.image_url?.startsWith("http") ? { image: item.image_url } : {}),
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      datePublished: item.created_at,
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "OkSaaS", item: `${SITE}/` },
+        { "@type": "ListItem", position: 2, name: item.title, item: `${SITE}${path}` },
+      ],
+    },
+  ]}
+>
+  <article class="flex flex-col gap-6">
+    <nav class="text-sm text-muted">
+      <a href="/" class="no-underline">~</a> / saas / <span class="text-subtle">{item.slug}</span>
+    </nav>
+
+    <div class="flex items-center gap-5">
+      {
+        item.image_url?.startsWith("http") && (
+          <img
+            src={item.image_url}
+            alt={`${item.title} logo`}
+            width="64"
+            height="64"
+            class="size-16 flex-none rounded-lg border border-line bg-row-hover object-contain"
+            onerror="this.remove()"
+          />
+        )
+      }
+      <div class="flex min-w-0 flex-col gap-1">
+        <h1 class="font-display text-4xl leading-[44px] font-bold break-words text-white">{item.title}</h1>
+        <p class="text-sm text-dim">
+          {host} · launched <time datetime={item.created_at}>{formatDate(item.created_at)}</time>
+        </p>
+      </div>
+    </div>
+
+    <p class="text-lg leading-8 whitespace-pre-line text-soft">{summary}</p>
+
+    <a href={withUtm(item.url)} target="_blank" rel="noopener" class="self-start no-underline">
+      [ visit {host} ↗ ]
+    </a>
+  </article>
+
+  {
+    around.length > 0 && (
+      <section aria-labelledby="more" class="flex flex-col gap-4">
+        <h2 id="more" class="text-sm font-normal text-muted">
+          MORE LAUNCHES
+        </h2>
+        <div class="border-t border-line">
+          {around.map((p) => (
+            <a
+              href={itemHref(p)}
+              class="group flex items-baseline gap-4 border-b border-line py-3 text-soft no-underline hover:text-soft"
+            >
+              <span class="min-w-0 flex-auto truncate">
+                <span class="font-display text-xl font-medium group-hover:text-accent">{p.title}</span>
+                <span class="text-sm text-dim">&#160;— {domain(p.url)}</span>
+              </span>
+              <span class="flex-none text-faint group-hover:text-accent">→</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    )
+  }
+</Layout>

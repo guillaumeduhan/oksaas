@@ -1,15 +1,23 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
+import Hero from "../../components/Hero.astro";
 import List from "../../components/List.astro";
-import { pageCount, pageItems } from "../../lib/items";
+import { pageCount, pageHref, pageItems } from "../../lib/items";
 
 export function getStaticPaths() {
   return Array.from({ length: pageCount - 1 }, (_, i) => ({ params: { page: String(i + 2) } }));
 }
 
 const page = Number(Astro.params.page);
+const items = pageItems(page);
+const titles = items.slice(0, 3).map((i) => i.title).join(", ");
 ---
 
-<Layout>
-  <List items={pageItems(page)} page={page} pageCount={pageCount} />
+<Layout
+  title={`Latest SaaS launches — Page ${page} of ${pageCount} | OkSaaS`}
+  description={`New SaaS products launched on OkSaaS, page ${page} of ${pageCount}: ${titles} and more.`}
+  path={pageHref(page)}
+>
+  <Hero title={`Latest SaaS launches, page ${page}.`} />
+  <List items={items} page={page} pageCount={pageCount} />
 </Layout>

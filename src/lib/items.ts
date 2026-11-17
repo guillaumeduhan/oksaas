@@ -7,11 +7,40 @@ export interface Item {
   created_at: string;
   is_promoted?: boolean;
   is_featured?: boolean;
+  description?: string;
+  image_url?: string;
+  slug: string;
 }
 
+export const SITE = "https://www.oksaas.co";
 export const PAGE_SIZE = 50;
 
-const items = data as Item[];
+function slugify(title: string): string {
+  return title
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 80)
+    .replace(/-+$/, "");
+}
+
+// Slugs are assigned oldest first, so an existing page keeps its URL when newer
+// launches with the same name arrive (they get -2, -3…).
+const taken = new Set<string>();
+const slugById = new Map<string, string>();
+for (const raw of [...(data as Omit<Item, "slug">[])].sort((a, b) => a.created_at.localeCompare(b.created_at))) {
+  const base = slugify(raw.title) || raw.id.slice(0, 8);
+  let slug = base;
+  for (let n = 2; taken.has(slug); n++) slug = `${base}-${n}`;
+  taken.add(slug);
+  slugById.set(raw.id, slug);
+}
+
+export const items: Item[] = (data as Omit<Item, "slug">[]).map((i) => ({ ...i, slug: slugById.get(i.id)! }));
+
+export const itemHref = (item: Item) => `/saas/${item.slug}`;
 
 // Sponsored (promoted) first, then featured.
 export const featured = [
@@ -28,6 +57,9 @@ export const pageCount = Math.max(1, Math.ceil(latest.length / PAGE_SIZE));
 export const pageItems = (page: number) => latest.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
 
 export const pageHref = (page: number) => (page <= 1 ? "/" : `/page/${page}`);
+
+export const formatDate = (date: string) =>
+  new Date(date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
 
 export function domain(url: string): string {
   try {
