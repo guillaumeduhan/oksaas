@@ -1,0 +1,34 @@
+---
+import { categories, categoryHref } from "../lib/categories";
+import { itemsInCategory } from "../lib/items";
+
+interface Props {
+  current?: string;
+}
+
+const { current } = Astro.props;
+const shown = categories
+  .filter((c) => c.slug !== "other")
+  .map((c) => ({ ...c, count: itemsInCategory(c.slug).length }))
+  .filter((c) => c.count > 0);
+---
+
+<nav aria-labelledby="t-cats" class="flex flex-col gap-2">
+  <h2 id="t-cats" class="text-base font-normal text-muted">$ ls ./categories</h2>
+  <ul class="flex flex-wrap gap-x-5 gap-y-1.5 text-sm">
+    {
+      shown.map((c) => (
+        <li>
+          <a
+            href={categoryHref(c.slug)}
+            aria-current={c.slug === current ? "page" : undefined}
+            class:list={["no-underline", c.slug === current ? "text-white" : "text-accent"]}
+          >
+            {c.name.toLowerCase()}
+            <span class="text-faint">({c.count})</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>

@@ -1,5 +1,5 @@
 ---
-import { domain, featured, withUtm } from "../lib/items";
+import { domain, featured, outboundHref, outboundRel } from "../lib/items";
 ---
 
 <section aria-labelledby="t-feat" class="flex flex-col">
@@ -7,8 +7,9 @@ import { domain, featured, withUtm } from "../lib/items";
   {
     featured.map((f) => (
       <a
-        href={withUtm(f.url)}
+        href={outboundHref(f)}
         target="_blank"
+        rel={outboundRel(f)}
         class="group flex items-center gap-4 py-2 text-body no-underline hover:bg-row-hover hover:text-body"
       >
         <span class="min-w-0 flex-auto truncate">

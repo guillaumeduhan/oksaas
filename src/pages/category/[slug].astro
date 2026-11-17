@@ -1,0 +1,89 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Categories from "../../components/Categories.astro";
+import Hero from "../../components/Hero.astro";
+import List from "../../components/List.astro";
+import { categories, categoryHref, type Category } from "../../lib/categories";
+import { SITE, itemHref, itemsInCategory } from "../../lib/items";
+
+export function getStaticPaths() {
+  return categories
+    .filter((c) => c.slug !== "other" && itemsInCategory(c.slug).length > 0)
+    .map((category) => ({ params: { slug: category.slug }, props: { category } }));
+}
+
+const { category } = Astro.props as { category: Category };
+const items = itemsInCategory(category.slug);
+const path = categoryHref(category.slug);
+const heading = `Best ${category.plural}`;
+const newest = items
+  .slice(0, 3)
+  .map((i) => i.title)
+  .join(", ");
+
+const faq = [
+  {
+    q: `What are the newest ${category.plural} on OkSaaS?`,
+    a: `The latest ${category.plural} launched on OkSaaS are ${newest}. The list above is sorted newest first and updated with every batch of launches.`,
+  },
+  {
+    q: `How do I choose between ${category.plural}?`,
+    a: category.criteria,
+  },
+  {
+    q: `How can I list my product in ${category.name}?`,
+    a: "Submit it for free with the “submit launch” form. Every accepted product gets its own page on OkSaaS with a dofollow backlink, and appears in the matching category.",
+  },
+];
+---
+
+<Layout
+  title={`${heading} (${items.length} tools) | OkSaaS`}
+  description={`${items.length} ${category.plural} launched on OkSaaS, newest first: ${newest} and more.`}
+  path={path}
+  jsonLd={[
+    {
+      "@type": "CollectionPage",
+      name: heading,
+      url: `${SITE}${path}`,
+      mainEntity: {
+        "@type": "ItemList",
+        numberOfItems: items.length,
+        itemListElement: items.map((item, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: `${SITE}${itemHref(item)}`,
+          name: item.title,
+        })),
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faq.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "OkSaaS", item: `${SITE}/` },
+        { "@type": "ListItem", position: 2, name: category.name, item: `${SITE}${path}` },
+      ],
+    },
+  ]}
+>
+  <Hero title={`${heading}.`} />
+  <p class="-mt-8 text-lg leading-8 text-soft">{category.intro}</p>
+  <Categories current={category.slug} />
+  <List items={items} page={1} pageCount={1} heading={`${category.name.toUpperCase()} · ${items.length}`} />
+
+  <section aria-labelledby="faq" class="flex flex-col gap-4">
+    <h2 id="faq" class="text-sm font-normal text-muted">FAQ</h2>
+    {
+      faq.map((f) => (
+        <div class="flex flex-col gap-1">
+          <h3 class="font-display text-xl font-medium text-white">{f.q}</h3>
+          <p class="text-soft">{f.a}</p>
+        </div>
+      ))
+    }
+  </section>
+</Layout>
