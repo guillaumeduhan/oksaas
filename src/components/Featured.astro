@@ -1,5 +1,5 @@
 ---
-import { domain, featured, outboundHref, outboundRel } from "../lib/items";
+import { featured, label, outboundHref, outboundRel } from "../lib/items";
 ---
 
 <section aria-labelledby="t-feat" class="flex flex-col">
@@ -14,7 +14,7 @@ import { domain, featured, outboundHref, outboundRel } from "../lib/items";
       >
         <span class="min-w-0 flex-auto truncate">
           <span class="text-white group-hover:text-accent">{f.title}</span>{" "}
-          <span class="text-muted">— {domain(f.url)}</span>
+          <span class="text-muted">— {label(f)}</span>
         </span>
         <span class:list={["flex-none", f.is_promoted ? "text-sponsored" : "text-accent"]}>
           {f.is_promoted ? "sponsored" : "featured"}

@@ -10,6 +10,8 @@ export interface Item {
   description?: string;
   image_url?: string;
   category?: string;
+  /** Short product type shown in lists, e.g. "Link Shortener". */
+  tag?: string;
   /** Where clicks go when it differs from `url` (affiliate/referral link). `url` stays the displayed site. */
   link?: string;
   slug: string;
@@ -68,6 +70,9 @@ export const pageHref = (page: number) => (page <= 1 ? "/" : `/page/${page}`);
 
 export const formatDate = (date: string) =>
   new Date(date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" });
+
+/** What lists show next to the name: the product type, else its domain. */
+export const label = (item: Item) => item.tag || domain(item.url);
 
 export function domain(url: string): string {
   try {

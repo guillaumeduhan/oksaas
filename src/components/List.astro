@@ -1,5 +1,5 @@
 ---
-import { PAGE_SIZE, domain, itemHref, outboundHref, outboundRel, pageHref, timeAgo, type Item } from "../lib/items";
+import { PAGE_SIZE, itemHref, label, outboundHref, outboundRel, pageHref, timeAgo, type Item } from "../lib/items";
 
 interface Props {
   items: Item[];
@@ -27,7 +27,7 @@ const num = (i: number) => String(offset + i + 1).padStart(2, "0");
             >
               {p.title}
             </a>
-            <span class="text-sm text-dim">&#160;— {domain(p.url)}</span>
+            <span class="text-sm text-dim">&#160;— {label(p)}</span>
           </span>
           <span class="flex-none text-sm text-dim">{timeAgo(p.created_at)}</span>
           <a

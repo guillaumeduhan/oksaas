@@ -1,7 +1,7 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
 import { categoryBySlug, categoryHref } from "../../lib/categories";
-import { SITE, domain, formatDate, itemHref, items, itemsInCategory, latest, outboundHref, outboundRel, type Item } from "../../lib/items";
+import { SITE, domain, formatDate, itemHref, items, itemsInCategory, label, latest, outboundHref, outboundRel, type Item } from "../../lib/items";
 
 export function getStaticPaths() {
   return items.map((item) => ({ params: { slug: item.slug }, props: { item } }));
@@ -30,7 +30,7 @@ const alternatives = byDistance(category ? itemsInCategory(category.slug) : late
 ---
 
 <Layout
-  title={`${item.title} — ${host} | OkSaaS`}
+  title={`${item.title} — ${label(item)} | OkSaaS`}
   description={metaDescription}
   path={path}
   ogType="article"
@@ -80,6 +80,7 @@ const alternatives = byDistance(category ? itemsInCategory(category.slug) : late
       <div class="flex min-w-0 flex-col gap-1">
         <h1 class="font-display text-4xl leading-[44px] font-bold break-words text-white">{item.title}</h1>
         <p class="text-sm text-dim">
+          {item.tag && <span class="text-subtle">{item.tag} · </span>}
           {host} · launched <time datetime={item.created_at}>{formatDate(item.created_at)}</time>
           {category && (
             <>
@@ -119,7 +120,7 @@ const alternatives = byDistance(category ? itemsInCategory(category.slug) : late
             >
               <span class="min-w-0 flex-auto truncate">
                 <span class="font-display text-xl font-medium group-hover:text-accent">{p.title}</span>
-                <span class="text-sm text-dim">&#160;— {p.description || domain(p.url)}</span>
+                <span class="text-sm text-dim">&#160;— {label(p)}</span>
               </span>
               <span class="flex-none text-faint group-hover:text-accent">→</span>
             </a>
