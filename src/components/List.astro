@@ -18,12 +18,12 @@ const num = (i: number) => String(offset + i + 1).padStart(2, "0");
   <div class="border-t border-line">
     {
       items.map((p, i) => (
-        <div class="group relative flex items-baseline gap-6 border-b border-line py-3.5 text-soft">
+        <div class="group relative flex items-baseline gap-6 border-b border-line py-2.5 text-soft">
           <span class="w-8 flex-none text-sm text-faint">{num(i)}</span>
           <span class="min-w-0 flex-auto truncate">
             <a
               href={itemHref(p)}
-              class="font-display text-2xl leading-[30px] font-medium text-soft no-underline group-hover:text-accent after:absolute after:inset-0"
+              class="font-display text-lg leading-7 font-medium text-soft no-underline group-hover:text-accent after:absolute after:inset-0"
             >
               {p.title}
             </a>
