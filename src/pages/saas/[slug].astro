@@ -1,6 +1,7 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-import { SITE, domain, formatDate, itemHref, items, latest, withUtm, type Item } from "../../lib/items";
+import { categoryBySlug, categoryHref } from "../../lib/categories";
+import { SITE, domain, formatDate, itemHref, items, itemsInCategory, latest, outboundHref, outboundRel, type Item } from "../../lib/items";
 
 export function getStaticPaths() {
   return items.map((item) => ({ params: { slug: item.slug }, props: { item } }));
@@ -12,11 +13,20 @@ const summary = item.description?.trim() || `${item.title} is a SaaS product lau
 const metaDescription = summary.length > 155 ? `${summary.slice(0, 152).replace(/\s+\S*$/, "")}…` : summary;
 const path = itemHref(item);
 
-// Neighbouring launches in the "latest" order, for internal linking.
-const index = latest.findIndex((i) => i.id === item.id);
-const around = (index === -1 ? latest.slice(0, 7) : latest.slice(Math.max(0, index - 3), index + 4))
-  .filter((i) => i.id !== item.id)
-  .slice(0, 6);
+const category = item.category && item.category !== "other" ? categoryBySlug.get(item.category) : undefined;
+
+// Alternatives: other products of the same category, closest launch dates first.
+// Falls back to neighbouring launches when the product has no category.
+const byDistance = (pool: Item[]) =>
+  pool
+    .filter((i) => i.id !== item.id)
+    .sort(
+      (a, b) =>
+        Math.abs(Date.parse(a.created_at) - Date.parse(item.created_at)) -
+        Math.abs(Date.parse(b.created_at) - Date.parse(item.created_at)),
+    )
+    .slice(0, 6);
+const alternatives = byDistance(category ? itemsInCategory(category.slug) : latest);
 ---
 
 <Layout
@@ -39,14 +49,19 @@ const around = (index === -1 ? latest.slice(0, 7) : latest.slice(Math.max(0, ind
       "@type": "BreadcrumbList",
       itemListElement: [
         { "@type": "ListItem", position: 1, name: "OkSaaS", item: `${SITE}/` },
-        { "@type": "ListItem", position: 2, name: item.title, item: `${SITE}${path}` },
+        ...(category
+          ? [{ "@type": "ListItem", position: 2, name: category.name, item: `${SITE}${categoryHref(category.slug)}` }]
+          : []),
+        { "@type": "ListItem", position: category ? 3 : 2, name: item.title, item: `${SITE}${path}` },
       ],
     },
   ]}
 >
   <article class="flex flex-col gap-6">
     <nav class="text-sm text-muted">
-      <a href="/" class="no-underline">~</a> / saas / <span class="text-subtle">{item.slug}</span>
+      <a href="/" class="no-underline">~</a> /{" "}
+      {category ? <a href={categoryHref(category.slug)} class="no-underline">{category.slug}</a> : "saas"} /{" "}
+      <span class="text-subtle">{item.slug}</span>
     </nav>
 
     <div class="flex items-center gap-5">
@@ -66,37 +81,55 @@ const around = (index === -1 ? latest.slice(0, 7) : latest.slice(Math.max(0, ind
         <h1 class="font-display text-4xl leading-[44px] font-bold break-words text-white">{item.title}</h1>
         <p class="text-sm text-dim">
           {host} · launched <time datetime={item.created_at}>{formatDate(item.created_at)}</time>
+          {category && (
+            <>
+              {" · "}
+              <a href={categoryHref(category.slug)} class="no-underline">
+                {category.name}
+              </a>
+            </>
+          )}
         </p>
       </div>
     </div>
 
     <p class="text-lg leading-8 whitespace-pre-line text-soft">{summary}</p>
 
-    <a href={withUtm(item.url)} target="_blank" rel="noopener" class="self-start no-underline">
+    <a href={outboundHref(item)} target="_blank" rel={outboundRel(item)} class="self-start no-underline">
       [ visit {host} ↗ ]
     </a>
   </article>
 
   {
-    around.length > 0 && (
+    alternatives.length > 0 && (
       <section aria-labelledby="more" class="flex flex-col gap-4">
         <h2 id="more" class="text-sm font-normal text-muted">
-          MORE LAUNCHES
+          {category ? `ALTERNATIVES TO ${item.title.toUpperCase()}` : "MORE LAUNCHES"}
         </h2>
+        {category && (
+          <p class="text-soft">
+            {item.title} is listed in {category.name}. Other {category.plural} launched around the same time:
+          </p>
+        )}
         <div class="border-t border-line">
-          {around.map((p) => (
+          {alternatives.map((p) => (
             <a
               href={itemHref(p)}
               class="group flex items-baseline gap-4 border-b border-line py-3 text-soft no-underline hover:text-soft"
             >
               <span class="min-w-0 flex-auto truncate">
                 <span class="font-display text-xl font-medium group-hover:text-accent">{p.title}</span>
-                <span class="text-sm text-dim">&#160;— {domain(p.url)}</span>
+                <span class="text-sm text-dim">&#160;— {p.description || domain(p.url)}</span>
               </span>
               <span class="flex-none text-faint group-hover:text-accent">→</span>
             </a>
           ))}
         </div>
+        {category && (
+          <a href={categoryHref(category.slug)} class="self-start text-sm no-underline">
+            [ all {category.plural} → ]
+          </a>
+        )}
       </section>
     )
   }

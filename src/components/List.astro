@@ -1,19 +1,20 @@
 ---
-import { PAGE_SIZE, domain, itemHref, pageHref, timeAgo, withUtm, type Item } from "../lib/items";
+import { PAGE_SIZE, domain, itemHref, outboundHref, outboundRel, pageHref, timeAgo, type Item } from "../lib/items";
 
 interface Props {
   items: Item[];
   page: number;
   pageCount: number;
+  heading?: string;
 }
 
-const { items, page, pageCount } = Astro.props;
+const { items, page, pageCount, heading = page === 1 ? "LATEST" : `LATEST · PAGE ${page}` } = Astro.props;
 const offset = (page - 1) * PAGE_SIZE;
 const num = (i: number) => String(offset + i + 1).padStart(2, "0");
 ---
 
 <section aria-labelledby="i-latest" class="flex flex-col gap-4">
-  <h2 id="i-latest" class="text-sm font-normal text-muted">{page === 1 ? "LATEST" : `LATEST · PAGE ${page}`}</h2>
+  <h2 id="i-latest" class="text-sm font-normal text-muted">{heading}</h2>
   <div class="border-t border-line">
     {
       items.map((p, i) => (
@@ -30,9 +31,9 @@ const num = (i: number) => String(offset + i + 1).padStart(2, "0");
           </span>
           <span class="flex-none text-sm text-dim">{timeAgo(p.created_at)}</span>
           <a
-            href={withUtm(p.url)}
+            href={outboundHref(p)}
             target="_blank"
-            rel="noopener"
+            rel={outboundRel(p)}
             aria-label={`Visit ${p.title}`}
             class="relative z-10 flex-none text-faint no-underline transition-transform duration-[120ms] hover:translate-x-0.5 hover:-translate-y-0.5 hover:text-accent"
           >

@@ -9,6 +9,9 @@ export interface Item {
   is_featured?: boolean;
   description?: string;
   image_url?: string;
+  category?: string;
+  /** Where clicks go when it differs from `url` (affiliate/referral link). `url` stays the displayed site. */
+  link?: string;
   slug: string;
 }
 
@@ -42,6 +45,11 @@ export const items: Item[] = (data as Omit<Item, "slug">[]).map((i) => ({ ...i, 
 
 export const itemHref = (item: Item) => `/saas/${item.slug}`;
 
+const newestFirst = (a: Item, b: Item) => b.created_at.localeCompare(a.created_at);
+
+/** Every listing of a category, newest first (sponsored and featured included). */
+export const itemsInCategory = (slug: string) => items.filter((i) => i.category === slug).sort(newestFirst);
+
 // Sponsored (promoted) first, then featured.
 export const featured = [
   ...items.filter((i) => i.is_promoted),
@@ -68,6 +76,12 @@ export function domain(url: string): string {
     return url;
   }
 }
+
+/** Outbound href for a listing: its referral link as-is, else its site with utm_source. */
+export const outboundHref = (item: Item) => item.link ?? withUtm(item.url);
+
+/** rel for outbound links: paid placements are marked sponsored, free listings stay dofollow. */
+export const outboundRel = (item: Item) => (item.is_promoted || item.link ? "sponsored noopener" : "noopener");
 
 export function withUtm(url: string): string {
   try {

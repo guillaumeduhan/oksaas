@@ -34,15 +34,17 @@ Dates are relative to the current year. Convert them to ISO 8601 UTC (`YYYY-MM-D
      "description": "<Description>",
      "image_url": "<image_url as provided>",
      "url": "<URL as provided>",
+     "category": "<category slug>",
      "is_promoted": false,
      "is_featured": false,
      "likes_count": 0,
      "email": "<email>"
    }
    ```
-6. **Append** the new entries at the end of the array in `data.json`, before the final `]`. Add a comma after the previous last entry.
-7. **Validate JSON**: `python3 -c "import json; json.load(open('data.json')); print('valid')"`.
-8. **Generate the tweet** (see format below).
+6. **Pick a category** for each entry: one slug from `src/lib/categories.ts` (`ai-image-video`, `ai-writing`, `ai-agents`, `developer-tools`, `no-code`, `marketing-seo`, `social-media`, `sales-crm`, `customer-support`, `productivity`, `design`, `finance`, `ecommerce`, `hr-recruiting`, `education`, `health`, `calculators-utilities`, `directories`, `security-privacy`, `travel-lifestyle`, `business-services`, `other`). Choose the product's primary purpose; use `other` only as a last resort. The category drives the `/category/<slug>` pages and the "Alternatives to" block on product pages.
+7. **Append** the new entries at the end of the array in `data.json`, before the final `]`. Add a comma after the previous last entry.
+8. **Validate JSON**: `python3 -c "import json; json.load(open('data.json')); print('valid')"`.
+9. **Generate the tweet** (see format below).
 
 ## Rules
 
@@ -51,6 +53,8 @@ Dates are relative to the current year. Convert them to ISO 8601 UTC (`YYYY-MM-D
 - Long descriptions (multi-paragraph) should be trimmed to a concise 1-2 sentence summary that fits on one line.
 - Do not set `is_promoted` or `is_featured` to true for new submissions.
 - `likes_count` always starts at 0.
+- Optional `link`: only for referral/affiliate placements — clicks go to `link`, while `url` stays the displayed site.
+- Every `id` must be unique: always generate a fresh UUID, never reuse or hand-write one (product page slugs are keyed by id).
 - Preserve entry order: most recent submission first within the appended block (matches how the user pastes them).
 - Skip entries missing critical fields (URL or title).
 
