@@ -1,5 +1,5 @@
 ---
-import { PAGE_SIZE, domain, pageHref, timeAgo, withUtm, type Item } from "../lib/items";
+import { PAGE_SIZE, domain, itemHref, pageHref, timeAgo, withUtm, type Item } from "../lib/items";
 
 interface Props {
   items: Item[];
@@ -17,21 +17,28 @@ const num = (i: number) => String(offset + i + 1).padStart(2, "0");
   <div class="border-t border-line">
     {
       items.map((p, i) => (
-        <a
-          href={withUtm(p.url)}
-          target="_blank"
-          class="group flex items-baseline gap-6 border-b border-line py-3.5 text-soft no-underline hover:text-soft"
-        >
+        <div class="group relative flex items-baseline gap-6 border-b border-line py-3.5 text-soft">
           <span class="w-8 flex-none text-sm text-faint">{num(i)}</span>
           <span class="min-w-0 flex-auto truncate">
-            <span class="font-display text-2xl leading-[30px] font-medium group-hover:text-accent">{p.title}</span>
+            <a
+              href={itemHref(p)}
+              class="font-display text-2xl leading-[30px] font-medium text-soft no-underline group-hover:text-accent after:absolute after:inset-0"
+            >
+              {p.title}
+            </a>
             <span class="text-sm text-dim">&#160;— {domain(p.url)}</span>
           </span>
           <span class="flex-none text-sm text-dim">{timeAgo(p.created_at)}</span>
-          <span class="flex-none text-faint transition-transform duration-[120ms] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-accent">
+          <a
+            href={withUtm(p.url)}
+            target="_blank"
+            rel="noopener"
+            aria-label={`Visit ${p.title}`}
+            class="relative z-10 flex-none text-faint no-underline transition-transform duration-[120ms] hover:translate-x-0.5 hover:-translate-y-0.5 hover:text-accent"
+          >
             ↗
-          </span>
-        </a>
+          </a>
+        </div>
       ))
     }
   </div>

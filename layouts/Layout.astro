@@ -2,12 +2,27 @@
 import "../globals.css";
 import Header from "../src/components/Header.astro";
 import Footer from "../src/components/Footer.astro";
+import { SITE } from "../src/lib/items";
 
-const title = "OkSaaS — The Best SaaS Drop, Every Week.";
-const description =
-  "OkSaaS curates the best new SaaS products every week. Discover trending tools before everyone else and submit your SaaS for free.";
-const url = "https://oksaas.co";
-const image = `${url}/og-image.png`; // 1200x630
+interface Props {
+  title?: string;
+  description?: string;
+  /** Path of this page, e.g. "/page/2" — used for canonical and og:url. */
+  path?: string;
+  ogType?: "website" | "article";
+  /** Extra JSON-LD objects for this page. */
+  jsonLd?: object[];
+}
+
+const {
+  title = "OkSaaS — The Best SaaS Drop, Every Week.",
+  description = "OkSaaS curates the best new SaaS products every week. Discover trending tools before everyone else and submit your SaaS for free.",
+  path = "/",
+  ogType = "website",
+  jsonLd = [],
+} = Astro.props;
+const url = `${SITE}${path}`;
+const image = `${SITE}/og-image.png`; // 1200x630
 ---
 
 <!doctype html>
@@ -20,10 +35,6 @@ const image = `${url}/og-image.png`; // 1200x630
     <!-- Primary SEO -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta
-      name="keywords"
-      content="saas directory, best saas products, weekly saas drop, new saas tools, trending saas, startup tools, software discovery, saas launch"
-    />
 
     <!-- Robots -->
     <meta name="robots" content="index, follow" />
@@ -42,7 +53,7 @@ const image = `${url}/og-image.png`; // 1200x630
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={url} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -59,42 +70,20 @@ const image = `${url}/og-image.png`; // 1200x630
     <meta name="twitter:image" content={image} />
     <meta name="twitter:creator" content="@oksaas" />
 
-    <!-- JSON-LD: SaaS directory -->
-    <script type="application/ld+json">
-      {
+    <!-- JSON-LD -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "OkSaaS",
-        "url": "https://oksaas.co",
-        "description": "The best SaaS drop, every week.",
-        "publisher": {
-          "@type": "Organization",
-          "name": "OkSaaS",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://oksaas.co/logo.png"
-          }
-        },
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://oksaas.co/search?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        },
-        "sameAs": ["https://x.com/oksaas"]
-      }
-    </script>
-
-    <!-- JSON-LD: Directory / ItemList -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Weekly SaaS Drops",
-        "url": "https://oksaas.co",
-        "itemListOrder": "Descending",
-        "description": "The best new SaaS products, curated every week."
-      }
-    </script>
+        name: "OkSaaS",
+        url: `${SITE}/`,
+        description: "The best SaaS drop, every week.",
+        publisher: { "@type": "Organization", name: "OkSaaS", logo: { "@type": "ImageObject", url: `${SITE}/logo.png` } },
+        sameAs: ["https://x.com/oksaas"],
+      })}
+    />
+    {jsonLd.map((ld) => <script type="application/ld+json" set:html={JSON.stringify({ "@context": "https://schema.org", ...ld })} />)}
 
     <!-- Theme -->
     <meta name="theme-color" content="#0a0a0a" />
