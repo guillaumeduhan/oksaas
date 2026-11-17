@@ -17,6 +17,10 @@
   --footer: #525252;
   --line: #222823;
   --row-hover: #111411;
+  --sponsored-bg: color-mix(in srgb, var(--sponsored) 8%, transparent);
+  --sponsored-bg-hover: color-mix(in srgb, var(--sponsored) 14%, transparent);
+  --accent-bg: color-mix(in srgb, var(--accent) 7%, transparent);
+  --accent-bg-hover: color-mix(in srgb, var(--accent) 13%, transparent);
 }
 
 @theme inline {
@@ -32,6 +36,10 @@
   --color-footer: var(--footer);
   --color-line: var(--line);
   --color-row-hover: var(--row-hover);
+  --color-sponsored-bg: var(--sponsored-bg);
+  --color-sponsored-bg-hover: var(--sponsored-bg-hover);
+  --color-accent-bg: var(--accent-bg);
+  --color-accent-bg-hover: var(--accent-bg-hover);
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --font-display: "Space Grotesk", system-ui, sans-serif;
 }

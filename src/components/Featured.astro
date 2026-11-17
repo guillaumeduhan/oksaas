@@ -2,7 +2,7 @@
 import { featured, label, outboundHref, outboundRel } from "../lib/items";
 ---
 
-<section aria-labelledby="t-feat" class="flex flex-col">
+<section aria-labelledby="t-feat" class="flex flex-col gap-1">
   <h2 id="t-feat" class="mb-2 text-base font-normal text-muted">$ ls ./featured</h2>
   {
     featured.map((f) => (
@@ -10,16 +10,18 @@ import { featured, label, outboundHref, outboundRel } from "../lib/items";
         href={outboundHref(f)}
         target="_blank"
         rel={outboundRel(f)}
-        class="group flex items-center gap-4 py-2 text-body no-underline hover:bg-row-hover hover:text-body"
+        class:list={[
+          "group flex items-center gap-4 px-3 py-2 no-underline",
+          f.is_promoted
+            ? "bg-sponsored-bg text-sponsored hover:bg-sponsored-bg-hover hover:text-sponsored"
+            : "bg-accent-bg text-accent hover:bg-accent-bg-hover hover:text-accent",
+        ]}
       >
         <span class="min-w-0 flex-auto truncate">
-          <span class="text-white group-hover:text-accent">{f.title}</span>{" "}
-          <span class="text-muted">— {label(f)}</span>
+          <span>{f.title}</span> <span class="text-muted">— {label(f)}</span>
         </span>
-        <span class:list={["flex-none", f.is_promoted ? "text-sponsored" : "text-accent"]}>
-          {f.is_promoted ? "sponsored" : "featured"}
-        </span>
-        <span class="flex-none text-muted">↗</span>
+        <span class="flex-none">{f.is_promoted ? "sponsored" : "featured"}</span>
+        <span class="flex-none">↗</span>
       </a>
     ))
   }
