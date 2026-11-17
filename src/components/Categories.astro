@@ -13,7 +13,8 @@ const shown = categories
   .filter((c) => c.count > 0);
 ---
 
-<nav aria-labelledby="t-cats" class="flex flex-col gap-2">
+<!-- Hidden on purpose: kept in the HTML for crawlers, not shown. -->
+<nav aria-labelledby="t-cats" class="hidden">
   <h2 id="t-cats" class="text-base font-normal text-muted">$ ls ./categories</h2>
   <ul class="flex flex-wrap gap-x-5 gap-y-1.5 text-sm">
     {

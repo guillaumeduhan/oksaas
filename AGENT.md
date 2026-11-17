@@ -35,6 +35,7 @@ Dates are relative to the current year. Convert them to ISO 8601 UTC (`YYYY-MM-D
      "image_url": "<image_url as provided>",
      "url": "<URL as provided>",
      "category": "<category slug>",
+     "tag": "<product type>",
      "is_promoted": false,
      "is_featured": false,
      "likes_count": 0,
@@ -42,6 +43,7 @@ Dates are relative to the current year. Convert them to ISO 8601 UTC (`YYYY-MM-D
    }
    ```
 6. **Pick a category** for each entry: one slug from `src/lib/categories.ts` (`ai-image-video`, `ai-writing`, `ai-agents`, `developer-tools`, `no-code`, `marketing-seo`, `social-media`, `sales-crm`, `customer-support`, `productivity`, `design`, `finance`, `ecommerce`, `hr-recruiting`, `education`, `health`, `calculators-utilities`, `directories`, `security-privacy`, `travel-lifestyle`, `business-services`, `other`). Choose the product's primary purpose; use `other` only as a last resort. The category drives the `/category/<slug>` pages and the "Alternatives to" block on product pages.
+   Also write a `tag`: the product type shown in lists instead of the domain — English, Title Case, 1–3 words, specific (e.g. `Link Shortener`, `Form Builder`, `AI Headshot Generator`), no product name or marketing words.
 7. **Append** the new entries at the end of the array in `data.json`, before the final `]`. Add a comma after the previous last entry.
 8. **Validate JSON**: `python3 -c "import json; json.load(open('data.json')); print('valid')"`.
 9. **Generate the tweet** (see format below).
