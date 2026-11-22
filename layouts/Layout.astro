@@ -3,6 +3,7 @@ import "../globals.css";
 import Header from "../src/components/Header.astro";
 import Footer from "../src/components/Footer.astro";
 import { SITE } from "../src/lib/items";
+import Analytics from "@vercel/analytics/astro";
 
 interface Props {
   title?: string;
@@ -88,24 +89,7 @@ const image = `${SITE}/og-image.png`; // 1200x630
     <!-- Theme -->
     <meta name="theme-color" content="#0a0a0a" />
 
-    <script defer data-domain="oksaas.co" src="https://analytics.guillaume.ceo/js/tracker.js"></script>
-
-    <!-- Privacy-friendly analytics by Plausible -->
-    <script async src="https://plausible.io/js/pa-NZVRr75V_CLz7MtN6izt5.js"
-    ></script>
-    <script>
-      ((window.plausible =
-        window.plausible ||
-        function () {
-          (plausible.q = plausible.q || []).push(arguments);
-        }),
-        (plausible.init =
-          plausible.init ||
-          function (i) {
-            plausible.o = i || {};
-          }));
-      plausible.init();
-    </script>
+    <Analytics />
   </head>
 
   <body>
