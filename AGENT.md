@@ -1,5 +1,21 @@
 # AGENT.md — Adding new SaaS listings to oksaas.co
 
+## « mise à jour » = pull Tally → data.json → PR
+
+When the user says **« mise à jour »**, run this whole flow without asking:
+
+1. `git switch main && git pull`, then `git switch -c submissions-<YYYY-MM-DD>` (today).
+2. `node scripts/tally-pull.mjs > <scratchpad>/pending.json` — pulls the Tally form `gDbJaO` (https://tally.so/forms/gDbJaO)
+   through the API, keeps only submissions not already in `data.json` (normalized URL), oldest first.
+   Key: `TALLY_API_KEY` in `.env.local` (gitignored; same key as `cabinet-legal.pro/.env.local`).
+3. For each pending entry, apply the Process below (category, tag, trim long descriptions, fresh UUID) and append
+   to `data.json` in chronological order (oldest first, same as previous batches). Keep the 2-space JSON format.
+4. Validate JSON and run `npm run build`.
+5. Commit `Add <N> submissions (<first date> → <last date>)`, push, open the PR with `gh` (body = count + tweet). Never merge.
+6. Give the user the PR link and the tweet.
+
+The manual paste flow below still applies if the user pastes submissions instead.
+
 This document describes the process to follow every time the user pastes a batch of new SaaS submissions to add to `data.json`.
 
 ## Input format
