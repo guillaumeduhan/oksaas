@@ -1,0 +1,44 @@
+{
+  "product": {
+    "name": "OkSaaS",
+    "domain": "oksaas.co",
+    "url": "https://www.oksaas.co",
+    "submit_url": "https://tally.so/r/gDbJaO",
+    "agents_url": "https://www.oksaas.co/agents.md",
+    "github_repo": "https://github.com/guillaumeduhan/oksaas",
+    "contact_email": "voir seo/directories.md (non publié dans le repo)"
+  },
+  "copy": {
+    "tagline_40c": "The best SaaS drop, every week",
+    "tagline_60c": "SaaS directory with free launches and dofollow backlinks",
+    "description_160c": "OkSaaS is a curated directory of new SaaS tools and indie products. Makers launch for free and get a listing with logo, description and a dofollow backlink.",
+    "description_500c": "OkSaaS is a curated directory of new SaaS products, indie tools and startups, published as a weekly drop. Makers submit their product through a short form and get a listing page with a logo, a description, a category and a dofollow backlink to their site, at no cost.\n\nVisitors browse 850+ listed tools across 22 categories, including AI, developer tools, marketing and SEO, design, productivity, finance and no-code, and filter them by recency. The site is static and fast, exposes an agents.md file for AI agents, and offers sponsored and featured placements for makers who want more visibility.",
+    "key_features": [
+      "Free product launch with a dofollow backlink",
+      "850+ SaaS tools across 22 categories",
+      "Weekly drop of new launches, filterable by recency",
+      "agents.md and llms.txt for AI agents",
+      "Optional sponsored and featured placements"
+    ]
+  },
+  "taxonomy": {
+    "primary_category": "Startup directory / SaaS directory",
+    "alt_categories": ["Product launch platform", "Marketing", "SEO tools"],
+    "tags": ["saas", "directory", "startups", "product-launch", "backlinks", "indie-hackers", "seo"],
+    "competitors_replaced": ["Product Hunt", "BetaList", "SaaSHub", "Uneed"],
+    "pricing_model": "Free (paid sponsored placements optional)",
+    "starting_price_usd": 0,
+    "free_tier_details": "Free listing with a dofollow backlink for every accepted submission"
+  },
+  "assets": {
+    "favicon": "https://www.oksaas.co/favicon.ico",
+    "logo_square_400": "https://www.oksaas.co/logo.png",
+    "logo_square_512": "seo/logo-512.png (agrandi depuis le 400 px)",
+    "og_image_1200x630": "https://www.oksaas.co/og-image.png",
+    "screenshots_1280x800": [
+      "seo/screenshots/01-home.png",
+      "seo/screenshots/02-category.png",
+      "seo/screenshots/03-listing.png"
+    ]
+  }
+}
