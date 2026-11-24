@@ -35,6 +35,7 @@ Products span many categories including: AI tools, developer tools, marketing, S
 
 - Website: https://www.oksaas.co
 - Sitemap: https://www.oksaas.co/sitemap.xml
+- For agents: https://www.oksaas.co/agents.md
 
 ## Contact
 

@@ -24,7 +24,9 @@ const items = pageItems(1);
     },
   ]}
 >
-  <Hero />
+  <Hero>
+    <p class="text-muted">For agents: <a href="/agents.md">/agents.md</a></p>
+  </Hero>
   <Featured />
   <Categories />
   <List items={items} page={1} pageCount={pageCount} />
