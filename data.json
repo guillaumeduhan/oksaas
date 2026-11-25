@@ -12305,5 +12305,33 @@
     "is_featured": false,
     "likes_count": 0,
     "email": "suziyan7166@gmail.com"
+  },
+  {
+    "id": "7a096c8d-4a5f-4874-a5a6-3a2ab88dbf19",
+    "created_at": "2026-11-25T11:17:58Z",
+    "title": "Oakgen.ai",
+    "description": "Oakgen.ai is an AI creative workspace for content creators and marketers. Generate images, video clips, voiceovers, music, avatars, and creator-style UGC ads. Edit and upscale the results, assemble clips in the built-in video editor, and queue finished videos in the post scheduler. One workspace and a shared credit balance cover the creative tools.",
+    "image_url": "https://oakgen.ai/logo/oakgen-512.png",
+    "url": "https://oakgen.ai/",
+    "category": "ai-image-video",
+    "tag": "AI Creative Workspace",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "contact@oakgen.ai"
+  },
+  {
+    "id": "cad3aab9-d874-4561-8fb7-5368e95b2cee",
+    "created_at": "2026-11-25T12:06:49Z",
+    "title": "Quokka Labs",
+    "description": "Quokka Labs is an AI-native engineering company building and modernizing digital products for startups, enterprises and government, covering generative and agentic AI, SaaS, mobile and web development, cloud and QA.",
+    "image_url": "https://www.prospectwiki.com/media/company_logo/logo-quokkalabs-insights.png",
+    "url": "https://quokkalabs.com/",
+    "category": "business-services",
+    "tag": "AI Dev Agency",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "quokkalabs135@gmail.com"
   }
 ]
