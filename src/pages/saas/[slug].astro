@@ -13,6 +13,11 @@ const summary = item.description?.trim() || `${item.title} is a SaaS product lau
 const metaDescription = summary.length > 155 ? `${summary.slice(0, 152).replace(/\s+\S*$/, "")}…` : summary;
 const path = itemHref(item);
 
+// Keep the <title> under ~60 chars so Google doesn't truncate it (better CTR):
+// only append the product type when the full string still fits, otherwise drop it.
+const titleWithTag = `${item.title} — ${label(item)} | OkSaaS`;
+const metaTitle = titleWithTag.length <= 60 ? titleWithTag : `${item.title} | OkSaaS`;
+
 const category = item.category && item.category !== "other" ? categoryBySlug.get(item.category) : undefined;
 
 // Alternatives: other products of the same category, closest launch dates first.
@@ -30,7 +35,7 @@ const alternatives = byDistance(category ? itemsInCategory(category.slug) : late
 ---
 
 <Layout
-  title={`${item.title} — ${label(item)} | OkSaaS`}
+  title={metaTitle}
   description={metaDescription}
   path={path}
   ogType="article"
