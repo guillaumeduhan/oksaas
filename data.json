@@ -13579,5 +13579,33 @@
     "is_featured": false,
     "likes_count": 0,
     "email": "urlshortly@gmail.com"
+  },
+  {
+    "id": "e3c2c62c-4dcc-4763-8513-f693f89fe73f",
+    "created_at": "2026-11-27T15:51:28Z",
+    "title": "EvntIQ",
+    "description": "EvntIQ helps professionals capture, organize and follow up with leads from conferences, trade shows, expos and networking events.",
+    "image_url": "https://evntiq.app/app-icon-256.png",
+    "url": "https://evntiq.app",
+    "category": "sales-crm",
+    "tag": "Event Lead Capture",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "ryandelauz-prnjnh+evntiqlinks@mail.grokbot.com"
+  },
+  {
+    "id": "1a667051-4017-4d72-abe7-5622d80e9317",
+    "created_at": "2026-11-27T16:40:43Z",
+    "title": "DereScan",
+    "description": "DereScan is a free anime Dere Test: answer 16 scenario questions to find which of 10 dere types matches you, then share your top 3 mix. No sign-up.",
+    "image_url": "https://derescan.com/_a/icon-192.c3c435e433.png",
+    "url": "https://derescan.com",
+    "category": "other",
+    "tag": "Personality Quiz",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "hi@derescan.com"
   }
 ]
