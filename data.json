@@ -13523,5 +13523,61 @@
     "is_featured": false,
     "likes_count": 0,
     "email": "hello@easegen.ai"
+  },
+  {
+    "id": "78969c0d-0e23-4a99-ba60-1b9943763eb1",
+    "created_at": "2026-11-27T11:03:25Z",
+    "title": "Perch: Coding Agent Monitor",
+    "description": "Perch is a Mac menu bar app that watches your coding agents (Claude Code, Codex, Cursor and more) and lets you approve permission prompts from the menu bar, iPhone or Apple Watch.",
+    "image_url": "https://perch.run/perch-mark.png",
+    "url": "https://perch.run",
+    "category": "developer-tools",
+    "tag": "Coding Agent Monitor",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "connect@inkryptislabs.com"
+  },
+  {
+    "id": "804d2a6e-41fd-449a-a311-ebd4bc1fce1f",
+    "created_at": "2026-11-27T11:05:18Z",
+    "title": "RadarMakers",
+    "description": "RadarMakers is a free launch directory for independent makers. Every product is reviewed by hand before it goes live, and live products are ranked by votes, ratings and helpful comments. Makers can submit a product for free.",
+    "image_url": "https://radarmakers.com/android-chrome-512x512.png",
+    "url": "https://radarmakers.com",
+    "category": "directories",
+    "tag": "Launch Directory",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "contact@radarmakers.com"
+  },
+  {
+    "id": "2e6b09bf-398a-4ead-b92b-ee59838d0406",
+    "created_at": "2026-11-27T13:38:45Z",
+    "title": "Auteo",
+    "description": "All-in-one AI creative suite for generating cinematic videos, images, voiceovers, and music in the browser.",
+    "image_url": "https://auteo.ai/favicon.ico",
+    "url": "https://auteo.ai/",
+    "category": "ai-image-video",
+    "tag": "AI Creative Suite",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "team@auteo.ai"
+  },
+  {
+    "id": "4cb3f00a-7f16-43f3-87d5-668d2c625ad4",
+    "created_at": "2026-11-27T14:24:14Z",
+    "title": "URLShortly",
+    "description": "URLShortly is a URL shortener with click analytics by country, device and referrer, plus a QR code generator (SVG, PNG, Wi-Fi, vCard) and link-in-bio pages. Start free; paid plans add branded domains, custom aliases and campaigns.",
+    "image_url": "https://urlshortly.com/content/favicon.png",
+    "url": "https://urlshortly.com",
+    "category": "marketing-seo",
+    "tag": "Link Shortener",
+    "is_promoted": false,
+    "is_featured": false,
+    "likes_count": 0,
+    "email": "urlshortly@gmail.com"
   }
 ]
